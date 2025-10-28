@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>KBT Skeppsbron | KBT i Göteborg sedan 2002</title>
+
+  <meta name="description" content="KBT Skeppsbron erbjuder kognitiv beteendeterapi i Göteborg. Hjälp vid stress, oro, ångest, utmattning, nedstämdhet och relationsproblem. Legitimerade psykoterapeuter." />
+  <link rel="icon" href="/favicon.png" />
+  <link rel="canonical" href="https://www.kbtskeppsbron.se/">
+
+  <!-- Fonts & icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Palett */
+      --brand-deep: #180f29;     /* djup bas (mörk lila/blå) */
+      --brand-mid:  #6f6a7b;     /* mjuk varmgrå/lila */
+      --brand-accent:#92b7c7;    /* teal/blågrön */
+      --brand-rose: #59484c;     /* dov brunrosa */
+      --brand-plum: #9e8cae;     /* dämpad lavendel */
+      --footer-bg: #1f2a30;      /* mörk footer */
+
+      --bg-page:#ffffff;
+      --text-main:#180f29;
+      --text-dim:#6f6a7b;
+
+      --border-soft: rgba(24,15,41,0.08);
+      --card-bg:#fff;
+      --card-shadow:0 20px 40px rgba(0,0,0,.08);
+    }
+
+    * {
+      box-sizing:border-box;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin:0;
+      background:var(--bg-page);
+      color:var(--text-main);
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+      line-height:1.5;
+    }
+
+    img,video {
+      max-width:100%;
+      height:auto;
+      display:block;
+    }
+
+    a {
+      color:var(--brand-deep);
+    }
+    a:hover {
+      text-decoration:underline;
+    }
+
+    /* === NAV / HEADER BAR === */
+    .site-nav {
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      z-index:1000;
+      display:block;
+      backdrop-filter: blur(8px);
+      background:rgba(24,15,41,0.5);
+      color:#fff;
+      border-bottom:1px solid rgba(255,255,255,0.08);
+      transition:background .25s ease, box-shadow .25s ease;
+    }
+
+    .site-nav.is-scrolled {
+      background:var(--brand-deep);
+      box-shadow:0 20px 40px rgba(0,0,0,.4);
+    }
+
+    .nav-inner {
+      width:min(1200px,92%);
+      margin-inline:auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:.5rem 0;
+      position:relative;
+    }
+
+    .brand-logo {
+      height:70px;
+      width:auto;
+      display:block;
+    }
+
+    .nav-toggle {
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      border:1px solid rgba(255,255,255,.3);
+      background:rgba(255,255,255,.05);
+      color:#fff;
+      border-radius:999px;
+      padding:.5rem .75rem;
+      font-size:.9rem;
+      line-height:1;
+      cursor:pointer;
+    }
+
+    .nav-toggle .material-icons {
+      font-size:1.2rem;
+      line-height:1;
+    }
+
+    .nav-links {
+      list-style:none;
+      margin:0;
+      padding:0;
+      display:none;
+      position:absolute;
+      right:0;
+      top:calc(100% + .5rem);
+      background:#fff;
+      border:1px solid var(--border-soft);
+      box-shadow:var(--card-shadow);
+      border-radius:1rem;
+      flex-direction:column;
+      min-width:180px;
+      z-index:1500;
+    }
+
+    .nav-links.open {
+      display:flex;
+    }
+
+    .nav-links a {
+      text-decoration:none;
+      display:block;
+      padding:.75rem 1rem;
+      border-radius:.5rem;
+      color:var(--text-main);
+      font-weight:500;
+      line-height:1.3;
+      font-size:.95rem;
+    }
+
+    .nav-links a:hover {
+      background:rgba(146,183,199,0.12);
+      color:var(--brand-deep);
+      text-decoration:none;
+    }
+
+    .nav-links .nav-cta {
+      color:#fff;
+      background:var(--brand-accent);
+      margin:.5rem 1rem 1rem;
+      text-align:center;
+      border-radius:999px;
+      border:1px solid var(--brand-accent);
+    }
+
+    .nav-links .nav-cta:hover {
+      background:var(--brand-plum);
+      border-color:var(--brand-plum);
+    }
+
+    /* desktop nav */
+    @media(min-width:900px){
+      .nav-toggle {
+        display:none;
+      }
+      .nav-links {
+        position:static;
+        background:transparent;
+        border:0;
+        box-shadow:none;
+        display:flex;
+        flex-direction:row;
+        align-items:center;
+        gap:.25rem;
+        min-width:auto;
+      }
+      .nav-links a {
+        color:#fff;
+        padding:.5rem .75rem;
+        font-size:.9rem;
+      }
+      .nav-links a:hover {
+        background:rgba(255,255,255,.12);
+        color:#fff;
+      }
+      .nav-links .nav-cta {
+        background:var(--brand-accent);
+        color:var(--brand-deep);
+        border:1px solid var(--brand-accent);
+        font-weight:600;
+      }
+      .nav-links .nav-cta:hover {
+        background:var(--brand-plum);
+        color:#fff;
+        border-color:var(--brand-plum);
+      }
+    }
+
+    /* === HERO SECTION === */
+    .hero {
+      position:relative;
+      min-height:70vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      text-align:center;
+      background:#000;
+      overflow:hidden;
+      padding-top:80px; /* space for fixed nav */
+    }
+
+    .hero-video {
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      filter:brightness(.8);
+    }
+
+    .hero-overlay {
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(
+          circle at 20% 30%,
+          rgba(158,140,174,0.35) 0%,
+          rgba(24,15,41,0.75) 60%
+        ),
+        linear-gradient(
+          to bottom,
+          rgba(24,15,41,.6) 0%,
+          rgba(24,15,41,.8) 60%,
+          rgba(24,15,41,1) 100%
+        );
+    }
+
+    .hero-content {
+      position:relative;
+      z-index:2;
+      max-width:90%;
+    }
+
+    .hero-content h1 {
+      margin:0;
+      font-size:clamp(2rem,1vw + 1.5rem,2.5rem);
+      font-weight:600;
+      line-height:1.2;
+      color:#fff;
+      text-shadow:0 20px 40px rgba(0,0,0,.8);
+    }
+
+    .hero-tagline {
+      margin:.75rem 0 1.5rem;
+      font-size:1.05rem;
+      line-height:1.5;
+      color:#fff;
+      text-shadow:0 20px 40px rgba(0,0,0,.8);
+    }
+
+    .hero-actions {
+      display:flex;
+      flex-wrap:wrap;
+      gap:.75rem;
+      justify-content:center;
+    }
+
+    .btn {
+      appearance:none;
+      border-radius:999px;
+      border:1px solid var(--brand-accent);
+      background:var(--brand-accent);
+      color:var(--brand-deep);
+      font-size:.9rem;
+      line-height:1.2;
+      font-weight:500;
+      padding:.7rem 1rem;
+      cursor:pointer;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:.4rem;
+      transition:all .15s ease;
+      box-shadow:0 20px 40px rgba(0,0,0,.4);
+    }
+
+    .btn-primary {
+      background:var(--brand-accent);
+      border-color:var(--brand-accent);
+      color:var(--brand-deep);
+    }
+    .btn-primary:hover {
+      background:var(--brand-plum);
+      border-color:var(--brand-plum);
+      color:#fff;
+      text-decoration:none;
+    }
+
+    .btn-secondary {
+      background:rgba(255,255,255,.1);
+      border:1px solid rgba(255,255,255,.4);
+      color:#fff;
+    }
+    .btn-secondary:hover {
+      background:#fff;
+      border-color:#fff;
+      color:var(--brand-deep);
+      text-decoration:none;
+    }
+
+    /* === LAYOUT HELPERS === */
+    .container {
+      width:min(1200px,92%);
+      margin-inline:auto;
+    }
+
+    main {
+      background:#fff;
+      color:var(--text-main);
+    }
+
+    /* === QUICK HELP ("Behöver du stöd just nu?") === */
+    .quick-help {
+      padding:2.5rem 0 2rem;
+    }
+
+    .quick-help h2{
+      font-size:1.4rem;
+      font-weight:600;
+      line-height:1.3;
+      margin:0 0 1rem;
+      color:var(--brand-deep);
+      display:flex;
+      align-items:flex-start;
+      gap:.5rem;
+      flex-wrap:wrap;
+    }
+    .quick-help h2 .material-icons{
+      font-size:1.2rem;
+      line-height:1;
+      color:var(--brand-accent);
+    }
+
+    .quick-help-grid {
+      display:grid;
+      grid-template-columns:1fr;
+      gap:1rem;
+    }
+    @media(min-width:600px){
+      .quick-help-grid {
+        grid-template-columns:repeat(2,1fr);
+      }
+    }
+    @media(min-width:1000px){
+      .quick-help-grid {
+        grid-template-columns:repeat(3,1fr);
+      }
+    }
+
+    .q-card {
+      position:relative;
+      background-image:
+        radial-gradient(circle at 25% 20%, rgba(146,183,199,0.18) 0%, rgba(255,255,255,0) 70%),
+        radial-gradient(circle at 80% 120%, rgba(158,140,174,.15) 0%, rgba(255,255,255,0) 70%);
+      background-color:#fff;
+      border:1px solid var(--border-soft);
+      box-shadow:var(--card-shadow);
+      border-radius:1rem;
+      padding:1rem 1rem 1rem;
+      text-decoration:none;
+      color:inherit;
+      display:flex;
+      flex-direction:row;
+      align-items:flex-start;
+      gap:.75rem;
+      transition:box-shadow .15s ease, transform .15s ease;
+    }
+
+    .q-card:hover {
+      transform:translateY(-2px);
+      box-shadow:0 30px 50px rgba(0,0,0,.12);
+      text-decoration:none;
+    }
+
+    .q-icon{
+      flex:0 0 auto;
+      background:rgba(146,183,199,0.12);
+      border:1px solid rgba(146,183,199,.4);
+      color:var(--brand-deep);
+      border-radius:.75rem;
+      width:42px;
+      height:42px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 10px 20px rgba(0,0,0,.06);
+      font-size:1rem;
+      line-height:1;
+    }
+    .q-icon .material-icons{
+      font-size:1.2rem;
+      color:var(--brand-accent);
+    }
+
+    .q-textblock{
+      flex:1;
+      min-width:0;
+    }
+
+    .q-label{
+      display:block;
+      font-weight:600;
+      font-size:1rem;
+      line-height:1.4;
+      color:var(--brand-deep);
+      margin:0 0 .25rem;
+    }
+
+    .q-desc{
+      font-size:.9rem;
+      line-height:1.4;
+      color:var(--text-dim);
+      margin:0;
+    }
+
+    .quick-help-note {
+      font-size:.85rem;
+      line-height:1.5;
+      color:var(--text-dim);
+      margin:1.5rem 0 0;
+      max-width:60ch;
+    }
+
+    /* === AKTUELLT (slider) === */
+    .news-wrapper{
+      background:
+        radial-gradient(circle at 15% 20%, rgba(158,140,174,0.12) 0%, rgba(255,255,255,0) 70%),
+        radial-gradient(circle at 80% 120%, rgba(146,183,199,0.18) 0%, rgba(255,255,255,0) 70%);
+      border-top:1px solid rgba(24,15,41,0.07);
+      border-bottom:1px solid rgba(24,15,41,0.07);
+      padding:2rem 0 2.5rem;
+      margin-top:2rem;
+      margin-bottom:2rem;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .news-head-row{
+      display:flex;
+      flex-direction:column;
+      gap:1rem;
+      margin-bottom:1rem;
+    }
+    @media(min-width:800px){
+      .news-head-row{
+        flex-direction:row;
+        align-items:flex-start;
+        justify-content:space-between;
+      }
+    }
+
+    .news-head-left{
+      max-width:700px;
+    }
+
+    .news-heading{
+      margin:0;
+      font-size:1.4rem;
+      font-weight:600;
+      line-height:1.3;
+      color:var(--brand-deep);
+      display:flex;
+      align-items:center;
+      gap:.5rem;
+    }
+    .news-heading .material-icons{
+      font-size:1.2rem;
+      color:var(--brand-accent);
+    }
+
+    .news-intro{
+      margin:.5rem 0 0;
+      font-size:.95rem;
+      line-height:1.5;
+      color:var(--text-dim);
+      max-width:60ch;
+    }
+
+    .news-head-right{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:.75rem;
+    }
+    @media(min-width:800px){
+      .news-head-right{
+        align-items:flex-end;
+      }
+    }
+
+    .all-news-link{
+      font-size:.9rem;
+      color:var(--brand-deep);
+      font-weight:500;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:.4rem;
+      line-height:1.3;
+    }
+    .all-news-link .material-icons{
+      font-size:1rem;
+      color:var(--brand-accent);
+    }
+    .all-news-link:hover{
+      text-decoration:underline;
+      color:var(--brand-deep);
+    }
+
+    .news-arrows{
+      display:flex;
+      gap:.5rem;
+    }
+    .news-arrow-btn{
+      appearance:none;
+      background:var(--brand-deep);
+      color:#fff;
+      border:0;
+      border-radius:.75rem;
+      width:36px;
+      height:36px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      box-shadow:0 20px 40px rgba(0,0,0,.2);
+      transition:background .15s ease;
+    }
+    .news-arrow-btn:hover{
+      background:var(--brand-plum);
+    }
+    .news-arrow-btn .material-icons{
+      font-size:1.2rem;
+      line-height:1;
+    }
+
+    .news-scroll-outer{
+      overflow-x:auto;
+      -webkit-overflow-scrolling:touch;
+      scroll-snap-type:x mandatory;
+      scrollbar-width:none;
+      padding-bottom:1rem;
+    }
+    .news-scroll-outer::-webkit-scrollbar{
+      display:none;
+    }
+
+    .news-scroll-inner{
+      display:flex;
+      gap:1rem;
+      padding:1rem 0 1rem .5rem;
+      min-width:max-content;
+    }
+    @media(min-width:600px){
+      .news-scroll-inner{
+        padding-left:0;
+      }
+    }
+
+    .news-card-alt{
+      flex:0 0 260px;
+      background:#fff;
+      border:1px solid var(--border-soft);
+      border-radius:1rem;
+      box-shadow:0 20px 40px rgba(0,0,0,.08);
+      padding:1rem 1rem 1.25rem;
+      scroll-snap-align:start;
+      position:relative;
+      background-image:
+        radial-gradient(circle at 20% 15%, rgba(24,15,41,.06) 0%, rgba(255,255,255,0) 70%),
+        radial-gradient(circle at 80% 120%, rgba(146,183,199,.15) 0%, rgba(255,255,255,0) 70%);
+    }
+
+    .news-chip-row{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      gap:.5rem;
+      font-size:.75rem;
+      line-height:1.2;
+      margin-bottom:.75rem;
+    }
+
+    .news-chip{
+      display:inline-flex;
+      align-items:center;
+      gap:.4rem;
+      font-weight:500;
+      border-radius:999px;
+      padding:.4rem .6rem;
+      font-size:.7rem;
+      line-height:1.2;
+      color:#fff;
+    }
+    .news-chip .material-icons{
+      font-size:1rem;
+      line-height:1;
+    }
+    .chip-collab{
+      background:var(--brand-rose);
+      color:#fff;
+    }
+    .chip-course{
+      background:var(--brand-plum);
+      color:#fff;
+    }
+    .chip-safety{
+      background:var(--brand-accent);
+      color:var(--brand-deep);
+    }
+    .chip-safety .material-icons{
+      color:var(--brand-deep);
+    }
+
+    .news-date-alt{
+      color:var(--text-dim);
+      font-size:.7rem;
+    }
+
+    .news-title-alt{
+      margin:0 0 .5rem;
+      font-size:1rem;
+      line-height:1.4;
+      font-weight:600;
+      color:var(--brand-deep);
+    }
+
+    .news-text-alt{
+      margin:.5rem 0 0;
+      font-size:.9rem;
+      line-height:1.5;
+      color:var(--text-main);
+    }
+
+    .news-more-alt{
+      margin-top:1rem;
+      font-size:.85rem;
+      font-weight:500;
+      color:var(--brand-deep);
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:.4rem;
+      line-height:1.3;
+    }
+    .news-more-alt .material-icons{
+      font-size:1rem;
+      color:var(--brand-accent);
+    }
+    .news-more-alt:hover{
+      text-decoration:underline;
+    }
+
+    /* === PATIENTSÄKERHET === */
+    .safety-section{
+      padding:2rem 0 2rem;
+    }
+
+    .safety-inner{
+      background:#fff;
+      border:1px solid var(--border-soft);
+      border-radius:1rem;
+      box-shadow:var(--card-shadow);
+      padding:1.5rem 1.5rem 1.25rem;
+      display:flex;
+      flex-direction:row;
+      align-items:flex-start;
+      gap:1rem;
+      background-image:
+        radial-gradient(circle at 20% 15%, rgba(24,15,41,.06) 0%, rgba(255,255,255,0) 70%),
+        radial-gradient(circle at 80% 120%, rgba(146,183,199,.15) 0%, rgba(255,255,255,0) 70%);
+    }
+    @media(max-width:600px){
+      .safety-inner{
+        flex-direction:column;
+      }
+    }
+
+    .safety-icon{
+      flex:0 0 auto;
+      background:rgba(146,183,199,0.12);
+      border:1px solid rgba(146,183,199,.4);
+      color:var(--brand-deep);
+      border-radius:.75rem;
+      width:44px;
+      height:44px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 10px 20px rgba(0,0,0,.06);
+      font-size:1rem;
+      line-height:1;
+    }
+    .safety-icon .material-icons{
+      font-size:1.3rem;
+      color:var(--brand-accent);
+    }
+
+    .safety-content h2{
+      margin:.25rem 0 .5rem;
+      font-size:1.2rem;
+      font-weight:600;
+      color:var(--brand-deep);
+      line-height:1.3;
+    }
+    .safety-content p{
+      margin:.5rem 0 0;
+      font-size:.95rem;
+      line-height:1.5;
+      color:var(--text-main);
+      max-width:70ch;
+    }
+    .safety-source{
+      font-size:.85rem;
+      color:var(--text-dim);
+    }
+    .safety-source a{
+      color:var(--brand-plum);
+      text-decoration:none;
+    }
+    .safety-source a:hover{
+      text-decoration:underline;
+    }
+
+    /* === CTA / BOKA === */
+    .cta-block {
+      padding:2rem 0 3rem;
+    }
+
+    .cta-inner{
+      background:
+        radial-gradient(circle at 15% 20%, rgba(158,140,174,0.12) 0%, rgba(255,255,255,0) 70%),
+        radial-gradient(circle at 80% 120%, rgba(146,183,199,0.18) 0%, rgba(255,255,255,0) 70%),
+        #fff;
+      border:1px solid var(--border-soft);
+      border-radius:1rem;
+      box-shadow:var(--card-shadow);
+      padding:2rem 1.5rem 2rem;
+      text-align:center;
+    }
+    .cta-inner h2{
+      margin:0 0 .75rem;
+      font-size:1.3rem;
+      font-weight:600;
+      color:var(--brand-deep);
+      line-height:1.3;
+    }
+    .cta-inner p{
+      margin:0 auto 1.5rem;
+      font-size:.95rem;
+      line-height:1.5;
+      color:var(--text-main);
+      max-width:60ch;
+    }
+
+    .cta-actions{
+      display:flex;
+      flex-direction:column;
+      gap:.75rem;
+      align-items:center;
+      justify-content:center;
+    }
+    @media(min-width:500px){
+      .cta-actions{
+        flex-direction:row;
+      }
+    }
+
+    /* tweak primär/sekundär i CTA så de känns clicky även utanför hero */
+    .cta-actions .btn-primary {
+      background:var(--brand-accent);
+      border-color:var(--brand-accent);
+      color:var(--brand-deep);
+      box-shadow:0 20px 40px rgba(0,0,0,.1);
+    }
+    .cta-actions .btn-primary:hover {
+      background:var(--brand-plum);
+      border-color:var(--brand-plum);
+      color:#fff;
+    }
+
+    .cta-actions .btn-secondary {
+      background:#fff;
+      border:1px solid var(--border-soft);
+      color:var(--brand-deep);
+      box-shadow:0 20px 40px rgba(0,0,0,.05);
+    }
+    .cta-actions .btn-secondary:hover {
+      background:rgba(146,183,199,0.12);
+      border-color:rgba(146,183,199,.4);
+      color:var(--brand-deep);
+    }
+
+    .cta-note {
+      margin-top:1rem;
+      font-size:.8rem;
+      line-height:1.4;
+      color:var(--text-dim);
+      max-width:40ch;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    /* === FOOTER (mörk, tre kolumner) === */
+    footer.site-footer {
+      background:
+        radial-gradient(circle at 25% 25%, rgba(146,183,199,0.25) 0%, rgba(31,42,48,0) 80%),
+        #1f2a30;
+      color:#fff;
+      padding:3rem 1.5rem 4rem;
+      border-top:1px solid rgba(255,255,255,0.08);
+      line-height:1.6;
+      font-size:16px;
+    }
+
+    .footer-topwrap{
+      max-width:1200px;
+      margin:0 auto 2rem;
+      text-align:center;
+    }
+
+    .footer-topwrap img{
+      height:80px;
+      width:auto;
+      display:block;
+      filter:brightness(1) contrast(1.05);
+      margin:0 auto;
+    }
+
+    .footer-topwrap .footer-claim{
+      font-size:.9rem;
+      color:rgba(255,255,255,.8);
+      letter-spacing:.03em;
+      margin-top:.5rem;
+    }
+
+    .footer-topwrap hr{
+      width:100%;
+      max-width:280px;
+      border:0;
+      border-top:1px solid rgba(146,183,199,.4);
+      margin:1.75rem auto 0;
+    }
+
+    .footer-grid {
+      max-width:1200px;
+      margin:0 auto 3rem;
+      display:grid;
+      gap:2rem 3rem;
+    }
+
+    @media(min-width:600px){
+      .footer-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+    }
+    @media(min-width:900px){
+      .footer-grid{
+        grid-template-columns:repeat(3,minmax(0,1fr));
+      }
+    }
+
+    .footer-col h3{
+      margin:0 0 .75rem;
+      font-size:.8rem;
+      font-weight:500;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--brand-accent);
+    }
+
+    .footer-col p,
+    .footer-col address,
+    .footer-col a {
+      font-style:normal;
+      color:rgba(255,255,255,.9);
+      font-size:.95rem;
+      line-height:1.6;
+      text-decoration:none;
+      margin:0;
+    }
+
+    .footer-col a:hover{
+      color:var(--brand-accent);
+      text-decoration:underline;
+    }
+
+    .footer-menu{
+      list-style:none;
+      padding:0;
+      margin:0;
+      font-size:.95rem;
+      line-height:1.6;
+    }
+
+    .footer-menu li{
+      margin:.4rem 0;
+    }
+
+    .footer-bottom{
+      max-width:1200px;
+      margin:0 auto;
+      border-top:1px solid rgba(255,255,255,0.08);
+      padding-top:1.5rem;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:rgba(255,255,255,.7);
+      font-size:.85rem;
+      line-height:1.6;
+      gap:1rem;
+    }
+
+    .footer-bottom a{
+      color:#92b7c7;
+      text-decoration:none;
+    }
+    .footer-bottom a:hover{
+      text-decoration:underline;
+    }
+
+    .footer-bottom img{
+      height:34px;
+      width:auto;
+      filter:brightness(1) contrast(1.05);
+    }
+
+    /* nice focus outline for keyboard users */
+    :focus-visible {
+      outline:2px solid var(--brand-accent);
+      outline-offset:2px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav" id="siteNav" aria-label="Huvudmeny">
+    <div class="nav-inner">
+      <a class="brand" href="/">
+        <img src="/assets/images/logo_original.svg" alt="KBT Skeppsbron" class="brand-logo">
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainMenu">
+        <span class="material-icons" aria-hidden="true">menu</span>
+        <span class="nav-toggle-label">Meny</span>
+      </button>
+
+      <ul class="nav-links" id="mainMenu">
+        <li><a href="/">Hem</a></li>
+        <li><a href="/behandling.html">Behandling</a></li>
+        <li><a href="/utbildning.html">Utbildning</a></li>
+        <li><a href="/handledning.html">Handledning</a></li>
+        <li><a href="/om_kontakt.html">Om oss</a></li>
+        <li><a href="#boka" class="nav-cta">Boka tid</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="/assets/images/Calm Sea Waves.mp4" type="video/mp4"/>
+      Din webbläsare stödjer tyvärr inte video-taggen.
+    </video>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <h1>Välkommen till<br>KBT Skeppsbron</h1>
+      <p class="hero-tagline">KBT i Göteborg sedan 2002</p>
+
+      <div class="hero-actions">
+        <a href="#boka" class="btn btn-primary">Boka en tid</a>
+        <a href="/om_kontakt.html" class="btn btn-secondary">Möt vårt team</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- SNABBHJÄLP / "Behöver du stöd just nu?" -->
+    <section class="quick-help container" id="home">
+      <h2><span class="material-icons" aria-hidden="true">favorite</span> Behöver du stöd just nu?</h2>
+
+      <div class="quick-help-grid">
+
+        <a class="q-card" href="/depression.html">
+          <div class="q-icon"><span class="material-icons" aria-hidden="true">mood_bad</span></div>
+          <div class="q-textblock">
+            <span class="q-label">Depression & nedstämdhet</span>
+            <p class="q-desc">Känner du dig låg, tappat energi eller glädje? Vi erbjuder KBT för depression och långvarig nedstämdhet.</p>
+          </div>
+        </a>
+
+        <a class="q-card" href="/angest.html">
+          <div class="q-icon"><span class="material-icons" aria-hidden="true">panic</span></div>
+          <div class="q-textblock">
+            <span class="q-label">Ångest & oro</span>
+            <p class="q-desc">Panik, oro, katastroftankar, svårt att slappna av? Våra terapeuter jobbar dagligen med ångestbehandling.</p>
+          </div>
+        </a>
+
+        <a class="q-card" href="/krisstod.html">
+          <div class="q-icon"><span class="material-icons" aria-hidden="true">crisis_alert</span></div>
+          <div class="q-textblock">
+            <span class="q-label">Krisstöd & livskriser</span>
+            <p class="q-desc">Något har hänt och du behöver prata med någon nu. Du är välkommen att höra av dig till oss.</p>
+          </div>
+        </a>
+
+        <a class="q-card" href="/samtalsstod.html">
+          <div class="q-icon"><span class="material-icons" aria-hidden="true">chat_bubble</span></div>
+          <div class="q-textblock">
+            <span class="q-label">Samtalsstöd</span>
+            <p class="q-desc">Ibland är det inte en diagnos. Ibland är det bara tungt. Vi möter dig där du är, utan krav.</p>
+          </div>
+        </a>
+
+        <a class="q-card" href="/stress-utmattning.html">
+          <div class="q-icon"><span class="material-icons" aria-hidden="true">battery_alert</span></div>
+          <div class="q-textblock">
+            <span class="q-label">Stress & utmattning</span>
+            <p class="q-desc">Sömnsvårigheter, hjärntrötthet, svårt att stänga av jobbet? Vi arbetar mycket med stressrelaterad ohälsa och återhämtning.</p>
+          </div>
+        </a>
+
+        <a class="q-card" href="/parterapi.html">
+          <div class="q-icon"><span class="material-icons" aria-hidden="true">favorite</span></div>
+          <div class="q-textblock">
+            <span class="q-label">Parterapi (IBCT)</span>
+            <p class="q-desc">Återkommande bråk? Svårt att nå varandra? Vi erbjuder evidensbaserad parterapi.</p>
+          </div>
+        </a>
+
+        <a class="q-card" href="/barn-unga.html">
+          <div class="q-icon"><span class="material-icons" aria-hidden="true">family_restroom</span></div>
+          <div class="q-textblock">
+            <span class="q-label">Barn och unga / föräldrastöd</span>
+            <p class="q-desc">Vi kan hjälpa barn och tonåringar med oro, nedstämdhet, skolfrånvaro och konflikter i hemmet – och stötta dig som förälder.</p>
+          </div>
+        </a>
+
+      </div>
+
+      <p class="quick-help-note">
+        Vi arbetar med KBT och moderna, evidensbaserade KBT-inriktningar. Alla terapeuter hos oss är legitimerade.
+      </p>
+    </section>
+
+    <!-- AKTUELLT / SLIDER -->
+    <section class="news-wrapper" id="aktuellt">
+      <div class="container news-head-row">
+        <div class="news-head-left">
+          <h2 class="news-heading">
+            <span class="material-icons" aria-hidden="true">campaign</span>
+            Aktuellt hos oss
+          </h2>
+          <p class="news-intro">
+            Kurser, samarbeten och sådant vi tycker är viktigt just nu – både för dig som privatperson och för företag.
+          </p>
+        </div>
+
+        <div class="news-head-right">
+          <a class="all-news-link" href="/aktuellt.html">
+            Visa alla nyheter
+            <span class="material-icons" aria-hidden="true">arrow_forward</span>
+          </a>
+
+          <div class="news-arrows">
+            <button class="news-arrow-btn" id="newsPrev" aria-label="Föregående">
+              <span class="material-icons" aria-hidden="true">chevron_left</span>
+            </button>
+            <button class="news-arrow-btn" id="newsNext" aria-label="Nästa">
+              <span class="material-icons" aria-hidden="true">chevron_right</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="news-scroll-outer">
+        <div class="news-scroll-inner" id="newsTrack">
+
+          <!-- Nyhet #1 -->
+          <article class="news-card-alt">
+            <div class="news-chip-row">
+              <span class="news-chip chip-collab">
+                <span class="material-icons" aria-hidden="true">handshake</span>
+                Samarbete
+              </span>
+              <time class="news-date-alt" datetime="2025-10-07">2025-10-07</time>
+            </div>
+
+            <h3 class="news-title-alt">
+              KBT i arbetsmiljöarbetet hos Eliassons Åkeri
+            </h3>
+            <p class="news-text-alt">
+              Tillsammans med Matilda Zackrisson och Anette Edsberger stärker vi samtalsklimat,
+              arbetsmiljö och ledarskap – med konkreta KBT-verktyg i vardagen.
+            </p>
+
+            <a class="news-more-alt" href="https://www.linkedin.com/posts/matilda-zackrisson-4a213b340_%C3%A5keriet-d%C3%A4r-samtalen-g%C3%B6r-skillnad-kbt-ger-activity-7326498832114937856-4dik?utm_source=share&utm_medium=member_ios&rcm=ACoAAFVzC_oBv2vH-G34jg4ca-sVdAIsAZyvcSE" target="_blank" rel="noopener">
+              Läs mer på LinkedIn
+              <span class="material-icons" aria-hidden="true">open_in_new</span>
+            </a>
+          </article>
+
+          <!-- Nyhet #2 -->
+          <article class="news-card-alt">
+            <div class="news-chip-row">
+              <span class="news-chip chip-course">
+                <span class="material-icons" aria-hidden="true">school</span>
+                Kurs
+              </span>
+              <time class="news-date-alt" datetime="2024-05-27">2024-05-27</time>
+            </div>
+
+            <h3 class="news-title-alt">
+              Unified Protocol – känslofokuserad KBT i praktiken
+            </h3>
+            <p class="news-text-alt">
+              Fyra dagar för terapeuter som vill jobba mer transdiagnostiskt och
+              känslofokuserat. Ledarskap av Billy Larsson och Lotta Scholander.
+            </p>
+            <p class="news-text-alt">
+              Intresseanmälan:
+              <a href="mailto:billy@kbtskeppsbron.se">billy@kbtskeppsbron.se</a> /
+              <a href="mailto:lotta@kbtskeppsbron.se">lotta@kbtskeppsbron.se</a>
+            </p>
+
+            <a class="news-more-alt" href="https://www.kbtskeppsbron.se/kurs_up.pdf" target="_blank" rel="noopener">
+              Läs mer om kursen
+              <span class="material-icons" aria-hidden="true">picture_as_pdf</span>
+            </a>
+          </article>
+
+          <!-- Nyhet #3 -->
+          <article class="news-card-alt">
+            <div class="news-chip-row">
+              <span class="news-chip chip-safety">
+                <span class="material-icons" aria-hidden="true">health_and_safety</span>
+                Patientsäkerhet
+              </span>
+              <span class="news-date-alt">Just nu</span>
+            </div>
+
+            <h3 class="news-title-alt">
+              Legitimation, sekretess och försäkring
+            </h3>
+            <p class="news-text-alt">
+              Alla våra psykologer / psykoterapeuter är legitimerade.
+              Det betyder sekretess, journalföring och patientförsäkring enligt lag.
+              Det är din trygghet.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PATIENTSÄKERHET -->
+    <section class="safety-section container" id="patientsakerhet">
+      <div class="safety-inner">
+        <div class="safety-icon">
+          <span class="material-icons" aria-hidden="true">health_and_safety</span>
+        </div>
+        <div class="safety-content">
+          <h2>Patientsäkerhet</h2>
+          <p>
+            Att vara legitimerad psykolog eller psykoterapeut innebär att vara godkänd av
+            Socialstyrelsen att bedriva behandling under eget ansvar. Vi arbetar under
+            hälso- och sjukvårdslagen, vilket innebär journalföringsplikt, sekretess och
+            skyldighet att ha patientförsäkring.
+          </p>
+          <p class="safety-source">
+            Läs mer på <a href="https://www.socialstyrelsen.se/" target="_blank" rel="noopener">Socialstyrelsens webbplats</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA / BOKA -->
+    <section class="cta-block" id="boka">
+      <div class="cta-inner container">
+        <h2>Boka tid eller ställ en fråga</h2>
+        <p>Som privatperson kan du kontakta oss direkt. Företag kan boka handledning, samtalsstöd eller utbildningsinsatser.</p>
+        <div class="cta-actions">
+          <a href="mailto:info@kbtskeppsbron.se" class="btn btn-primary">Maila oss</a>
+          <a href="/om_kontakt.html" class="btn btn-secondary">Kontakta en terapeut direkt</a>
+        </div>
+        <div class="cta-note">
+          Av sekretesskäl – skriv inte känsliga personuppgifter eller detaljerad symtombeskrivning i mejlet.
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-topwrap">
+      <a href="/index.html" style="text-decoration:none;display:inline-flex;flex-direction:column;align-items:center;gap:.5rem;">
+        <img src="/assets/images/kbt-skeppsbron-logo-footer.png" alt="KBT Skeppsbron logotyp" />
+        <div class="footer-claim">KBT i Göteborg sedan 2002</div>
+      </a>
+      <hr />
+    </div>
+
+    <div class="footer-grid">
+      <!-- Kontakt -->
+      <section class="footer-col">
+        <h3>Kontakt</h3>
+        <address>
+          Surbrunnsgatan&nbsp;6<br>
+          411&nbsp;19&nbsp;Göteborg<br><br>
+          <a href="mailto:info@kbtskeppsbron.se">info@kbtskeppsbron.se</a>
+        </address>
+      </section>
+
+      <!-- Patientsäkerhet -->
+      <section class="footer-col">
+        <h3>Patientsäkerhet & Avbokning</h3>
+        <p>
+          Alla terapeuter hos oss är legitimerade och arbetar enligt hälso- och sjukvårdslagen.  
+          Det innebär journalföring, sekretess och patientförsäkring.
+        </p>
+        <p>
+          Avbokning senast 48 h före kostnadsfritt.  
+          Inom 24 h debiteras halva priset, senare än 24 h fullt pris.
+        </p>
+      </section>
+
+      <!-- Meny -->
+      <nav class="footer-col" aria-label="Sidkarta" style="margin-left:10rem;">
+        <h3>Meny</h3>
+        <ul class="footer-menu">
+          <li><a href="/behandling.html">Behandling</a></li>
+          <li><a href="/utbildning.html">Utbildning</a></li>
+          <li><a href="/handledning.html">Handledning</a></li>
+          <li><a href="/om_kontakt.html">Om oss / Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <div>
+        © <span id="year">2025</span> KBT Skeppsbron<br>
+        Surbrunnsgatan&nbsp;6,&nbsp;411&nbsp;19&nbsp;Göteborg<br>
+        <a href="https://www.google.se/maps/place/Surbrunnsgatan+6,+Göteborg"
+           target="_blank" rel="noopener">Visa karta</a><br>
+        <a href="mailto:info@kbtskeppsbron.se">info@kbtskeppsbron.se</a>
+      </div>
+
+      <a href="https://www.socialstyrelsen.se/" target="_blank" rel="noopener" style="line-height:0;">
+        <img src="/assets/images/socialstyrelsen.png"
+             alt="Socialstyrelsen logotyp" />
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    // dynamiskt år i footern
+    (function(){
+      var y=document.getElementById('year');
+      if(y){y.textContent=new Date().getFullYear();}
+    })();
+
+    // mobilmeny toggle
+    const navToggle = document.getElementById('navToggle');
+    const mainMenu = document.getElementById('mainMenu');
+    const siteNav = document.getElementById('siteNav');
+
+    navToggle.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!expanded));
+      mainMenu.classList.toggle('open');
+    });
+
+    // scroll-effekt: gör nav kompakt/mörk
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY > 50;
+      siteNav.classList.toggle('is-scrolled', scrolled);
+    });
+
+    // sliderkontroller för "Aktuellt"
+    (function(){
+      const outer = document.querySelector('.news-scroll-outer');
+      const prev = document.getElementById('newsPrev');
+      const next = document.getElementById('newsNext');
+      if(outer && prev && next){
+        const step = 280; // px per klick
+        prev.addEventListener('click', ()=>{
+          outer.scrollBy({left:-step,behavior:'smooth'});
+        });
+        next.addEventListener('click', ()=>{
+          outer.scrollBy({left:step,behavior:'smooth'});
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>

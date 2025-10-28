@@ -1,0 +1,1122 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Behandling | KBT Skeppsbron – Kognitiv beteendeterapi i Göteborg</title>
+  <meta name="description" content="KBT, ACT, schematerapi, IBCT-parterapi, compassionfokuserad terapi och mer. Vi erbjuder evidensbaserad behandling för ångest, stress, utmattning, relationer m.m. i centrala Göteborg." />
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Fonts & icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg:#fff;
+      --surface:#ffffff;
+      --surface-alt:#f3f5f7;
+      --surface-soft:rgba(146,183,199,0.08);
+      --text:#111;
+      --text-dim:#555;
+      --border:#e2e5e8;
+      --brand:#224c5e;
+      --accent:#92b7c7;
+      --accent-bg:rgba(146,183,199,0.12);
+      --radius-lg:1rem;
+      --radius-full:999px;
+      --shadow:0 20px 40px rgba(0,0,0,.06);
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background-color:var(--bg);
+      line-height:1.5;
+    }
+    img{max-width:100%;height:auto;display:block;border:0}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .container{width:min(1200px,92%);margin-inline:auto}
+    .sr-only{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;}
+
+    /* HEADER */
+    header.site-header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:#fff;
+      border-bottom:1px solid var(--border);
+    }
+
+    .nav-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:.5rem 0;
+      position:relative;
+    }
+
+    .logo img{
+      height:70px;
+      width:auto;
+      display:block;
+    }
+
+    .nav-toggle{
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      border:1px solid var(--border);
+      background:#fff;
+      border-radius:var(--radius-full);
+      padding:.5rem .75rem;
+      font-size:.9rem;
+      line-height:1;
+      cursor:pointer;
+    }
+
+    .nav-links{
+      display:none;
+      list-style:none;
+      padding:0;
+      margin:0;
+    }
+
+    .nav-links a{
+      display:block;
+      padding:.5rem .75rem;
+      border-radius:.5rem;
+      color:var(--text);
+      font-weight:500;
+      line-height:1.3;
+      white-space:nowrap;
+    }
+
+    .nav-links a:hover{
+      background:var(--accent-bg);
+      color:var(--brand);
+      text-decoration:none;
+    }
+
+    .nav-links a[aria-current="page"]{
+      color:#fff;
+      background:var(--brand);
+    }
+
+    @media(min-width:900px){
+      .nav-toggle{display:none}
+      .nav-links{display:flex;gap:.5rem}
+    }
+
+    .breadcrumbs{
+      font-size:.8rem;
+      color:var(--text-dim);
+      padding:0 0 .75rem 0;
+    }
+    .breadcrumbs ol{
+      list-style:none;
+      padding:0;margin:0;
+      display:flex;flex-wrap:wrap;gap:.5rem;
+    }
+    .breadcrumbs a{color:var(--text-dim);text-decoration:none}
+    .breadcrumbs a:hover{color:var(--text);text-decoration:underline}
+
+    main{padding-block:2rem 4rem}
+
+    /* ============ HERO / INTRO TOP SECTION ============ */
+    .hero-wrap{
+      display:grid;
+      gap:1.5rem;
+      background:linear-gradient(
+        to right,
+        rgba(146,183,199,0.12),
+        rgba(255,255,255,0)
+      );
+      border:1px solid var(--border);
+      border-radius:var(--radius-lg);
+      box-shadow:var(--shadow);
+      padding:1.5rem 1.5rem 1.25rem;
+    }
+
+    @media(min-width:900px){
+      .hero-wrap{
+        grid-template-columns:1fr minmax(260px,300px);
+        align-items:start;
+      }
+    }
+
+    /* left column */
+    .intro-eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      font-size:.8rem;
+      font-weight:500;
+      line-height:1.2;
+      color:var(--brand);
+      background:var(--accent-bg);
+      border-radius:var(--radius-full);
+      width:max-content;
+      padding:.4rem .75rem;
+      border:1px solid rgba(146,183,199,.4);
+    }
+    .intro-eyebrow .material-icons{
+      font-size:1rem;
+      color:var(--accent);
+      line-height:1;
+    }
+
+    .hero-headline{
+      margin-top:1rem;
+      color:var(--brand);
+      font-weight:600;
+      font-size:clamp(1.5rem,1vw+1rem,1.9rem);
+      line-height:1.25;
+    }
+
+    .hero-lead{
+      margin-top:1rem;
+      font-size:1rem;
+      line-height:1.6;
+      color:var(--text);
+      max-width:75ch;
+    }
+
+    /* chips: vanliga problem */
+    .hero-tags-block{
+      margin-top:1.25rem;
+    }
+    .hero-tags-label{
+      font-size:.75rem;
+      font-weight:600;
+      color:var(--text-dim);
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      margin-bottom:.5rem;
+      display:block;
+    }
+    .chip-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.5rem;
+    }
+    .chip{
+      background:var(--accent-bg);
+      color:var(--brand);
+      border-radius:var(--radius-full);
+      border:1px solid rgba(146,183,199,.4);
+      font-size:.8rem;
+      line-height:1.2;
+      font-weight:500;
+      padding:.4rem .6rem;
+      display:inline-flex;
+      align-items:center;
+      gap:.4rem;
+    }
+    .chip .material-icons{
+      font-size:1rem;
+      line-height:1;
+      color:var(--accent);
+    }
+
+    /* right column: trygghetskort med bild */
+    .hero-sidecard{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:var(--radius-lg);
+      box-shadow:var(--shadow);
+      padding:1rem 1rem 1.25rem;
+      display:flex;
+      flex-direction:column;
+      position:relative;
+    }
+    .hero-photo{
+      border-radius:var(--radius-lg);
+      overflow:hidden;
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+      aspect-ratio:4/3;
+      background:#000;
+    }
+    .hero-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+    .hero-sidecard h2{
+      margin:1rem 0 .5rem;
+      font-size:1rem;
+      line-height:1.4;
+      font-weight:600;
+      color:var(--brand);
+      display:flex;
+      gap:.5rem;
+      align-items:flex-start;
+    }
+    .hero-sidecard h2 .material-icons{
+      font-size:1.1rem;
+      color:var(--accent);
+      line-height:1;
+    }
+    .hero-sidecard p{
+      margin:.5rem 0 0;
+      font-size:.9rem;
+      line-height:1.5;
+      color:var(--text);
+    }
+    .hero-side-meta{
+      margin-top:1rem;
+      font-size:.8rem;
+      line-height:1.4;
+      color:var(--text-dim);
+    }
+
+    /* ============ SECTION WRAPPER FOR THERAPIES ============ */
+    .sections-wrapper{
+      margin-top:3rem;
+      display:grid;
+      gap:2rem;
+    }
+
+    /* alternating background blocks */
+    .therapy-section{
+      border-radius:var(--radius-lg);
+      box-shadow:var(--shadow);
+      border:1px solid var(--border);
+      background:var(--surface);
+      padding:1.5rem 1.5rem 1.25rem;
+    }
+    .therapy-section.alt{
+      background:
+        radial-gradient(circle at 25% 20%, rgba(146,183,199,0.16) 0%, rgba(255,255,255,0) 70%),
+        #ffffff;
+    }
+
+    .therapy-headline{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.75rem 1rem;
+      align-items:flex-start;
+    }
+    .therapy-icon{
+      flex:0 0 auto;
+      background:var(--accent-bg);
+      color:var(--brand);
+      border-radius:var(--radius-lg);
+      border:1px solid rgba(146,183,199,.4);
+      width:44px;
+      height:44px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:var(--shadow);
+    }
+    .therapy-icon .material-icons{
+      font-size:1.2rem;
+      color:var(--accent);
+    }
+    .therapy-text-head{
+      flex:1;
+      min-width:0;
+    }
+    .therapy-text-head h2{
+      margin:0;
+      font-size:1.2rem;
+      line-height:1.3;
+      font-weight:600;
+      color:var(--brand);
+      display:flex;
+      flex-wrap:wrap;
+      gap:.5rem;
+      align-items:flex-start;
+    }
+    .therapy-text-head .subline{
+      margin-top:.25rem;
+      font-size:.9rem;
+      line-height:1.4;
+      color:var(--text-dim);
+    }
+
+    .therapy-body{
+      margin-top:1rem;
+      font-size:.95rem;
+      line-height:1.55;
+      color:var(--text);
+    }
+    .therapy-body p{
+      margin:.75rem 0;
+    }
+    .therapy-body ul{
+      padding-left:1.25rem;
+      margin:.5rem 0 1rem;
+      font-size:.95rem;
+      line-height:1.5;
+      color:var(--text);
+    }
+    .therapy-body li{
+      margin:.4rem 0;
+    }
+
+    /* "Passar ofta vid:" chips under varje metod */
+    .fit-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.5rem;
+      margin-top:1rem;
+      padding:0;
+      list-style:none;
+    }
+    .fit-tags li{
+      background:var(--surface-soft);
+      color:var(--brand);
+      border-radius:var(--radius-full);
+      border:1px solid rgba(146,183,199,.4);
+      font-size:.8rem;
+      line-height:1.2;
+      font-weight:500;
+      padding:.4rem .6rem;
+      display:inline-flex;
+      align-items:center;
+      gap:.4rem;
+    }
+    .fit-tags .material-icons{
+      font-size:1rem;
+      line-height:1;
+      color:var(--accent);
+    }
+
+    .tagline-box{
+      background:var(--surface-alt);
+      border:1px solid var(--border);
+      border-radius:var(--radius-lg);
+      padding:1rem 1rem .9rem;
+      font-size:.9rem;
+      line-height:1.5;
+      color:var(--text);
+    }
+    .tagline-box strong{
+      color:var(--brand);
+    }
+
+    /* CTA with face / contact */
+    .cta-card{
+      margin-top:2rem;
+      border:1px solid var(--border);
+      border-radius:var(--radius-lg);
+      box-shadow:var(--shadow);
+      background:
+        radial-gradient(circle at 25% 25%, rgba(146,183,199,0.18) 0%, rgba(255,255,255,0) 70%),
+        #ffffff;
+      padding:1.5rem;
+      display:grid;
+      gap:1.5rem;
+    }
+
+    @media(min-width:720px){
+      .cta-card{
+        grid-template-columns:auto 1fr auto;
+        align-items:center;
+      }
+    }
+
+    .cta-avatar{
+      display:flex;
+      align-items:flex-start;
+      gap:.75rem;
+    }
+    .avatar-circle{
+      width:56px;
+      height:56px;
+      border-radius:var(--radius-full);
+      overflow:hidden;
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+      flex-shrink:0;
+      background:#000;
+    }
+    .avatar-circle img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .avatar-meta{
+      font-size:.8rem;
+      line-height:1.4;
+      color:var(--text-dim);
+    }
+    .avatar-meta strong{
+      color:var(--text);
+      font-weight:600;
+      display:block;
+      font-size:.9rem;
+    }
+
+    .cta-card-text h2{
+      margin:0;
+      font-size:1.1rem;
+      line-height:1.4;
+      font-weight:600;
+      color:var(--brand);
+      display:flex;
+      align-items:center;
+      gap:.5rem;
+    }
+    .cta-card-text h2 .material-icons{
+      font-size:1.2rem;
+      color:var(--accent);
+    }
+    .cta-card-text p{
+      margin:.5rem 0 0;
+      font-size:.9rem;
+      line-height:1.5;
+      color:var(--text);
+    }
+
+    .cta-actions{
+      display:flex;
+      flex-direction:column;
+      gap:.5rem;
+      justify-content:flex-start;
+      align-items:flex-start;
+    }
+    @media(min-width:720px){
+      .cta-actions{align-items:flex-end;text-align:right;}
+    }
+
+    .btn{
+      appearance:none;
+      border-radius:var(--radius-full);
+      border:1px solid var(--brand);
+      background:#fff;
+      color:var(--brand);
+      font-size:.85rem;
+      line-height:1.2;
+      font-weight:500;
+      padding:.6rem .9rem;
+      cursor:pointer;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:.4rem;
+      transition:all .15s ease;
+    }
+    .btn .material-icons{
+      font-size:1rem;
+      line-height:1;
+    }
+    .btn:hover{
+      background:var(--brand);
+      color:#fff;
+      text-decoration:none;
+    }
+
+    /* FOOTER (mörk) */
+    footer.site-footer{
+      background:
+        radial-gradient(circle at 25% 25%, rgba(146,183,199,0.25) 0%, rgba(31,42,48,0) 80%),
+        #1f2a30;
+      color:#fff;
+      padding:3rem 1.5rem 4rem;
+      border-top:1px solid rgba(255,255,255,0.08);
+      line-height:1.6;
+      font-size:16px;
+      margin-top:4rem;
+    }
+
+    .footer-top{
+      max-width:1200px;
+      margin:0 auto 2rem;
+      text-align:center;
+    }
+    .footer-top img{
+      height:80px;
+      width:auto;
+      filter:brightness(1) contrast(1.05);
+      display:block;
+      margin:0 auto;
+    }
+    .footer-top-tagline{
+      font-size:.9rem;
+      color:rgba(255,255,255,.8);
+      letter-spacing:.03em;
+      margin-top:.5rem;
+    }
+    .footer-top hr{
+      width:100%;
+      max-width:280px;
+      border:0;
+      border-top:1px solid rgba(146,183,199,.4);
+      margin:1.75rem auto 0;
+    }
+
+    .footer-grid{
+      max-width:1200px;
+      margin:0 auto 3rem;
+      display:grid;
+      gap:2rem 3rem;
+    }
+    @media(min-width:600px){
+      .footer-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+    }
+    @media(min-width:900px){
+      .footer-grid{
+        grid-template-columns:repeat(3,minmax(0,1fr));
+      }
+    }
+
+    .footer-col h3{
+      margin:0 0 .75rem;
+      font-size:.8rem;
+      font-weight:500;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--accent);
+    }
+    .footer-col p,
+    .footer-col address,
+    .footer-col a{
+      color:rgba(255,255,255,.9);
+      font-size:.95rem;
+      line-height:1.6;
+      font-style:normal;
+      text-decoration:none;
+    }
+    .footer-col a:hover{
+      color:#92b7c7;
+      text-decoration:underline;
+    }
+
+    .footer-menu{
+      list-style:none;
+      padding:0;
+      margin:0;
+      font-size:.95rem;
+    }
+    .footer-menu li{margin:.4rem 0;}
+    .footer-menu a{
+      color:rgba(255,255,255,.9);
+      text-decoration:none;
+      transition:color .2s ease;
+    }
+    .footer-menu a:hover{color:#92b7c7;}
+
+    .footer-bottom{
+      max-width:1200px;
+      margin:0 auto;
+      border-top:1px solid rgba(255,255,255,0.08);
+      padding-top:1.5rem;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:rgba(255,255,255,.7);
+      font-size:.85rem;
+      line-height:1.6;
+      gap:1rem;
+    }
+    .footer-bottom a{
+      color:#92b7c7;
+      text-decoration:none;
+    }
+    .footer-bottom a:hover{
+      text-decoration:underline;
+    }
+    .footer-bottom img{
+      height:34px;
+      width:auto;
+      filter:brightness(1) contrast(1.05);
+      display:block;
+    }
+  </style>
+</head>
+<body>
+  <a class="sr-only" href="#main">Hoppa till innehåll</a>
+
+  <!-- HEADER -->
+  <header class="site-header" role="banner">
+    <div class="container nav-row">
+      <a class="logo" href="/index.html" aria-label="KBT Skeppsbron startsida">
+        <img src="/assets/images/logo_original.svg" alt="KBT Skeppsbron" />
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="mainmenu" id="navToggle">
+        <span class="material-icons" aria-hidden="true">menu</span>
+        Meny
+      </button>
+
+      <ul class="nav-links" id="mainmenu" role="menubar">
+        <li role="none"><a role="menuitem" href="/index.html">Hem</a></li>
+        <li role="none"><a role="menuitem" href="/behandling.html" aria-current="page">Behandling</a></li>
+        <li role="none"><a role="menuitem" href="/utbildning.html">Utbildning</a></li>
+        <li role="none"><a role="menuitem" href="/handledning.html">Handledning</a></li>
+        <li role="none"><a role="menuitem" href="/om_kontakt.html">Om oss / Kontakt</a></li>
+      </ul>
+    </div>
+
+    <div class="container breadcrumbs" aria-label="Brödsmulor">
+      <nav aria-label="Brödsmulor">
+        <ol>
+          <li><a href="/index.html">Hem</a></li>
+          <li aria-hidden="true">/</li>
+          <li><span aria-current="page">Behandling</span></li>
+        </ol>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container" role="main">
+
+    <!-- HERO / INTRO -->
+    <section class="hero-wrap">
+      <!-- LEFT -->
+      <div>
+        <div class="intro-eyebrow">
+          <span class="material-icons" aria-hidden="true">favorite</span>
+          Evidensbaserad behandling
+        </div>
+
+        <h1 class="hero-headline">
+          KBT och närliggande metoder – individuellt, för par och för ungdomar
+        </h1>
+
+        <p class="hero-lead">
+          Du behöver inte “vara värst” för att få komma. Vi möter människor som är stressade,
+          ledsna, oroliga, överväldigade eller fast i relationsmönster som gör ont.
+          Tillsammans tittar vi på vad som håller dig kvar där du inte vill vara –
+          och hur du kan ta steg i rätt riktning.
+        </p>
+
+        <div class="hero-tags-block">
+          <span class="hero-tags-label">Vanliga besvär vi behandlar</span>
+          <div class="chip-row">
+            <div class="chip"><span class="material-icons">panic</span> Ångest / oro</div>
+            <div class="chip"><span class="material-icons">bedtime</span> Sömnbesvär</div>
+            <div class="chip"><span class="material-icons">favorite_border</span> Relationskonflikter</div>
+            <div class="chip"><span class="material-icons">bolt</span> Stress & utmattning</div>
+            <div class="chip"><span class="material-icons">psychology</span> Tvång / OCD</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <aside class="hero-sidecard">
+        <div class="hero-photo">
+          <img src="/assets/images/placeholder_mottagning.jpg" alt="Mottagningsrum på KBT Skeppsbron">
+        </div>
+        <h2>
+          <span class="material-icons" aria-hidden="true">handshake</span>
+          Trygg, legitimerad vård
+        </h2>
+        <p>
+          Alla terapeuter här är legitimerade yrkesutövare (t.ex. psykolog, psykoterapeut,
+          hälso- och sjukvårdskurator) och arbetar enligt hälso- och sjukvårdslagen
+          – journalföring, sekretess och patientförsäkring.
+        </p>
+        <div class="hero-side-meta">
+          Vanligen kan vi erbjuda en första tid inom en vecka.
+        </div>
+      </aside>
+    </section>
+
+    <!-- THERAPY SECTIONS -->
+    <section class="sections-wrapper">
+
+      <!-- KBT -->
+      <article class="therapy-section" id="kbt">
+        <div class="therapy-headline">
+          <div class="therapy-icon">
+            <span class="material-icons" aria-hidden="true">psychology</span>
+          </div>
+          <div class="therapy-text-head">
+            <h2>KBT – Kognitiv beteendeterapi</h2>
+            <div class="subline">Konkreta steg mot förändring i vardagen.</div>
+          </div>
+        </div>
+
+        <div class="therapy-body">
+          <p>
+            I KBT tittar vi på hur känslor, tankar, kropp och beteenden hänger ihop.
+            Vi försöker förstå vad som gör att problemen lever vidare – och vi provar
+            nya sätt att agera, steg för steg. Du får uppgifter mellan samtalen för
+            att testa det i din egen vardag.
+          </p>
+
+          <p>Vanligt vid t.ex.:</p>
+          <ul>
+            <li>Ångest / oro (panik, GAD, katastroftankar)</li>
+            <li>Tvångssyndrom (OCD)</li>
+            <li>Ätproblematik / ätstörningar</li>
+            <li>Sömnsvårigheter & insomni</li>
+            <li>Social fobi, specifika fobier</li>
+            <li>Nedstämdhet / depression</li>
+            <li>Missbruk och beroende</li>
+            <li>Stress och utmattning</li>
+            <li>Återkommande konflikter i relationer</li>
+          </ul>
+
+          <div class="tagline-box">
+            <strong>Vi tar emot vuxna, ungdomar och par.</strong><br>
+            Du kan boka privat, via arbetsgivare eller via försäkringsbolag.
+          </div>
+
+          <ul class="fit-tags">
+            <li><span class="material-icons">support_agent</span> Vill ha tydlig plan</li>
+            <li><span class="material-icons">fact_check</span> Gilla att följa upp mål</li>
+            <li><span class="material-icons">directions_run</span> Testa nytt beteende</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- ACT -->
+      <article class="therapy-section alt" id="act">
+        <div class="therapy-headline">
+          <div class="therapy-icon">
+            <span class="material-icons" aria-hidden="true">self_improvement</span>
+          </div>
+          <div class="therapy-text-head">
+            <h2>ACT – Acceptance and Commitment Therapy</h2>
+            <div class="subline">Leva mer som du vill leva, även när känslor är jobbiga.</div>
+          </div>
+        </div>
+
+        <div class="therapy-body">
+          <p>
+            ACT handlar om att identifiera vad som är viktigt för dig – värderingar,
+            riktning – och hitta sätt att röra dig dit trots obehagliga tankar och
+            känslor. Istället för “jag måste må bättre innan jag kan börja leva”
+            jobbar vi med “hur kan jag börja leva, även med det som är svårt?”.
+          </p>
+
+          <p>Extra hjälpsamt om du känner att du kört fast, undviker situationer, eller lever på paus.</p>
+
+          <ul class="fit-tags">
+            <li><span class="material-icons">flag</span> Fastnat / står still</li>
+            <li><span class="material-icons">waves</span> Mycket känslostormar</li>
+            <li><span class="material-icons">travel_explore</span> Vill hitta riktning</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- SCHEMATERAPI -->
+      <article class="therapy-section" id="schematerapi">
+        <div class="therapy-headline">
+          <div class="therapy-icon">
+            <span class="material-icons" aria-hidden="true">account_tree</span>
+          </div>
+          <div class="therapy-text-head">
+            <h2>Schematerapi</h2>
+            <div class="subline">När du ofta hamnar i samma känslomässiga mönster – särskilt i relationer.</div>
+          </div>
+        </div>
+
+        <div class="therapy-body">
+          <p>
+            Schematerapi utgår från KBT men går mer på djupet i långvariga mönster,
+            anknytning och känsloreglering. Vi kartlägger återkommande “scheman”:
+            stark självkritik, rädsla för att bli övergiven, svårt att sätta gränser,
+            eller att känslor tar över (eller stängs av helt).
+          </p>
+
+          <p>
+            Målet är att du både förstår varför det blir så – och får verktyg att
+            reagera annorlunda här och nu.
+          </p>
+
+          <ul class="fit-tags">
+            <li><span class="material-icons">favorite_border</span> Relationskaos</li>
+            <li><span class="material-icons">sentiment_dissatisfied</span> Självkritik</li>
+            <li><span class="material-icons">psychology</span> Svårt reglera känslor</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- CFT -->
+      <article class="therapy-section alt" id="cft">
+        <div class="therapy-headline">
+          <div class="therapy-icon">
+            <span class="material-icons" aria-hidden="true">favorite</span>
+          </div>
+          <div class="therapy-text-head">
+            <h2>Compassionfokuserad terapi (CFT)</h2>
+            <div class="subline">Bygga självvärme istället för självkritik.</div>
+          </div>
+        </div>
+
+        <div class="therapy-body">
+          <p>
+            CFT tränar ett mer vänligt, realistiskt och stöttande sätt att vara med sig själv.
+            Bra när du kämpar med låg självkänsla, skam, hård inre röst (“inget jag gör är bra nog”),
+            eller har svårt att känna att du duger ens när du försöker.
+          </p>
+
+          <p>
+            Metoden bygger bland annat på forskning om anknytning, hjärnan och medkänsla (Paul Gilbert).
+          </p>
+
+          <p style="margin-top:1rem;">
+            <a href="/images/CFT.pdf" target="_blank" rel="noopener">Läs mer om CFT (PDF)</a>
+          </p>
+
+          <ul class="fit-tags">
+            <li><span class="material-icons">mood_bad</span> Självhat / skam</li>
+            <li><span class="material-icons">psychology_alt</span> Perfektionism</li>
+            <li><span class="material-icons">volunteer_activism</span> Svårt vara snäll mot sig själv</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- IBCT -->
+      <article class="therapy-section" id="ibct">
+        <div class="therapy-headline">
+          <div class="therapy-icon">
+            <span class="material-icons" aria-hidden="true">favorite_border</span>
+          </div>
+          <div class="therapy-text-head">
+            <h2>IBCT – Parterapi</h2>
+            <div class="subline">Vi tittar på mönstret mellan er – inte bara “vem som har fel”.</div>
+          </div>
+        </div>
+
+        <div class="therapy-body">
+          <p>
+            IBCT (Integrative Behavioral Couple Therapy) är en modern, forskningsbaserad
+            parterapi. Vi kartlägger hur ni fastnar, vilka triggers som drar igång grälen,
+            hur ni försöker lösa det (ofta under stress), och vad som gör att cirkeln
+            bara upprepas.
+          </p>
+
+          <p>
+            Fokus ligger både på acceptans (att förstå och tåla olikheter)
+            och på förändring (nya sätt att kommunicera, lyssna, visa närhet).
+          </p>
+
+          <p>
+            Ni börjar med en bedömningsfas på fyra samtal:
+            två samtal tillsammans och två individuella. Därefter får ni återkoppling
+            och en plan framåt.
+          </p>
+
+          <ul class="fit-tags">
+            <li><span class="material-icons">forum</span> Återkommande gräl</li>
+            <li><span class="material-icons">link_off</span> Tappad närhet</li>
+            <li><span class="material-icons">mood</span> “Vi pratar men vi hör inte varann”</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- MI -->
+      <article class="therapy-section alt" id="mi">
+        <div class="therapy-headline">
+          <div class="therapy-icon">
+            <span class="material-icons" aria-hidden="true">directions_walk</span>
+          </div>
+          <div class="therapy-text-head">
+            <h2>MI – Motiverande samtal</h2>
+            <div class="subline">Stöd att börja göra en förändring du egentligen vill göra.</div>
+          </div>
+        </div>
+
+        <div class="therapy-body">
+          <p>
+            MI är ett samarbetsinriktat sätt att stärka din egen motivation.
+            Istället för att någon säger “du borde”, utforskar vi vad du faktiskt
+            vill, vad som håller dig tillbaka, och vilket första steg som känns
+            möjligt på riktigt.
+          </p>
+
+          <p>
+            MI föddes inom missbruks-/beroendevård men funkar även för
+            livsstilsförändring, vanor och återfallsprevention.
+          </p>
+
+          <ul class="fit-tags">
+            <li><span class="material-icons">smoking_rooms</span> Beroende / återfall</li>
+            <li><span class="material-icons">local_drink</span> Vanor du vill bryta</li>
+            <li><span class="material-icons">trending_flat</span> “Jag vill men jag kommer inte igång”</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Mindfulness -->
+      <article class="therapy-section" id="mindfulness">
+        <div class="therapy-headline">
+          <div class="therapy-icon">
+            <span class="material-icons" aria-hidden="true">spa</span>
+          </div>
+          <div class="therapy-text-head">
+            <h2>Mindfulnessbaserade metoder (MBSR / MBKT)</h2>
+            <div class="subline">Stress, återhämtning och att kliva ur autopilot.</div>
+          </div>
+        </div>
+
+        <div class="therapy-body">
+          <p>
+            Mindfulnessbaserade program har visat god effekt vid stress, återkommande
+            nedstämdhet och utmattning. Du tränar närvaro, acceptans och att bemöta
+            tankar/känslor utan att fastna i dem eller slå på dig själv.
+          </p>
+
+          <p>
+            Vi använder mindfulness som ett inslag i behandling.
+            För hela 8-veckorsprogram samarbetar vi med Henrik Kok (Naturligt-Vis).
+          </p>
+
+          <p style="margin-top:1rem;">
+            <a href="https://naturligt-vis.se/kurser/index.html" target="_blank" rel="noopener">
+              Länk till Naturligt-Vis
+            </a>
+          </p>
+
+          <ul class="fit-tags">
+            <li><span class="material-icons">bolt</span> Stress / utmattning</li>
+            <li><span class="material-icons">bedtime</span> Sömn / återhämtning</li>
+            <li><span class="material-icons">replay</span> Nedstämdhet som kommer tillbaka</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- CTA -->
+      <aside class="cta-card">
+        <div class="cta-avatar">
+          <div class="avatar-circle">
+            <img src="/assets/images/placeholder_terapeut.jpg" alt="En av våra terapeuter">
+          </div>
+          <div class="avatar-meta">
+            <strong>Vill du boka eller fråga något?</strong>
+            Mejla oss eller kontakta en terapeut direkt.
+          </div>
+        </div>
+
+        <div class="cta-card-text">
+          <h2><span class="material-icons" aria-hidden="true">mail</span> Boka / fråga</h2>
+          <p>
+            Privatperson: <a href="mailto:info@kbtskeppsbron.se">info@kbtskeppsbron.se</a><br>
+            Skriv gärna kort, men undvik känsliga personuppgifter i mejlet.
+          </p>
+          <p>
+            Företag / avtal / chefsstöd:<br>
+            Matilda Zackrisson<br>
+            0708&nbsp;91&nbsp;91&nbsp;19<br>
+            <a href="mailto:foretagshalsa@kbtskeppsbron.se">foretagshalsa@kbtskeppsbron.se</a>
+          </p>
+        </div>
+
+        <div class="cta-actions">
+          <a class="btn" href="/om_kontakt.html#team">
+            <span class="material-icons" aria-hidden="true">groups</span>
+            Möt våra terapeuter
+          </a>
+          <a class="btn" href="/om_kontakt.html#hitta-hit">
+            <span class="material-icons" aria-hidden="true">location_on</span>
+            Hitta till mottagningen
+          </a>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-top">
+      <a href="/index.html" style="text-decoration:none;display:inline-flex;flex-direction:column;align-items:center;gap:.5rem;">
+        <img src="/assets/images/kbt-skeppsbron-logo-footer.png" alt="KBT Skeppsbron logotyp" />
+        <div class="footer-top-tagline">KBT i Göteborg sedan 2002</div>
+      </a>
+      <hr />
+    </div>
+
+    <div class="footer-grid">
+      <section class="footer-col">
+        <h3>Kontakt</h3>
+        <address>
+          Surbrunnsgatan&nbsp;6<br>
+          411&nbsp;19&nbsp;Göteborg<br><br>
+          <a href="mailto:info@kbtskeppsbron.se">info@kbtskeppsbron.se</a>
+        </address>
+      </section>
+
+      <section class="footer-col">
+        <h3>Patientsäkerhet & Avbokning</h3>
+        <p>
+          Alla terapeuter hos oss är legitimerade och arbetar enligt hälso-
+          och sjukvårdslagen. Det innebär journalföring, sekretess och
+          patientförsäkring.
+        </p>
+        <p>
+          Avbokning senast 48 h före kostnadsfritt.<br>
+          Inom 24 h debiteras halva priset,<br>
+          senare än 24 h fullt pris.
+        </p>
+      </section>
+
+      <nav class="footer-col" aria-label="Sidmeny i sidfoten">
+        <h3>Meny</h3>
+        <ul class="footer-menu">
+          <li><a href="/behandling.html">Behandling</a></li>
+          <li><a href="/utbildning.html">Utbildning</a></li>
+          <li><a href="/handledning.html">Handledning</a></li>
+          <li><a href="/om_kontakt.html">Om oss / Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <div>
+        © <span id="year"></span> KBT Skeppsbron<br>
+        Surbrunnsgatan&nbsp;6,&nbsp;411&nbsp;19&nbsp;Göteborg<br>
+        <a href="https://www.google.se/maps/place/Surbrunnsgatan+6,+Göteborg"
+           target="_blank" rel="noopener">Visa karta</a><br>
+        <a href="mailto:info@kbtskeppsbron.se">info@kbtskeppsbron.se</a>
+      </div>
+
+      <a href="https://www.socialstyrelsen.se/" target="_blank" rel="noopener" style="line-height:0;">
+        <img src="/assets/images/socialstyrelsen.png"
+             alt="Socialstyrelsen logotyp" />
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    // år i footern
+    (function(){
+      var y=document.getElementById('year');
+      if(y){ y.textContent=new Date().getFullYear(); }
+    })();
+
+    // mobilmeny toggle
+    (function(){
+      const toggle = document.getElementById('navToggle');
+      const menu = document.getElementById('mainmenu');
+      if(toggle && menu){
+        toggle.addEventListener('click',()=>{
+          const open = toggle.getAttribute('aria-expanded') === 'true';
+          toggle.setAttribute('aria-expanded', String(!open));
+          menu.style.display = open ? 'none' : 'flex';
+          if(!open){
+            menu.style.flexDirection = 'column';
+            menu.style.gap = '.5rem';
+            menu.style.background = '#fff';
+            menu.style.position='absolute';
+            menu.style.top='60px';
+            menu.style.right='4%';
+            menu.style.padding='1rem';
+            menu.style.border='1px solid var(--border)';
+            menu.style.borderRadius='var(--radius-lg)';
+            menu.style.boxShadow='var(--shadow)';
+            menu.style.zIndex='1500';
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

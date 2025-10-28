@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Handledning & chefsstöd | KBT Skeppsbron Göteborg</title>
+  <meta name="description" content="KBT Skeppsbron erbjuder handledning, chefsstöd och coaching för personal inom vård, skola, socialtjänst, HVB och företagshälsa. Trygg, erfaren handledning med KBT-bas." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-page:#ffffff;
+      --bg-soft:#f9f7f5;
+      --bg-card:#ffffff;
+      --accent:#92b7c7;
+      --text:#1a1a1a;
+      --text-dim:#555;
+      --border:rgba(0,0,0,.08);
+      --radius-lg:1rem;
+      --shadow-card:0 24px 44px rgba(0,0,0,.06);
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0;}
+    img{max-width:100%;display:block;border:0;}
+    body{
+      background-color:var(--bg-page);
+      color:var(--text);
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:var(--accent);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+
+    /* TOP NAV (samma stil som utbildning-sidan) */
+    header.site-topnav{
+      background:#fff;
+      border-bottom:1px solid var(--border);
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+    .topnav-inner{
+      max-width:1200px;
+      margin:0 auto;
+      padding:.75rem 1rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:1rem;
+    }
+    .brand-block{
+      display:flex;
+      align-items:center;
+      gap:.75rem;
+      text-decoration:none;
+      color:var(--text);
+    }
+    .brand-block img{
+      height:56px;
+      width:auto;
+    }
+    .brand-text{
+      font-size:.9rem;
+      line-height:1.4;
+      font-weight:500;
+      color:var(--text);
+      letter-spacing:-0.02em;
+    }
+    .brand-text span{
+      display:block;
+      font-size:.8rem;
+      color:var(--text-dim);
+      font-weight:400;
+    }
+    nav.top-links{
+      font-size:.9rem;
+      display:flex;
+      flex-wrap:wrap;
+      gap:.5rem;
+    }
+    nav.top-links a{
+      color:var(--text);
+      font-weight:500;
+      padding:.4rem .75rem;
+      border-radius:.5rem;
+      line-height:1.3;
+      text-decoration:none;
+      background:transparent;
+      border:1px solid transparent;
+    }
+    nav.top-links a[aria-current="page"]{
+      background:var(--accent);
+      color:#fff;
+    }
+    nav.top-links a:hover{
+      background:rgba(146,183,199,.12);
+      text-decoration:none;
+    }
+
+    /* HERO */
+    .hero-wrap{
+      background:
+        radial-gradient(circle at 15% 20%, rgba(146,183,199,.18) 0%, rgba(249,247,245,1) 70%);
+      border-bottom:1px solid var(--border);
+    }
+    .hero{
+      max-width:1200px;
+      margin:0 auto;
+      padding:3rem 1rem 2rem;
+      display:grid;
+      gap:2rem;
+    }
+    @media(min-width:900px){
+      .hero{
+        grid-template-columns:1fr 360px;
+        align-items:start;
+      }
+    }
+    .hero-content{
+      display:flex;
+      flex-direction:column;
+      gap:1rem;
+    }
+    .hero-eyebrow{
+      font-size:.8rem;
+      font-weight:600;
+      color:var(--accent);
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+    .hero-content h1{
+      font-size:clamp(2rem,1vw+1rem,2.4rem);
+      line-height:1.2;
+      font-weight:600;
+      letter-spacing:-0.03em;
+      color:var(--text);
+    }
+    .hero-content p.lead{
+      font-size:1.05rem;
+      line-height:1.6;
+      color:var(--text-dim);
+      max-width:65ch;
+    }
+
+    /* side card (kontakt/CTA) */
+    .hero-sidecard{
+      background:var(--bg-card);
+      border:1px solid var(--border);
+      border-radius:var(--radius-lg);
+      box-shadow:var(--shadow-card);
+      padding:1.25rem 1.5rem 1.5rem;
+      display:flex;
+      flex-direction:column;
+      gap:1rem;
+      font-size:.95rem;
+      line-height:1.5;
+      color:var(--text);
+      position:relative;
+    }
+    .hero-sidecard-heading{
+      display:flex;
+      align-items:flex-start;
+      gap:.75rem;
+    }
+    .hero-sidecard-icon{
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      background:var(--accent);
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:1.2rem;
+      box-shadow:0 16px 32px rgba(146,183,199,.4);
+    }
+    .hero-sidecard h2{
+      font-size:1rem;
+      font-weight:600;
+      line-height:1.4;
+      margin:0;
+      color:var(--text);
+      letter-spacing:-0.02em;
+    }
+    .hero-sidecard p{
+      margin:0;
+      color:var(--text);
+      font-size:.95rem;
+      line-height:1.5;
+    }
+    .button-link{
+      align-self:flex-start;
+      display:inline-block;
+      background:var(--accent);
+      color:#fff;
+      font-weight:500;
+      padding:.6rem .9rem;
+      border-radius:999px;
+      font-size:.9rem;
+      line-height:1.2;
+      text-decoration:none;
+      box-shadow:0 12px 24px rgba(146,183,199,.5);
+    }
+    .button-link:hover{
+      filter:brightness(.95);
+      text-decoration:none;
+    }
+    .hero-sidecard .disclaimer{
+      font-size:.8rem;
+      line-height:1.4;
+      color:var(--text-dim);
+    }
+
+    /* CONTENT BLOCKS */
+    main{
+      max-width:1200px;
+      margin:0 auto;
+      padding:3rem 1rem 4rem;
+    }
+
+    .blocks-grid{
+      display:grid;
+      gap:2rem;
+    }
+    @media(min-width:900px){
+      .blocks-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+    }
+
+    .block-card{
+      background:var(--bg-card);
+      border:1px solid var(--border);
+      border-radius:var(--radius-lg);
+      box-shadow:var(--shadow-card);
+      padding:2rem 1.5rem 1.75rem;
+      display:flex;
+      flex-direction:column;
+      position:relative;
+    }
+
+    .block-top{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:1rem;
+      margin-bottom:1rem;
+    }
+    .block-heading{
+      max-width:80%;
+    }
+    .block-eyebrow{
+      font-size:.8rem;
+      font-weight:600;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--accent);
+      margin-bottom:.4rem;
+    }
+    .block-card h2{
+      font-size:1.3rem;
+      line-height:1.35;
+      font-weight:600;
+      letter-spacing:-0.03em;
+      margin:0;
+      color:var(--text);
+    }
+
+    .tag-soft{
+      background:var(--bg-soft);
+      border:1px solid var(--border);
+      border-radius:999px;
+      font-size:.75rem;
+      line-height:1.2;
+      padding:.4rem .6rem;
+      font-weight:500;
+      color:var(--text);
+      white-space:nowrap;
+    }
+
+    .block-body{
+      font-size:.95rem;
+      line-height:1.5;
+      color:var(--text-dim);
+    }
+    .block-body p{
+      margin:0 0 1rem;
+    }
+    .block-body ul{
+      margin:0 0 1rem 1.25rem;
+      padding:0;
+    }
+    .block-body li{
+      margin-bottom:.5rem;
+    }
+
+    .block-visual{
+      border-radius:var(--radius-lg);
+      overflow:hidden;
+      background:linear-gradient(
+        135deg,
+        rgba(146,183,199,.18) 0%,
+        rgba(191,174,154,.15) 100%
+      );
+      border:1px solid var(--border);
+      box-shadow:inset 0 0 30px rgba(0,0,0,.05);
+      min-height:140px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      font-size:.8rem;
+      line-height:1.4;
+      color:var(--text-dim);
+      margin:1rem 0 0;
+      padding:1rem;
+    }
+
+    /* CTA SECTION */
+    .cta-section{
+      margin-top:3rem;
+      background:var(--bg-soft);
+      border:1px solid var(--border);
+      border-radius:var(--radius-lg);
+      box-shadow:0 24px 44px rgba(0,0,0,.04);
+      padding:2rem 1.5rem;
+      text-align:center;
+    }
+    @media(min-width:700px){
+      .cta-section{
+        padding:2.5rem 3rem;
+      }
+    }
+    .cta-section h2{
+      font-size:1.4rem;
+      line-height:1.3;
+      font-weight:600;
+      letter-spacing:-0.03em;
+      color:var(--text);
+      margin:0 0 1rem;
+    }
+    .cta-section p{
+      margin:0 auto 1.5rem;
+      font-size:1rem;
+      line-height:1.5;
+      max-width:50ch;
+      color:var(--text-dim);
+    }
+    .cta-actions{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:.75rem;
+    }
+    @media(min-width:480px){
+      .cta-actions{
+        flex-direction:row;
+        justify-content:center;
+      }
+    }
+    .btn-primary{
+      background:var(--accent);
+      color:#fff;
+      padding:.7rem 1rem;
+      border-radius:999px;
+      font-size:.9rem;
+      font-weight:500;
+      line-height:1.2;
+      text-decoration:none;
+      box-shadow:0 16px 32px rgba(146,183,199,.4);
+      white-space:nowrap;
+    }
+    .btn-primary:hover{
+      filter:brightness(.95);
+      text-decoration:none;
+    }
+    .btn-ghost{
+      background:#fff;
+      border:1px solid var(--border);
+      color:var(--text);
+      padding:.7rem 1rem;
+      border-radius:999px;
+      font-size:.9rem;
+      font-weight:500;
+      line-height:1.2;
+      text-decoration:none;
+      white-space:nowrap;
+    }
+    .btn-ghost:hover{
+      background:#fff;
+      text-decoration:none;
+      box-shadow:0 16px 32px rgba(0,0,0,.06);
+    }
+    .cta-legal{
+      margin-top:1rem;
+      font-size:.8rem;
+      line-height:1.4;
+      color:var(--text-dim);
+      max-width:50ch;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    /* PATIENTSÄKERHET */
+    .safety-section{
+      max-width:1200px;
+      margin:4rem auto 0;
+      padding:0 1rem;
+      display:grid;
+      gap:1.5rem;
+      align-items:start;
+    }
+    @media(min-width:800px){
+      .safety-section{
+        grid-template-columns:260px 1fr;
+      }
+    }
+    .safety-badge{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:var(--radius-lg);
+      box-shadow:var(--shadow-card);
+      padding:1.5rem;
+      text-align:center;
+    }
+    .iconcircle{
+      width:48px;
+      height:48px;
+      border-radius:12px;
+      margin:0 auto .75rem;
+      background:var(--accent);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      font-size:1.4rem;
+      box-shadow:0 16px 32px rgba(146,183,199,.5);
+    }
+    .safety-badge h3{
+      font-size:1rem;
+      font-weight:600;
+      line-height:1.4;
+      margin:0 0 .5rem;
+      color:var(--text);
+      letter-spacing:-0.02em;
+    }
+    .safety-badge p{
+      font-size:.9rem;
+      line-height:1.5;
+      color:var(--text-dim);
+      margin:0;
+    }
+    .safety-copy{
+      background:var(--bg-soft);
+      border:1px solid var(--border);
+      border-radius:var(--radius-lg);
+      box-shadow:0 24px 44px rgba(0,0,0,.04);
+      padding:1.5rem 1.5rem 2rem;
+      font-size:.95rem;
+      line-height:1.5;
+      color:var(--text-dim);
+    }
+    .safety-copy p{margin:0 0 1rem;}
+    .safety-copy strong{color:var(--text);font-weight:600;}
+
+    /* FOOTER */
+    footer.site-footer-light{
+      background:
+        radial-gradient(circle at 30% 30%, rgba(146,183,199,0.15) 0%, rgba(255,255,255,1) 85%);
+      color:#333;
+      padding:3rem 1.5rem 4rem;
+      border-top:1px solid rgba(0,0,0,0.1);
+      line-height:1.6;
+      font-size:16px;
+      margin-top:4rem;
+    }
+    .footer-topbrand{
+      max-width:1200px;
+      margin:0 auto 2rem;
+      text-align:center;
+    }
+    .footer-topbrand img{
+      height:80px;
+      width:auto;
+    }
+    .footer-topbrand hr{
+      width:100%;
+      max-width:280px;
+      border:0;
+      border-top:1px solid rgba(146,183,199,.4);
+      margin:1.75rem auto 0;
+    }
+    .footer-grid{
+      max-width:1200px;
+      margin:0 auto 3rem;
+      display:grid;
+      gap:2rem 3rem;
+    }
+    @media(min-width:600px){
+      .footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+    }
+    @media(min-width:900px){
+      .footer-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
+    }
+    .footer-grid h3{
+      margin:0 0 .75rem;
+      font-size:.8rem;
+      font-weight:600;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--accent);
+    }
+    .footer-grid address{
+      font-style:normal;
+      color:#333;
+      font-size:.95rem;
+      line-height:1.5;
+    }
+    .footer-grid p{
+      margin:0 0 .75rem;
+      font-size:.95rem;
+      line-height:1.5;
+      color:#333;
+    }
+    .footer-menu ul{
+      margin:0;
+      padding:0;
+      list-style:none;
+      font-size:.95rem;
+    }
+    .footer-menu li{margin:.4rem 0;}
+    .footer-menu a{
+      color:#333;
+      text-decoration:none;
+    }
+    .footer-menu a:hover{
+      color:var(--accent);
+      text-decoration:underline;
+    }
+
+    .footer-bottom{
+      max-width:1200px;
+      margin:0 auto;
+      border-top:1px solid rgba(0,0,0,0.1);
+      padding-top:1.5rem;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:#555;
+      font-size:.85rem;
+      line-height:1.6;
+      gap:1rem;
+    }
+    .footer-bottom a{
+      color:var(--accent);
+      text-decoration:none;
+    }
+    .footer-bottom a:hover{text-decoration:underline;}
+    .footer-bottom img{
+      height:34px;
+      width:auto;
+      filter:grayscale(100%) contrast(1.1) brightness(0.5);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP NAV -->
+  <header class="site-topnav" role="banner">
+    <div class="topnav-inner">
+      <a class="brand-block" href="/index.html">
+        <img src="/assets/images/kbt-skeppsbron-logo.jpg" alt="KBT Skeppsbron logotyp">
+        <div class="brand-text">
+          KBT Skeppsbron
+          <span>Göteborg</span>
+        </div>
+      </a>
+
+      <nav class="top-links" aria-label="Huvudmeny">
+        <a href="/index.html">Hem</a>
+        <a href="/behandling.html">Behandling</a>
+        <a href="/utbildning.html">Utbildning</a>
+        <a href="/handledning.html" aria-current="page">Handledning</a>
+        <a href="/om_kontakt.html">Om oss / Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-wrap">
+    <div class="hero">
+      <div class="hero-content">
+        <div class="hero-eyebrow">Handledning & stöd</div>
+        <h1>Stöd för dig som arbetar med människor – utan att själv gå sönder</h1>
+        <p class="lead">
+          Vi handleder personalgrupper, chefer och behandlare inom vård, socialtjänst,
+          skola, kriminalvård, HVB, företagshälsa och psykiatri. Syftet är både kvalitet –
+          och hållbarhet. Hur tar vi hand om andra och samtidigt oss själva?
+        </p>
+      </div>
+
+      <aside class="hero-sidecard">
+        <div class="hero-sidecard-heading">
+          <div class="hero-sidecard-icon">
+            <span class="material-icons" aria-hidden="true" style="font-size:1.2rem;">groups</span>
+          </div>
+          <h2>Boka handledning</h2>
+        </div>
+        <p>
+          Vill ni ha regelbunden handledning (1–2 ggr/månad), akut stöd i en svår process
+          – eller ett neutralt bollplank i en konflikt?
+        </p>
+        <a class="button-link" href="mailto:info@kbtskeppsbron.se">Maila oss</a>
+        <p class="disclaimer">Skicka inga känsliga personuppgifter via e-post. Vi återkopplar säkert.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- BLOCKS -->
+  <main role="main">
+
+    <section class="blocks-grid">
+
+      <!-- Arbetshandledning -->
+      <article class="block-card">
+        <div class="block-top">
+          <div class="block-heading">
+            <div class="block-eyebrow">Arbetshandledning</div>
+            <h2>Kontinuerligt stöd i vardagen</h2>
+          </div>
+          <div class="tag-soft">Grupp eller individ</div>
+        </div>
+
+        <div class="block-body">
+          <p>
+            Vi träffar er regelbundet – ofta varannan vecka eller en gång i månaden – för
+            att skapa utrymme att prata om det som faktiskt händer i mötet med klienter,
+            patienter, brukare eller elever.
+          </p>
+          <p>
+            Vi kan fokusera på ärenden (”hur går jag vidare i det här fallet?”) eller på
+            grupprocesser (kommunikation, slitningar, gränser, arbetsmiljö).
+          </p>
+          <p>
+            Vi erbjuder även handledning för chefer som behöver ett tryggt rum för beslut,
+            ansvar och lojalitetskonflikter.
+          </p>
+        </div>
+
+        <div class="block-visual">
+          <div>
+            <strong>Bildförslag:</strong><br>
+            Personalgrupp i samtal / anteckningsblock & kaffe<br>
+            (byt mot riktigt foto)
+          </div>
+        </div>
+      </article>
+
+      <!-- Utbildningshandledning -->
+      <article class="block-card">
+        <div class="block-top">
+          <div class="block-heading">
+            <div class="block-eyebrow">Utbildningshandledning</div>
+            <h2>Handledning för blivande psykoterapeuter</h2>
+          </div>
+          <div class="tag-soft">Steg 1 & legit-nivå</div>
+        </div>
+
+        <div class="block-body">
+          <p>
+            Alla hos oss är utbildade handledare och lärare inom KBT. Vi erbjuder kvalificerad handledning till dig som går en psykoterapeututbildning – både på grundläggande nivå (steg 1) och mot legitimation.
+          </p>
+          <p>
+            Behöver du handledare med tydlig KBT-kompetens och pedagogisk trygghet när du tar dina första egna ärenden? Det är exakt det här vi gör.
+          </p>
+        </div>
+
+        <div class="block-visual">
+          <div>
+            <strong>Bildförslag:</strong><br>
+            Två stolar i terapirum, lugn miljö<br>
+            (byt mot riktigt foto)
+          </div>
+        </div>
+      </article>
+
+      <!-- Process & konflikthantering -->
+      <article class="block-card">
+        <div class="block-top">
+          <div class="block-heading">
+            <div class="block-eyebrow">Processhandledning</div>
+            <h2>Konflikter, samarbete och arbetsmiljö</h2>
+          </div>
+          <div class="tag-soft">Personalgrupper</div>
+        </div>
+
+        <div class="block-body">
+          <p>
+            Ibland är det inte ärendena som är svåra – utan samspelet i gruppen.
+            Vi hjälper er sortera roller, ansvar, gränser och kommunikation för att ni ska
+            kunna samarbeta professionellt utan att fastna i upprepade konflikter.
+          </p>
+          <p>
+            Det kan handla om att avlasta ilska och frustration på ett tryggt sätt,
+            tydliggöra mandat eller hitta ett gemensamt språk kring bemötande.
+          </p>
+        </div>
+
+        <div class="block-visual">
+          <div>
+            <strong>Bildförslag:</strong><br>
+            Chef + två medarbetare i lugnt samtal<br>
+            (byt mot riktigt foto)
+          </div>
+        </div>
+      </article>
+
+      <!-- Coaching -->
+      <article class="block-card">
+        <div class="block-top">
+          <div class="block-heading">
+            <div class="block-eyebrow">Coaching</div>
+            <h2>Att orka vara människa och ändå vara professionell</h2>
+          </div>
+          <div class="tag-soft">Individuellt stöd</div>
+        </div>
+
+        <div class="block-body">
+          <p>
+            Coaching hos oss utgår från KBT och tredjevågens KBT (t.ex. ACT). Vi tittar på
+            vad som faktiskt står i vägen för dig: stress, värderingar, självbild,
+            gränssättning, prestationskrav, relationsmönster eller ren utmattning.
+          </p>
+          <p>
+            Vi definierar tillsammans målbeteenden och alternativa sätt att agera – små
+            konkreta steg som går att göra, inte bara fina ord.
+          </p>
+        </div>
+
+        <div class="block-visual">
+          <div>
+            <strong>Bildförslag:</strong><br>
+            Någon som antecknar personliga mål / kalender<br>
+            (byt mot riktigt foto)
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" aria-labelledby="ctaTitle">
+      <h2 id="ctaTitle">Vill ni starta handledning eller boka ett första möte?</h2>
+      <p>
+        Skriv kort vad ni behöver: kontinuerlig handledning, chefsstöd, stöd till en
+        personalgrupp, eller hjälp i en pågående konflikt. Vi återkopplar och lägger upp
+        ett upplägg tillsammans.
+      </p>
+
+      <div class="cta-actions">
+        <a class="btn-primary" href="mailto:info@kbtskeppsbron.se">Maila oss</a>
+        <a class="btn-ghost" href="/utbildning.html">Utbildning & kurser</a>
+      </div>
+
+      <div class="cta-legal">
+        Skicka inga personuppgifter eller känslig information via e-post. Vi bokar ett säkert första samtal.
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PATIENTSÄKERHET -->
+  <section class="safety-section" aria-labelledby="safetyTitle">
+    <div class="safety-badge">
+      <div class="iconcircle">
+        <span class="material-icons" aria-hidden="true" style="font-size:1.3rem;">verified_user</span>
+      </div>
+      <h3 id="safetyTitle">Patientsäkerhet</h3>
+      <p>Legitimerade behandlare. Sekretess. Journalföring. Patientförsäkring.</p>
+    </div>
+
+    <div class="safety-copy">
+      <p><strong>Alla handledare hos KBT Skeppsbron är legitimerade</strong> (psykoterapeuter, psykologer, läkare m.fl.). Vi arbetar under hälso- och sjukvårdslagen.</p>
+      <p>Det betyder: sekretess, journalföring och patientförsäkring. Ni får kvalificerad handledning med tydligt ansvar – viktigt både för personal och arbetsgivare.</p>
+      <p>Vi har lång erfarenhet från bland annat primärvård, specialistpsykiatri, socialtjänst, HVB, skola och företagshälsa.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer-light" role="contentinfo">
+    <div class="footer-topbrand">
+      <a href="/index.html" style="text-decoration:none;display:inline-flex;flex-direction:column;align-items:center;gap:.5rem;">
+        <img src="/assets/images/kbt-skeppsbron-logo-footer.png" alt="KBT Skeppsbron logotyp" />
+        <div style="font-size:.9rem;color:#555;letter-spacing:.03em;">KBT i Göteborg sedan 2002</div>
+      </a>
+      <hr />
+    </div>
+
+    <div class="footer-grid">
+
+      <section>
+        <h3>Kontakt</h3>
+        <address style="font-style:normal;">
+          Surbrunnsgatan&nbsp;6<br>
+          411&nbsp;19&nbsp;Göteborg<br><br>
+          <a href="mailto:info@kbtskeppsbron.se" style="color:#92b7c7;text-decoration:none;">info@kbtskeppsbron.se</a>
+        </address>
+      </section>
+
+      <section>
+        <h3>Avbokning & trygghet</h3>
+        <p>
+          Avbokning senast 48 h före är kostnadsfritt. Inom 24 h debiteras halv avgift,
+          senare än 24 h full avgift.
+        </p>
+        <p>
+          Vi följer hälso- och sjukvårdslagen, vilket innebär sekretess, journalföring
+          och patientförsäkring.
+        </p>
+      </section>
+
+      <nav class="footer-menu" aria-label="Sidmeny">
+        <h3>Meny</h3>
+        <ul style="list-style:none;margin:0;padding:0;">
+          <li style="margin:.4rem 0;"><a href="/behandling.html" style="color:#333;text-decoration:none;">Behandling</a></li>
+          <li style="margin:.4rem 0;"><a href="/utbildning.html" style="color:#333;text-decoration:none;">Utbildning</a></li>
+          <li style="margin:.4rem 0;"><a href="/handledning.html" style="color:#333;text-decoration:none;">Handledning</a></li>
+          <li style="margin:.4rem 0;"><a href="/om_kontakt.html" style="color:#333;text-decoration:none;">Om oss / Kontakt</a></li>
+        </ul>
+      </nav>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div>
+        © <span id="year">2025</span> KBT Skeppsbron<br />
+        Surbrunnsgatan&nbsp;6,&nbsp;411&nbsp;19&nbsp;Göteborg<br />
+        <a href="https://www.google.se/maps/place/Surbrunnsgatan+6,+Göteborg"
+           target="_blank" rel="noopener">Visa karta</a><br />
+        <a href="mailto:info@kbtskeppsbron.se">info@kbtskeppsbron.se</a>
+      </div>
+
+      <a href="https://www.socialstyrelsen.se/" target="_blank" rel="noopener" style="line-height:0;">
+        <img src="/assets/images/socialstyrelsen.png" alt="Socialstyrelsen" />
+      </a>
+    </div>
+
+    <script>
+      (function(){
+        var y=document.getElementById('year');
+        if(y){y.textContent=new Date().getFullYear();}
+      })();
+    </script>
+  </footer>
+
+</body>
+</html>

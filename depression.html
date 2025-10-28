@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Depression & Nedstämdhet | KBT i Göteborg – KBT Skeppsbron</title>
+  <meta name="description" content="KBT vid depression och långvarig nedstämdhet i Göteborg. Legitimerade psykoterapeuter med lång erfarenhet av behandling av nedstämdhet, hopplöshet och energibrist." />
+  <link rel="icon" href="/favicon.png" />
+
+  <!-- Fonts / Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+
+  <style>
+    :root{
+      --brand-deep:#180f29;
+      --brand-mid:#6f6a7b;
+      --brand-accent:#92b7c7;
+      --brand-rose:#59484c;
+      --brand-plum:#9e8cae;
+      --footer-bg:#1f2a30;
+
+      --text-main:#180f29;
+      --text-dim:#6f6a7b;
+      --border-soft:rgba(24,15,41,0.08);
+
+      --card-bg:#fff;
+      --card-shadow:0 20px 40px rgba(0,0,0,.08);
+      --radius-lg:1rem;
+    }
+
+    *{box-sizing:border-box;-webkit-font-smoothing:antialiased;}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+      background:#fff;
+      color:var(--text-main);
+      line-height:1.5;
+    }
+    img{max-width:100%;height:auto;display:block;}
+    a{color:var(--brand-deep);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+
+    .container{width:min(1200px,92%);margin-inline:auto;}
+
+    /* NAV (samma som index) */
+    .site-nav{
+      position:sticky;
+      top:0;
+      left:0;
+      right:0;
+      z-index:1000;
+      backdrop-filter:blur(8px);
+      background:var(--brand-deep);
+      color:#fff;
+      border-bottom:1px solid rgba(255,255,255,0.08);
+      box-shadow:0 20px 40px rgba(0,0,0,.4);
+    }
+    .nav-inner{
+      width:min(1200px,92%);
+      margin-inline:auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:.5rem 0;
+      position:relative;
+    }
+    .brand-logo{height:70px;width:auto;display:block;}
+
+    .nav-toggle{
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      border:1px solid rgba(255,255,255,.3);
+      background:rgba(255,255,255,.05);
+      color:#fff;
+      border-radius:999px;
+      padding:.5rem .75rem;
+      font-size:.9rem;
+      line-height:1;
+      cursor:pointer;
+    }
+    .nav-toggle .material-icons{font-size:1.2rem;line-height:1;}
+
+    .nav-links{
+      list-style:none;
+      margin:0;
+      padding:0;
+      display:none;
+      position:absolute;
+      right:0;
+      top:calc(100% + .5rem);
+      background:#fff;
+      border:1px solid var(--border-soft);
+      box-shadow:var(--card-shadow);
+      border-radius:var(--radius-lg);
+      flex-direction:column;
+      min-width:180px;
+      z-index:1500;
+    }
+    .nav-links.open{display:flex;}
+    .nav-links a{
+      text-decoration:none;
+      display:block;
+      padding:.75rem 1rem;
+      border-radius:.5rem;
+      color:var(--text-main);
+      font-weight:500;
+      line-height:1.3;
+      font-size:.95rem;
+    }
+    .nav-links a:hover{
+      background:rgba(146,183,199,0.12);
+      color:var(--brand-deep);
+      text-decoration:none;
+    }
+    .nav-links .nav-cta{
+      color:#fff;
+      background:var(--brand-accent);
+      margin:.5rem 1rem 1rem;
+      text-align:center;
+      border-radius:999px;
+      border:1px solid var(--brand-accent);
+    }
+    .nav-links .nav-cta:hover{
+      background:var(--brand-plum);
+      border-color:var(--brand-plum);
+    }
+
+    @media(min-width:900px){
+      .nav-toggle{display:none;}
+      .nav-links{
+        position:static;
+        background:transparent;
+        border:0;
+        box-shadow:none;
+        display:flex;
+        flex-direction:row;
+        align-items:center;
+        gap:.25rem;
+        min-width:auto;
+      }
+      .nav-links a{
+        color:#fff;
+        padding:.5rem .75rem;
+        font-size:.9rem;
+      }
+      .nav-links a:hover{
+        background:rgba(255,255,255,.12);
+        color:#fff;
+      }
+      .nav-links .nav-cta{
+        background:var(--brand-accent);
+        color:var(--brand-deep);
+        border:1px solid var(--brand-accent);
+        font-weight:600;
+      }
+      .nav-links .nav-cta:hover{
+        background:var(--brand-plum);
+        color:#fff;
+        border-color:var(--brand-plum);
+      }
+    }
+
+    /* HERO / TOPIC INTRO */
+    .topic-hero{
+      background:
+        radial-gradient(circle at 20% 20%, rgba(158,140,174,0.2) 0%, rgba(255,255,255,0) 70%),
+        radial-gradient(circle at 80% 120%, rgba(146,183,199,0.25) 0%, rgba(255,255,255,0) 70%),
+        #fff;
+      border-bottom:1px solid rgba(24,15,41,.07);
+      padding:3rem 0 2rem;
+    }
+    .breadcrumb{
+      font-size:.8rem;
+      color:var(--text-dim);
+      margin-bottom:1rem;
+      display:flex;
+      flex-wrap:wrap;
+      gap:.5rem;
+    }
+    .breadcrumb a{
+      color:var(--text-dim);
+      text-decoration:none;
+    }
+    .breadcrumb a:hover{
+      color:var(--brand-deep);
+      text-decoration:underline;
+    }
+
+    .topic-headline{
+      max-width:60ch;
+    }
+    .topic-eyebrow{
+      font-size:.8rem;
+      font-weight:500;
+      color:var(--brand-accent);
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      display:flex;
+      align-items:center;
+      gap:.4rem;
+      margin:0 0 .5rem;
+    }
+    .topic-eyebrow .material-icons{
+      font-size:1rem;
+      line-height:1;
+      color:var(--brand-accent);
+    }
+    .topic-hero h1{
+      margin:0 0 .75rem;
+      font-size:clamp(1.6rem,1vw + 1rem,2rem);
+      line-height:1.25;
+      font-weight:600;
+      color:var(--brand-deep);
+    }
+    .topic-lead{
+      margin:0;
+      font-size:1rem;
+      line-height:1.6;
+      color:var(--text-main);
+      max-width:65ch;
+    }
+
+    /* MAIN BODY GRID */
+    .topic-wrapper{
+      padding:2rem 0 3rem;
+    }
+    .topic-grid{
+      display:grid;
+      gap:2rem;
+    }
+    @media(min-width:900px){
+      .topic-grid{
+        grid-template-columns:2fr 1fr;
+      }
+    }
+
+    /* TEXT BODY CARD */
+    .topic-body{
+      background:#fff;
+      border:1px solid var(--border-soft);
+      box-shadow:var(--card-shadow);
+      border-radius:var(--radius-lg);
+      padding:1.5rem 1.5rem 1.5rem;
+      background-image:
+        radial-gradient(circle at 20% 15%, rgba(24,15,41,.05) 0%, rgba(255,255,255,0) 70%),
+        radial-gradient(circle at 80% 120%, rgba(146,183,199,.12) 0%, rgba(255,255,255,0) 70%);
+    }
+    .topic-body h2{
+      margin:1.5rem 0 .5rem;
+      font-size:1.1rem;
+      font-weight:600;
+      color:var(--brand-deep);
+      line-height:1.3;
+      display:flex;
+      align-items:center;
+      gap:.4rem;
+    }
+    .topic-body h2:first-child{margin-top:0;}
+    .topic-body h2 .material-icons{
+      font-size:1.1rem;
+      color:var(--brand-accent);
+    }
+    .topic-body p{
+      margin:.5rem 0 1rem;
+      color:var(--text-main);
+      font-size:.95rem;
+      line-height:1.5;
+      max-width:70ch;
+    }
+    .topic-body ul{
+      margin:.5rem 0 1rem;
+      padding-left:1.25rem;
+      color:var(--text-main);
+      font-size:.95rem;
+      line-height:1.5;
+    }
+    .topic-body li{margin-bottom:.4rem;}
+
+    /* SIDE CARD (Boka / Trygghet) */
+    .side-stack{
+      display:grid;
+      gap:1.5rem;
+      align-content:start;
+    }
+
+    .cta-card,
+    .safe-card{
+      background:#fff;
+      border:1px solid var(--border-soft);
+      box-shadow:var(--card-shadow);
+      border-radius:var(--radius-lg);
+      padding:1.25rem 1.25rem 1.25rem;
+      position:relative;
+    }
+    .cta-card{
+      background-image:
+        radial-gradient(circle at 20% 15%, rgba(158,140,174,.15) 0%, rgba(255,255,255,0) 70%),
+        radial-gradient(circle at 80% 120%, rgba(146,183,199,.18) 0%, rgba(255,255,255,0) 70%);
+      text-align:left;
+    }
+    .cta-card h2{
+      margin:0 0 .5rem;
+      font-size:1rem;
+      font-weight:600;
+      color:var(--brand-deep);
+      line-height:1.3;
+      display:flex;
+      align-items:center;
+      gap:.4rem;
+    }
+    .cta-card h2 .material-icons{
+      font-size:1.1rem;
+      color:var(--brand-accent);
+    }
+    .cta-card p{
+      margin:.5rem 0 1rem;
+      color:var(--text-main);
+      font-size:.9rem;
+      line-height:1.4;
+    }
+    .cta-actions{
+      display:flex;
+      flex-direction:column;
+      gap:.5rem;
+    }
+    .btn{
+      appearance:none;
+      border-radius:999px;
+      border:1px solid var(--brand-accent);
+      background:var(--brand-accent);
+      color:var(--brand-deep);
+      font-size:.9rem;
+      line-height:1.2;
+      font-weight:500;
+      padding:.7rem 1rem;
+      cursor:pointer;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:.4rem;
+      transition:all .15s ease;
+      box-shadow:0 20px 40px rgba(0,0,0,.08);
+      justify-content:center;
+      text-align:center;
+    }
+    .btn:hover{
+      background:var(--brand-plum);
+      border-color:var(--brand-plum);
+      color:#fff;
+      text-decoration:none;
+    }
+    .btn.secondary{
+      background:#fff;
+      border:1px solid var(--border-soft);
+      color:var(--brand-deep);
+    }
+    .btn.secondary:hover{
+      background:rgba(146,183,199,0.12);
+      border-color:rgba(146,183,199,.4);
+      color:var(--brand-deep);
+    }
+    .cta-note{
+      margin-top:.5rem;
+      font-size:.8rem;
+      line-height:1.4;
+      color:var(--text-dim);
+    }
+
+    .safe-card{
+      background-image:
+        radial-gradient(circle at 20% 15%, rgba(24,15,41,.05) 0%, rgba(255,255,255,0) 70%),
+        radial-gradient(circle at 80% 120%, rgba(146,183,199,.12) 0%, rgba(255,255,255,0) 70%);
+    }
+    .safe-head{
+      display:flex;
+      align-items:flex-start;
+      gap:.6rem;
+    }
+    .safe-icon{
+      flex:0 0 auto;
+      background:rgba(146,183,199,0.12);
+      border:1px solid rgba(146,183,199,.4);
+      border-radius:.75rem;
+      width:40px;
+      height:40px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 10px 20px rgba(0,0,0,.06);
+    }
+    .safe-icon .material-icons{
+      font-size:1.2rem;
+      color:var(--brand-accent);
+    }
+    .safe-head-content h3{
+      margin:0;
+      font-size:.95rem;
+      line-height:1.3;
+      font-weight:600;
+      color:var(--brand-deep);
+    }
+    .safe-head-content p{
+      margin:.25rem 0 0;
+      font-size:.85rem;
+      line-height:1.4;
+      color:var(--text-main);
+    }
+    .safe-legal{
+      margin:.75rem 0 0;
+      font-size:.8rem;
+      line-height:1.4;
+      color:var(--text-dim);
+    }
+
+    /* FOOTER (återanvänd mörka tre-kolumn) */
+    footer.site-footer{
+      background:
+        radial-gradient(circle at 25% 25%, rgba(146,183,199,0.25) 0%, rgba(31,42,48,0) 80%),
+        #1f2a30;
+      color:#fff;
+      padding:3rem 1.5rem 4rem;
+      border-top:1px solid rgba(255,255,255,0.08);
+      line-height:1.6;
+      font-size:16px;
+    }
+    .footer-topwrap{
+      max-width:1200px;
+      margin:0 auto 2rem;
+      text-align:center;
+    }
+    .footer-topwrap img{
+      height:80px;
+      width:auto;
+      display:block;
+      filter:brightness(1) contrast(1.05);
+      margin:0 auto;
+    }
+    .footer-claim{
+      font-size:.9rem;
+      color:rgba(255,255,255,.8);
+      letter-spacing:.03em;
+      margin-top:.5rem;
+    }
+    .footer-topwrap hr{
+      width:100%;
+      max-width:280px;
+      border:0;
+      border-top:1px solid rgba(146,183,199,.4);
+      margin:1.75rem auto 0;
+    }
+
+    .footer-grid{
+      max-width:1200px;
+      margin:0 auto 3rem;
+      display:grid;
+      gap:2rem 3rem;
+    }
+    @media(min-width:600px){
+      .footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+    }
+    @media(min-width:900px){
+      .footer-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
+    }
+
+    .footer-col h3{
+      margin:0 0 .75rem;
+      font-size:.8rem;
+      font-weight:500;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--brand-accent);
+    }
+
+    .footer-col p,
+    .footer-col address,
+    .footer-col a {
+      font-style:normal;
+      color:rgba(255,255,255,.9);
+      font-size:.95rem;
+      line-height:1.6;
+      text-decoration:none;
+      margin:0;
+    }
+    .footer-col a:hover{
+      color:var(--brand-accent);
+      text-decoration:underline;
+    }
+
+    .footer-menu{
+      list-style:none;
+      padding:0;
+      margin:0;
+      font-size:.95rem;
+      line-height:1.6;
+    }
+    .footer-menu li{margin:.4rem 0;}
+
+    .footer-bottom{
+      max-width:1200px;
+      margin:0 auto;
+      border-top:1px solid rgba(255,255,255,0.08);
+      padding-top:1.5rem;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:rgba(255,255,255,.7);
+      font-size:.85rem;
+      line-height:1.6;
+      gap:1rem;
+    }
+    .footer-bottom a{
+      color:#92b7c7;
+      text-decoration:none;
+    }
+    .footer-bottom a:hover{
+      text-decoration:underline;
+    }
+    .footer-bottom img{
+      height:34px;
+      width:auto;
+      filter:brightness(1) contrast(1.05);
+    }
+
+    :focus-visible{
+      outline:2px solid var(--brand-accent);
+      outline-offset:2px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav" aria-label="Huvudmeny">
+    <div class="nav-inner">
+      <a class="brand" href="/index.html">
+        <img src="/assets/images/logo_original.svg" alt="KBT Skeppsbron" class="brand-logo">
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainMenu">
+        <span class="material-icons" aria-hidden="true">menu</span>
+        <span class="nav-toggle-label">Meny</span>
+      </button>
+
+      <ul class="nav-links" id="mainMenu">
+        <li><a href="/index.html">Hem</a></li>
+        <li><a href="/behandling.html">Behandling</a></li>
+        <li><a href="/utbildning.html">Utbildning</a></li>
+        <li><a href="/handledning.html">Handledning</a></li>
+        <li><a href="/om_kontakt.html">Om oss</a></li>
+        <li><a href="/index.html#boka" class="nav-cta">Boka tid</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- TOPIC HERO -->
+  <header class="topic-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Brödsmulor">
+        <a href="/index.html">Hem</a>
+        <span aria-hidden="true">/</span>
+        <a href="/behandling.html">Behandling</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Depression</span>
+      </nav>
+
+      <div class="topic-headline">
+        <div class="topic-eyebrow">
+          <span class="material-icons" aria-hidden="true">mood_bad</span>
+          Depression & Nedstämdhet
+        </div>
+        <h1>KBT vid depression och nedstämdhet</h1>
+        <p class="topic-lead">
+          När allt känns tungt, hopplöst eller meningslöst kan det vara svårt att ens ta första steget.
+          Vi jobbar med evidensbaserad KBT för nedstämdhet och depression – i din takt, utan att döma.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <main class="topic-wrapper">
+    <div class="container topic-grid">
+      <!-- MAIN CONTENT -->
+      <article class="topic-body">
+        <h2><span class="material-icons" aria-hidden="true">psychology</span> Vanliga tecken på depression</h2>
+        <p>Depression handlar inte bara om "att vara ledsen". Det kan också vara att du går på autopilot, känner dig tom,
+          har tappat driv, isolerar dig eller fastnar i självkritiska tankar du inte kommer ur.</p>
+        <ul>
+          <li>Du känner dig nedstämd eller tom nästan varje dag</li>
+          <li>Du saknar energi, ork och lust</li>
+          <li>Det som brukade kännas viktigt känns meningslöst</li>
+          <li>Sömn och aptit har förändrats (för lite/för mycket)</li>
+          <li>Du grubblar, ältar eller klandrar dig själv</li>
+          <li>Det är svårt att “bara skärpa sig” även om du försöker</li>
+        </ul>
+
+        <p>Det här är vanligt. Det betyder inte att du är svag eller misslyckad – det betyder att du har det tufft och behöver stöd.</p>
+
+        <h2><span class="material-icons" aria-hidden="true">handyman</span> Hur KBT kan hjälpa</h2>
+        <p>I KBT tittar vi på sambandet mellan tankar, känslor, kropp och beteenden.
+          Tillsammans utforskar vi vad som håller dig fast och hur små, konkreta steg kan börja vända spiralen.
+        </p>
+        <ul>
+          <li>Vi kartlägger nuläget och vad som vidmakthåller måendet</li>
+          <li>Vi tränar på att få tillbaka meningsfull aktivitet och återhämtning</li>
+          <li>Vi jobbar med självkritik och skam på ett respektfullt sätt</li>
+          <li>Vi hjälper dig att bryta isolering och passivitet i realistiska steg</li>
+        </ul>
+
+        <p>Det är alltid ett samarbete. Du är expert på dig själv. Vi är experter på metoderna.</p>
+
+        <h2><span class="material-icons" aria-hidden="true">diversity_1</span> Hos oss på KBT Skeppsbron</h2>
+        <p>Alla våra terapeuter som tar emot för depression är legitimerade psykologer eller psykoterapeuter.
+          Vi erbjuder individuell terapi för vuxna och unga vuxna, ibland även par om relationen är påverkad.
+        </p>
+        <p>Du kan boka tid privat (ingen remiss krävs). Vi har också avtal med vissa arbetsgivare och försäkringsbolag.</p>
+      </article>
+
+      <!-- SIDE CONTENT -->
+      <aside class="side-stack">
+
+        <section class="cta-card">
+          <h2>
+            <span class="material-icons" aria-hidden="true">mail</span>
+            Boka tid eller fråga oss
+          </h2>
+          <p>Vill du komma igång med samtal, eller bara kolla om det här passar dig?
+            Du kan mejla oss direkt – du behöver ingen remiss.
+          </p>
+          <div class="cta-actions">
+            <a class="btn" href="mailto:info@kbtskeppsbron.se">
+              <span class="material-icons" aria-hidden="true">send</span>
+              Maila oss
+            </a>
+            <a class="btn secondary" href="/om_kontakt.html">
+              <span class="material-icons" aria-hidden="true">person_search</span>
+              Välj terapeut själv
+            </a>
+          </div>
+          <div class="cta-note">
+            Skriv inte känsliga detaljer (t.ex. diagnoser) via mejl. Det tar vi i rummet.
+          </div>
+        </section>
+
+        <section class="safe-card">
+          <div class="safe-head">
+            <div class="safe-icon">
+              <span class="material-icons" aria-hidden="true">health_and_safety</span>
+            </div>
+            <div class="safe-head-content">
+              <h3>Patientsäkerhet</h3>
+              <p>Vi lyder under hälso- och sjukvårdslagen. Det betyder tystnadsplikt, journalföring, patientsäkerhet och försäkring om något skulle hända.</p>
+            </div>
+          </div>
+          <div class="safe-legal">
+            Alla våra behandlare är legitimerade av Socialstyrelsen.
+          </div>
+        </section>
+
+      </aside>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-topwrap">
+      <a href="/index.html" style="text-decoration:none;display:inline-flex;flex-direction:column;align-items:center;gap:.5rem;">
+        <img src="/assets/images/kbt-skeppsbron-logo-footer.png" alt="KBT Skeppsbron logotyp" />
+        <div class="footer-claim">KBT i Göteborg sedan 2002</div>
+      </a>
+      <hr />
+    </div>
+
+    <div class="footer-grid">
+      <section class="footer-col">
+        <h3>Kontakt</h3>
+        <address>
+          Surbrunnsgatan 6<br>
+          411 19 Göteborg<br><br>
+          <a href="mailto:info@kbtskeppsbron.se">info@kbtskeppsbron.se</a>
+        </address>
+      </section>
+
+      <section class="footer-col">
+        <h3>Patientsäkerhet & Avbokning</h3>
+        <p>Alla terapeuter hos oss är legitimerade och arbetar enligt hälso- och sjukvårdslagen. Det innebär journalföring, sekretess och patientförsäkring.</p>
+        <p>Avbokning senast 48 h före kostnadsfritt. Inom 24 h debiteras halva priset, senare än 24 h fullt pris.</p>
+      </section>
+
+      <nav class="footer-col" aria-label="Sidkarta" style="margin-left:10rem;">
+        <h3>Meny</h3>
+        <ul class="footer-menu">
+          <li><a href="/behandling.html">Behandling</a></li>
+          <li><a href="/utbildning.html">Utbildning</a></li>
+          <li><a href="/handledning.html">Handledning</a></li>
+          <li><a href="/om_kontakt.html">Om oss / Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <div>
+        © <span id="year">2025</span> KBT Skeppsbron<br>
+        Surbrunnsgatan 6, 411 19 Göteborg<br>
+        <a href="https://www.google.se/maps/place/Surbrunnsgatan+6,+Göteborg" target="_blank" rel="noopener">Visa karta</a><br>
+        <a href="mailto:info@kbtskeppsbron.se">info@kbtskeppsbron.se</a>
+      </div>
+
+      <a href="https://www.socialstyrelsen.se/" target="_blank" rel="noopener" style="line-height:0;">
+        <img src="/assets/images/socialstyrelsen.png" alt="Socialstyrelsen logotyp" />
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    // mobilmeny
+    (function(){
+      const navToggle=document.getElementById('navToggle');
+      const mainMenu=document.getElementById('mainMenu');
+      if(navToggle && mainMenu){
+        navToggle.addEventListener('click',()=>{
+          const exp=navToggle.getAttribute('aria-expanded')==='true';
+          navToggle.setAttribute('aria-expanded',String(!exp));
+          mainMenu.classList.toggle('open');
+        });
+      }
+    })();
+
+    // dynamiskt år
+    (function(){
+      var y=document.getElementById('year');
+      if(y){y.textContent=new Date().getFullYear();}
+    })();
+  </script>
+</body>
+</html>

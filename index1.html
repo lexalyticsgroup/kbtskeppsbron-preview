@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+  <title>KBT Skeppsbron | KBT i Göteborg sedan 2002</title>
+
+  <meta name="description" content="KBT Skeppsbron erbjuder kognitiv beteendeterapi i Göteborg. Hjälp vid stress, oro, ångest, utmattning och relationsproblem. Legitimerade psykoterapeuter." />
+
+  <!-- Fonts & icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Core styles -->
+  <link rel="stylesheet" href="/CSS/global.css" media="screen"/>
+  <link rel="stylesheet" href="/CSS/home.css" media="screen"/>
+  <link rel="stylesheet" href="/CSS/print.css" media="print"/>
+
+  <link rel="icon" href="/favicon.png" />
+  <link rel="canonical" href="https://www.kbtskeppsbron.se/"/>
+
+  <style>
+    /* ---- Quick help block overrides / new SEO cards ---- */
+    .quick-help {
+      margin-top:3rem;
+      margin-bottom:3rem;
+    }
+
+    .quick-help h2{
+      font-size:1.4rem;
+      font-weight:600;
+      line-height:1.3;
+      color:#224c5e; /* brand */
+      margin:0 0 1rem 0;
+      display:flex;
+      align-items:center;
+      gap:.5rem;
+    }
+
+    .quick-help h2 .material-icons{
+      font-size:1.2rem;
+      color:#92b7c7;
+    }
+
+    .quick-help-grid{
+      display:grid;
+      gap:1rem;
+    }
+    @media(min-width:600px){
+      .quick-help-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+    }
+    @media(min-width:1000px){
+      .quick-help-grid{
+        grid-template-columns:repeat(3,1fr);
+      }
+    }
+
+    .q-card{
+      background:#fff;
+      border:1px solid #e2e5e8;
+      border-radius:1rem;
+      box-shadow:0 20px 40px rgba(0,0,0,.06);
+      text-decoration:none;
+      color:#111;
+      padding:1rem 1rem 1.1rem;
+      display:flex;
+      flex-direction:column;
+      position:relative;
+      transition:box-shadow .15s ease, transform .15s ease;
+      background-image:
+        radial-gradient(circle at 25% 20%, rgba(146,183,199,0.16) 0%, rgba(255,255,255,0) 70%);
+    }
+
+    .q-card:hover{
+      text-decoration:none;
+      box-shadow:0 30px 50px rgba(0,0,0,.1);
+      transform:translateY(-2px);
+    }
+
+    .q-icon{
+      width:40px;
+      height:40px;
+      border-radius:.75rem;
+      background:rgba(146,183,199,0.12);
+      border:1px solid rgba(146,183,199,.4);
+      box-shadow:0 20px 40px rgba(0,0,0,.06);
+      color:#224c5e;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-bottom:.75rem;
+    }
+    .q-icon .material-icons{
+      font-size:1.2rem;
+      color:#92b7c7;
+      line-height:1;
+    }
+
+    .q-label{
+      font-size:1rem;
+      line-height:1.4;
+      font-weight:600;
+      color:#224c5e;
+      margin:0 0 .4rem 0;
+    }
+
+    .q-desc{
+      font-size:.9rem;
+      line-height:1.5;
+      color:#555;
+      margin:0;
+    }
+
+    .quick-help-note{
+      margin-top:1.5rem;
+      font-size:.9rem;
+      line-height:1.5;
+      color:#555;
+      max-width:70ch;
+    }
+
+    /* ---- Dark footer (3-column) ---- */
+    footer.site-footer{
+      background:
+        radial-gradient(circle at 25% 25%, rgba(146,183,199,0.25) 0%, rgba(31,42,48,0) 80%),
+        #1f2a30;
+      color:#fff;
+      padding:3rem 1.5rem 4rem;
+      border-top:1px solid rgba(255,255,255,0.08);
+      line-height:1.6;
+      font-size:16px;
+      margin-top:4rem;
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+    }
+
+    .footer-top{
+      max-width:1200px;
+      margin:0 auto 2rem;
+      text-align:center;
+    }
+    .footer-top img{
+      height:80px;
+      width:auto;
+      filter:brightness(1) contrast(1.05);
+      display:block;
+      margin:0 auto;
+    }
+    .footer-top-tagline{
+      font-size:.9rem;
+      color:rgba(255,255,255,.8);
+      letter-spacing:.03em;
+      margin-top:.5rem;
+    }
+    .footer-top hr{
+      width:100%;
+      max-width:280px;
+      border:0;
+      border-top:1px solid rgba(146,183,199,.4);
+      margin:1.75rem auto 0;
+    }
+
+    .footer-grid{
+      max-width:1200px;
+      margin:0 auto 3rem;
+      display:grid;
+      gap:2rem 3rem;
+    }
+
+    @media(min-width:600px){
+      .footer-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+    }
+    @media(min-width:900px){
+      .footer-grid{
+        grid-template-columns:repeat(3,minmax(0,1fr));
+      }
+    }
+
+    .footer-col h3{
+      margin:0 0 .75rem;
+      font-size:.8rem;
+      font-weight:500;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:#92b7c7;
+    }
+    .footer-col p,
+    .footer-col address,
+    .footer-col a{
+      color:rgba(255,255,255,.9);
+      font-size:.95rem;
+      line-height:1.6;
+      font-style:normal;
+      text-decoration:none;
+    }
+    .footer-col a:hover{
+      color:#92b7c7;
+      text-decoration:underline;
+    }
+
+    .footer-menu{
+      list-style:none;
+      padding:0;
+      margin:0;
+      font-size:.95rem;
+    }
+    .footer-menu li{margin:.4rem 0;}
+    .footer-menu a{
+      color:rgba(255,255,255,.9);
+      text-decoration:none;
+      transition:color .2s ease;
+    }
+    .footer-menu a:hover{
+      color:#92b7c7;
+    }
+
+    .footer-bottom{
+      max-width:1200px;
+      margin:0 auto;
+      border-top:1px solid rgba(255,255,255,0.08);
+      padding-top:1.5rem;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:rgba(255,255,255,.7);
+      font-size:.85rem;
+      line-height:1.6;
+      gap:1rem;
+    }
+    .footer-bottom a{
+      color:#92b7c7;
+      text-decoration:none;
+    }
+    .footer-bottom a:hover{
+      text-decoration:underline;
+    }
+    .footer-bottom img{
+      height:34px;
+      width:auto;
+      filter:brightness(1) contrast(1.05);
+      display:block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav" id="siteNav" aria-label="Huvudmeny">
+    <div class="nav-inner">
+      <a class="brand" href="/">
+        <img src="/assets/images/logo_original.svg" alt="KBT Skeppsbron" class="brand-logo">
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainMenu">
+        <span class="material-icons" aria-hidden="true">menu</span>
+        <span class="nav-toggle-label">Meny</span>
+      </button>
+
+      <ul class="nav-links" id="mainMenu">
+        <li><a href="/">Hem</a></li>
+        <li><a href="/behandling.html">Behandling</a></li>
+        <li><a href="/utbildning.html">Utbildning</a></li>
+        <li><a href="/handledning.html">Handledning</a></li>
+        <li><a href="/om_kontakt.html">Om oss</a></li>
+        <li><a href="#boka" class="nav-cta">Boka tid</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="/assets/images/Calm Sea Waves.mp4" type="video/mp4"/>
+      Din webbläsare stödjer tyvärr inte video-taggen.
+    </video>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <h1>Välkommen till<br>KBT Skeppsbron</h1>
+      <p class="hero-tagline">KBT i Göteborg sedan 2002</p>
+
+      <div class="hero-actions">
+        <a href="#boka" class="btn btn-primary">Boka en tid</a>
+        <a href="/om_kontakt.html" class="btn btn-secondary">Möt vårt team</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- SNABBHJÄLP / akut behov / SEO-fokuserad variant -->
+    <section class="quick-help container" id="home">
+      <h2><span class="material-icons" aria-hidden="true">favorite</span> Behöver du stöd just nu?</h2>
+
+      <div class="quick-help-grid">
+
+        <a class="q-card" href="/depression.html">
+          <div class="q-icon">
+            <span class="material-icons" aria-hidden="true">cloud</span>
+          </div>
+          <h3 class="q-label">Depression</h3>
+          <p class="q-desc">Känner du dig nedstämd, tom eller tappat lusten till sånt som brukade kännas viktigt?</p>
+        </a>
+
+        <a class="q-card" href="/angest.html">
+          <div class="q-icon">
+            <span class="material-icons" aria-hidden="true">panic</span>
+          </div>
+          <h3 class="q-label">Ångest</h3>
+          <p class="q-desc">Oro, panik eller katastroftankar som tar över och gör vardagen svår?</p>
+        </a>
+
+        <a class="q-card" href="/krisstod.html">
+          <div class="q-icon">
+            <span class="material-icons" aria-hidden="true">warning</span>
+          </div>
+          <h3 class="q-label">Krisstöd</h3>
+          <p class="q-desc">Har något hänt nyligen? Förlust, separation, sjukdom, besked du inte kan landa i?</p>
+        </a>
+
+        <a class="q-card" href="/samtalsstod.html">
+          <div class="q-icon">
+            <span class="material-icons" aria-hidden="true">support_agent</span>
+          </div>
+          <h3 class="q-label">Samtalsstöd</h3>
+          <p class="q-desc">Behöver du prata med någon utomstående som lyssnar utan att döma?</p>
+        </a>
+
+        <a class="q-card" href="/stress-och-utmattning.html">
+          <div class="q-icon">
+            <span class="material-icons" aria-hidden="true">bolt</span>
+          </div>
+          <h3 class="q-label">Stress och utmattning</h3>
+          <p class="q-desc">Är du slutkörd, svårt att återhämta dig, svårt att sova eller svårt att tänka klart?</p>
+        </a>
+
+        <a class="q-card" href="/parterapi.html">
+          <div class="q-icon">
+            <span class="material-icons" aria-hidden="true">favorite_border</span>
+          </div>
+          <h3 class="q-label">Parterapi</h3>
+          <p class="q-desc">Upprepade konflikter, tappad närhet eller svårt att prata utan att det låser sig?</p>
+        </a>
+
+        <a class="q-card" href="/barn-och-unga.html">
+          <div class="q-icon">
+            <span class="material-icons" aria-hidden="true">child_care</span>
+          </div>
+          <h3 class="q-label">Barn och unga</h3>
+          <p class="q-desc">Oro, nedstämdhet, skola, relationer eller konflikter hemma – behöver ni stöd i familjen?</p>
+        </a>
+
+      </div>
+
+      <p class="quick-help-note">
+        Vi arbetar med KBT och moderna, evidensbaserade KBT-inriktningar. Alla terapeuter hos oss är legitimerade yrkesutövare enligt hälso- och sjukvårdslagen.
+      </p>
+    </section>
+
+    <!-- AKTUELLT / NEWS -->
+    <section class="news-section container" id="aktuellt">
+      <div class="section-head">
+        <h2>Aktuellt</h2>
+        <a class="all-news-link" href="/aktuellt.html">Visa alla nyheter
+          <span class="material-icons" aria-hidden="true">arrow_forward</span>
+        </a>
+      </div>
+
+      <div class="news-grid">
+
+        <!-- Nyhet #1 -->
+        <article class="news-card">
+          <div class="news-meta">
+            <span class="news-date">2025-10-07</span>
+          </div>
+          <h3 class="news-title">
+            Samarbete mellan KBT Skeppsbron och Eliassons Åkeri – fokus på arbetsmiljö och samtal
+          </h3>
+          <p class="news-text">
+            Tillsammans med Matilda Zackrisson och Anette Edsberger arbetar vi för att stärka arbetsmiljö,
+            samtalsklimat och medarbetarnas välmående – med KBT som praktiskt verktyg i vardagen.
+          </p>
+          <a class="news-more" href="https://www.linkedin.com/posts/matilda-zackrisson-4a213b340_%C3%A5keriet-d%C3%A4r-samtalen-g%C3%B6r-skillnad-kbt-ger-activity-7326498832114937856-4dik?utm_source=share&utm_medium=member_ios&rcm=ACoAAFVzC_oBv2vH-G34jg4ca-sVdAIsAZyvcSE" target="_blank" rel="noopener">
+            Läs mer på LinkedIn <span class="material-icons" aria-hidden="true">open_in_new</span>
+          </a>
+        </article>
+
+        <!-- Nyhet #2 -->
+        <article class="news-card">
+          <div class="news-meta">
+            <span class="news-date">2024-05-27</span>
+          </div>
+          <h3 class="news-title">
+            Fyra-dagars kurs i Unified Protocol (UP)
+          </h3>
+          <p class="news-text">
+            UP är en transdiagnostisk KBT-modell på frammarsch. Kursen riktar sig till psykoterapeuter
+            som vill arbeta mer känslofokuserat – praktiskt, effektivt och forskningsbaserat.
+          </p>
+          <p class="news-text">
+            Intresseanmälan: <a href="mailto:billy@kbtskeppsbron.se">billy@kbtskeppsbron.se</a> /
+            <a href="mailto:lotta@kbtskeppsbron.se">lotta@kbtskeppsbron.se</a>
+          </p>
+          <a class="news-more" href="https://www.kbtskeppsbron.se/kurs_up.pdf" target="_blank" rel="noopener">
+            Läs mer om kursen <span class="material-icons" aria-hidden="true">picture_as_pdf</span>
+          </a>
+        </article>
+
+        <!-- Nyhet #3 -->
+        <article class="news-card">
+          <div class="news-meta">
+            <span class="news-date">Patientsäkerhet</span>
+          </div>
+          <h3 class="news-title">
+            Legitimerade behandlare. Sekretess. Journalföring. Försäkring.
+          </h3>
+          <p class="news-text">
+            Alla våra psykoterapeuter är legitimerade yrkesutövare.
+            Vi arbetar under hälso- och sjukvårdslagen, med sekretess och dokumentationskrav.
+            Det är din trygghet som patient.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- PATIENTSÄKERHET -->
+    <section class="safety-section container" id="patientsakerhet">
+      <div class="safety-inner">
+        <div class="safety-icon">
+          <span class="material-icons" aria-hidden="true">health_and_safety</span>
+        </div>
+        <div class="safety-content">
+          <h2>Patientsäkerhet</h2>
+          <p>
+            Att vara legitimerad psykoterapeut innebär att vara godkänd av Socialstyrelsen
+            att bedriva psykoterapi med eget ansvar. Även yrkestitlar som psykolog, läkare,
+            fysioterapeut och sjuksköterska är skyddade — vilket ger dig som patient trygghet.
+          </p>
+          <p>
+            Vi arbetar under hälso- och sjukvårdslagen, vilket innebär journalföringsplikt,
+            sekretess och skyldighet att ha patientförsäkring vid eventuell skada.
+          </p>
+          <p class="safety-source">
+            Läs mer på <a href="https://www.socialstyrelsen.se/" target="_blank" rel="noopener">Socialstyrelsens webbplats</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION / BOKA -->
+    <section class="cta-block" id="boka">
+      <div class="cta-inner container">
+        <h2>Boka tid eller ställ en fråga</h2>
+        <p>Som privatperson kan du kontakta oss direkt. Företag kan boka handledning, samtalsstöd eller utbildningsinsatser.</p>
+        <div class="cta-actions">
+          <a href="mailto:info@kbtskeppsbron.se" class="btn btn-primary">
+            Maila oss
+          </a>
+          <a href="/om_kontakt.html" class="btn btn-secondary">
+            Kontakta en terapeut direkt
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- NY FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-top">
+      <a href="/index.html" style="text-decoration:none;display:inline-flex;flex-direction:column;align-items:center;gap:.5rem;">
+        <img src="/assets/images/kbt-skeppsbron-logo-footer.png" alt="KBT Skeppsbron logotyp" />
+        <div class="footer-top-tagline">KBT i Göteborg sedan 2002</div>
+      </a>
+      <hr />
+    </div>
+
+    <div class="footer-grid">
+      <section class="footer-col">
+        <h3>Kontakt</h3>
+        <address>
+          Surbrunnsgatan&nbsp;6<br>
+          411&nbsp;19&nbsp;Göteborg<br><br>
+          <a href="mailto:info@kbtskeppsbron.se">info@kbtskeppsbron.se</a>
+        </address>
+      </section>
+
+      <section class="footer-col">
+        <h3>Patientsäkerhet & Avbokning</h3>
+        <p>
+          Alla terapeuter hos oss är legitimerade och arbetar enligt hälso-
+          och sjukvårdslagen. Det innebär journalföring, sekretess och
+          patientförsäkring.
+        </p>
+        <p>
+          Avbokning senast 48 h före kostnadsfritt.<br>
+          Inom 24 h debiteras halva priset,<br>
+          senare än 24 h fullt pris.
+        </p>
+      </section>
+
+      <nav class="footer-col" aria-label="Sidmeny i sidfoten">
+        <h3>Meny</h3>
+        <ul class="footer-menu">
+          <li><a href="/behandling.html">Behandling</a></li>
+          <li><a href="/utbildning.html">Utbildning</a></li>
+          <li><a href="/handledning.html">Handledning</a></li>
+          <li><a href="/om_kontakt.html">Om oss / Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <div>
+        © <span id="year"></span> KBT Skeppsbron<br>
+        Surbrunnsgatan&nbsp;6,&nbsp;411&nbsp;19&nbsp;Göteborg<br>
+        <a href="https://www.google.se/maps/place/Surbrunnsgatan+6,+Göteborg"
+           target="_blank" rel="noopener">Visa karta</a><br>
+        <a href="mailto:info@kbtskeppsbron.se">info@kbtskeppsbron.se</a>
+      </div>
+
+      <a href="https://www.socialstyrelsen.se/" target="_blank" rel="noopener" style="line-height:0;">
+        <img src="/assets/images/socialstyrelsen.png"
+             alt="Socialstyrelsen logotyp" />
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    // dynamiskt år i footern
+    (function(){
+      var y=document.getElementById('year');
+      if(y){ y.textContent=new Date().getFullYear(); }
+    })();
+
+    // mobilmeny toggle + nav scroll
+    const navToggle = document.getElementById('navToggle');
+    const mainMenu = document.getElementById('mainMenu');
+    const siteNav = document.getElementById('siteNav');
+
+    navToggle.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!expanded));
+      mainMenu.classList.toggle('open');
+    });
+
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY > 50;
+      siteNav.classList.toggle('is-scrolled', scrolled);
+    });
+  </script>
+
+</body>
+</html>
