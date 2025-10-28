@@ -1,0 +1,12 @@
+@charset "UTF-8";
+/* print.css */
+
+@page { margin: 15mm; }
+nav, .nav, .cta-grid, .site-footer, .person__actions { 
+    display: none !important; 
+}
+
+a[href^="http"]::after { 
+    content: " (" attr(href) ")"; 
+    font-size: .9em; 
+}

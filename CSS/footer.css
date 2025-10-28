@@ -1,0 +1,6 @@
+@charset "UTF-8";
+/* === footer === */
+
+.site-footer {
+    border-top: 1px solid #eee;margin-top:2rem}
+.site-footer .container{display:flex;justify-content:space-between;align-items:center;padding:1rem 0}

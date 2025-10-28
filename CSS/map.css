@@ -1,0 +1,212 @@
+@charset "UTF-8";
+/* KARTA */
+
+.container8 {
+	height: 90vh;
+	position: relative;
+	
+	display: flex;
+	align-items: center;
+    justify-content: center;
+
+	
+}
+
+.textbox-hitta-hit {
+	width: 60%;
+    height: 70%; /* Anpassa höjden efter behov */
+	text-align: center;
+	color: black;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Lådskugga */
+	border-radius: 8px;
+	
+	/* Positionering av innehåll */
+	display: flex;
+    justify-content: space-around;
+	align-items: center;
+	align-content: center;
+	
+	
+}
+
+.icon-box {
+	padding-left: 5%;
+	
+}
+
+.icon-box h2 {
+	font-size: 2rem;
+}
+
+.place-icon /* Platsikonen */ {
+	max-height: 70px; 
+	margin: 0 20px 20px; 
+	
+}
+
+iframe /* Kartan */ {
+	height: 80%;
+    width: 50%;
+    border: 0;
+}
+
+
+/* För små skärmar (mobil 1) */
+
+@media only screen and (max-width: 429px) {
+
+
+/* KARTA */
+
+.container8 {
+    height: 100vh;
+    align-content: center;
+
+}
+
+.textbox-hitta-hit {
+    width: 90%;
+    height: 90%; /* Anpassa höjden efter behov */
+    box-shadow: 0 0 0 0; /* Lådskugga */
+    margin-right: 0;
+    
+
+    /* Positionering av innehåll */
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.icon-box {
+    padding-left: 0;
+
+
+}
+
+.icon-box h2 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.place-icon /* Platsikonen */ {
+    max-height: 70px; 
+    margin: 10% 20px 20px; 
+
+}
+
+iframe /* Kartan */ {
+    height: 60%;
+    width: 100%;
+    border: 0;
+    margin: 0;
+}
+
+
+
+}
+
+
+/* För små skärmar (mobil "max" 2) */
+@media only screen and (min-width: 430px) and (max-width: 700px) {
+
+/* KARTA */
+
+.container8 {
+    height: 100vh;
+    align-content: center;
+
+}
+
+.textbox-hitta-hit {
+    width: 90%;
+    height: 90%; /* Anpassa höjden efter behov */
+    box-shadow: 0 0 0 0; /* Lådskugga */
+    margin-right: 0;
+    
+
+    /* Positionering av innehåll */
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.icon-box {
+    padding-left: 0;
+
+
+}
+
+.icon-box h2 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.place-icon /* Platsikonen */ {
+    max-height: 70px; 
+    margin: 10% 20px 20px; 
+
+}
+
+iframe /* Kartan */ {
+    height: 60%;
+    width: 100%;
+    border: 0;
+    margin: 0;
+}
+    
+
+}
+
+
+/* För mellanstora skärmar (tablet: Ex. Ipad Air) */
+@media only screen and (min-width: 701px) and (max-width: 1023px) {
+
+
+/* KARTA */
+
+.container8 {
+    height: 130vh;
+    align-content: center;
+
+}
+
+.textbox-hitta-hit {
+    width: 90%;
+    height: 90%; /* Anpassa höjden efter behov */
+    box-shadow: 0 0 0 0; /* Lådskugga */
+    margin: 5% 0 5% 0;
+    
+    
+
+    /* Positionering av innehåll */
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.icon-box {
+    padding-left: 0;
+
+
+}
+
+.icon-box h2 {
+    font-size: 3rem;
+    margin-bottom: 1%;
+}
+
+.place-icon /* Platsikonen */ {
+    max-height: 70px; 
+    margin: 5% 20% 8%; 
+
+}
+
+iframe /* Kartan */ {
+    height: 60%;
+    width: 90%;
+    border: 0;
+    margin: 0;
+}
+    
+
+}

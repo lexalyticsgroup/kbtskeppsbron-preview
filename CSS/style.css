@@ -1,0 +1,67 @@
+/* CSS Document */
+
+
+.stats {
+	display: flex;
+	justify-content: center;
+	gap: 2rem;
+	padding: 2rem;
+	
+	background-color: #fff;
+	box-shadow: 0 4px 6px rgba(0,0,0,0.09);
+}
+
+.stat-box {
+	text-align: center;
+}
+
+.services {
+	display: flex;
+	justify-content: center;
+	gap: 1.5rem;
+	padding: 2rem;
+	flex-wrap: wrap;
+}
+
+.service-box {
+	border: 1px solid #eee;
+	border-radius: 8px;
+	padding: 1.5rem;
+	width: 250px;
+	text-align: center;
+}
+
+.service-box.featured {
+	background-color: #1a202c;
+	color: white;
+}
+
+.service-box a {
+	display: inline-block;
+	margin-top: 1rem;
+	text-decoration: none;
+	color: #007bff;
+}
+
+.section {
+	text-align: center;
+	padding: 4rem 2rem;
+}
+
+.two-columns {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 2rem;
+	flex-wrap: wrap;
+}
+
+.two-columns img, .two-columns video {
+	max-width: 500px;
+	width: 100%;
+	border-radius: 10px;
+}
+
+.two-columns .text {
+	max-width: 500px;
+}

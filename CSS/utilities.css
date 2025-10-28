@@ -1,0 +1,18 @@
+@charset "UTF-8";
+/* utilities.css */
+
+
+.stack-sm>*+*{margin-top:.5rem}
+.stack-md>*+*{margin-top:1rem}
+.stack-lg>*+*{margin-top:1.6rem}
+.lead{font-size:1.15rem;color:var(--muted)}
+.breadcrumbs{font-size:.9rem;color:var(--muted);margin:.5rem 0 0}
+
+:focus-visible {
+    outline: 3px solid currentColor;
+    outline-offset: 2px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+  

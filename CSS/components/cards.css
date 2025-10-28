@@ -1,0 +1,22 @@
+@charset "UTF-8";
+/* CSS cards */
+
+.cta-grid {
+    display: grid;
+    gap: 1rem;
+    margin-block: 1.25rem;
+}
+
+@media (min-width: 720px) {
+    .cta-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+    .card {
+        background: #fff;
+        border: 1px solid #eee;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 1.1rem;
+    }
