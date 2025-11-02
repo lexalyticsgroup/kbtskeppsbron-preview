@@ -207,13 +207,13 @@
   .hero-content h1{
     font-family: 'Roboto', system-ui, sans-serif;
     font-weight:300;
-    font-size:clamp(2rem,2vw + 1rem,3.5rem);
+    font-size:clamp(3.5rem,2vw + 1rem,3.5rem);
     line-height:1.2;
     margin:0 0 1rem 0;
     color:#fff;
   }
   .hero-tagline{
-    font-size:1.2rem;
+    font-size:2rem;
     font-weight:300;
     margin:0 0 2rem 0;
     color:#fff;

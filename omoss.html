@@ -1,0 +1,1132 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Om oss & Kontakt | KBT Skeppsbron – Legitimerade psykoterapeuter i Göteborg</title>
+  <meta name="description" content="Möt teamet på KBT Skeppsbron i Göteborg. Alla våra terapeuter är legitimerade och erfarna inom KBT, parterapi, handledning och utbildning. Boka tid som privatperson eller företag." />
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Fonts & icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg:#fff; --surface:#ffffff; --surface-alt:#f3f5f7; --text:#111; --text-dim:#555;
+      --border:#e2e5e8; --brand:#224c5e; --accent:#92b7c7; --accent-bg:rgba(146,183,199,0.12);
+      --radius-lg:1rem; --radius-full:999px; --shadow:0 20px 40px rgba(0,0,0,.06);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background-color:var(--bg);line-height:1.5}
+    img{max-width:100%;height:auto;display:block;border:0}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{width:min(1200px,92%);margin-inline:auto}
+    .sr-only{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+
+    /* Header / Nav */
+    header.site-header{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid var(--border)}
+    .nav-row{display:flex;align-items:center;justify-content:space-between;padding:.5rem 0;position:relative}
+    .logo img{height:70px;width:auto;display:block}
+    .nav-toggle{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--border);background:#fff;border-radius:var(--radius-full);padding:.5rem .75rem;font-size:.9rem;line-height:1;cursor:pointer}
+    .nav-links{display:none;list-style:none;padding:0;margin:0}
+    .nav-links a{display:block;padding:.5rem .75rem;border-radius:.5rem;color:var(--text);font-weight:500;line-height:1.3;text-decoration:none;white-space:nowrap}
+    .nav-links a:hover{background:var(--accent-bg);color:var(--brand);text-decoration:none}
+    .nav-links a[aria-current="page"]{color:#fff;background:var(--brand)}
+    @media(min-width:900px){.nav-toggle{display:none}.nav-links{display:flex;gap:.5rem}}
+    .breadcrumbs{font-size:.8rem;color:var(--text-dim);padding:0 0 .75rem 0}
+    .breadcrumbs ol{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:.5rem}
+    .breadcrumbs a{color:var(--text-dim)}
+    .breadcrumbs a:hover{color:var(--text)}
+
+    main{padding-block:2rem 4rem}
+
+    /* Intro */
+    .intro{display:grid;gap:1rem;background:linear-gradient(to right, rgba(146,183,199,0.12), rgba(255,255,255,0));border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:1.5rem 1.5rem 1.25rem}
+    .intro h1{font-size:clamp(1.5rem,1vw+1rem,1.9rem);line-height:1.25;margin:0;font-weight:600;color:var(--brand);display:flex;align-items:flex-start;gap:.5rem}
+    .intro h1 .material-icons{font-size:1.4rem;color:var(--accent)}
+    .intro .lead{font-size:1rem;line-height:1.6;color:var(--text);max-width:75ch;margin:0}
+
+    /* Kontaktkort */
+    .about-grid{display:grid;gap:1.5rem;margin-top:2rem}
+    @media(min-width:900px){.about-grid{grid-template-columns:1fr 1fr}}
+    .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:1.5rem 1.5rem 1.25rem;display:flex;flex-direction:column}
+    .card h2{margin:0;font-weight:600;color:var(--brand);line-height:1.3;font-size:1.1rem;display:flex;align-items:center;gap:.5rem}
+    .card h2 .material-icons{font-size:1.2rem;color:var(--accent)}
+    .card p{margin-top:.75rem;margin-bottom:0;color:var(--text);font-size:.95rem;line-height:1.5}
+
+    /* Team */
+    .team-section{margin-top:3rem}
+    .team-section>h2{margin:0 0 1rem;font-size:1.4rem;font-weight:600;line-height:1.3;color:var(--brand);display:flex;align-items:center;gap:.5rem}
+    .team-section>h2 .material-icons{font-size:1.2rem;color:var(--accent)}
+    .team-grid{display:grid;gap:1.5rem;align-items:stretch}
+    @media(min-width:600px){.team-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:1000px){.team-grid{grid-template-columns:repeat(3,1fr)}}
+    .person-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column;position:relative}
+    .person-media{position:relative;background:#000}
+    .person-media img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover}
+    .person-badge{position:absolute;bottom:.75rem;left:.75rem;background:rgba(0,0,0,.6);color:#fff;border-radius:var(--radius-full);font-size:.7rem;line-height:1.2;padding:.4rem .6rem;box-shadow:0 10px 20px rgba(0,0,0,.4)}
+    .person-body{padding:1rem 1.25rem 1.25rem;display:flex;flex-direction:column;flex-grow:1}
+    .person-name{font-weight:600;font-size:1.1rem;line-height:1.3;margin:0 0 .25rem 0;color:var(--text)}
+    .person-role{font-size:.95rem;color:var(--text-dim);margin:0;line-height:1.4}
+    .contact-lines{font-size:.85rem;line-height:1.5;color:var(--text);margin-top:.75rem}
+    .contact-lines .material-icons{font-size:1rem;line-height:1;vertical-align:middle;margin-right:.4rem;color:var(--accent)}
+    .tags{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0 0;padding:0;list-style:none}
+    .tags li{background:var(--accent-bg);color:var(--brand);border-radius:var(--radius-full);padding:.35rem .6rem;font-size:.8rem;line-height:1.2;font-weight:500;border:1px solid rgba(146,183,199,.4)}
+    .person-actions{margin-top:auto;padding-top:1rem;display:flex;flex-wrap:wrap;gap:.5rem}
+    .btn{appearance:none;border-radius:var(--radius-full);border:1px solid var(--brand);background:#fff;color:var(--brand);font-size:.85rem;line-height:1.2;font-weight:500;padding:.6rem .9rem;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:.4rem;transition:all .15s ease}
+    .btn .material-icons{font-size:1rem;line-height:1}
+    .btn:hover{background:var(--brand);color:#fff;text-decoration:none}
+    .btn-outline{border:1px solid var(--border);color:var(--text)}
+    .btn-outline:hover{background:var(--accent);border-color:var(--accent);color:#000}
+
+    /* Info / Karta / Footer / Modal (oförändrat) */
+    .info-section{margin-top:3rem;display:grid;gap:2rem}
+    @media(min-width:700px){.info-section{grid-template-columns:1fr 1fr}}
+    .info-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:1.5rem 1.5rem 1.25rem}
+    .info-card h2{margin-top:0;font-size:1.2rem;font-weight:600;line-height:1.4;color:var(--brand);display:flex;align-items:center;gap:.5rem}
+    .info-card h2 .material-icons{font-size:1.2rem;color:var(--accent)}
+    .info-card p{margin-top:.5rem;line-height:1.5;font-size:.95rem;color:var(--text)}
+
+    .map-section{margin-top:3rem;display:grid;gap:2rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:1.5rem}
+    @media(min-width:900px){.map-section{grid-template-columns:1fr 1fr;align-items:start}}
+    .map-text h2{margin:0;font-size:1.2rem;font-weight:600;color:var(--brand);line-height:1.3;display:flex;align-items:center;gap:.5rem}
+    .map-text h2 .material-icons{font-size:1.2rem;color:var(--accent)}
+    .map-text p{margin:.75rem 0 0;font-size:.95rem;line-height:1.5;color:var(--text)}
+    .map-wrapper{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);min-height:260px}
+    .map-frame{width:100%;height:100%;min-height:260px;border:0;display:block}
+
+    footer.site-footer{background:radial-gradient(circle at 25% 25%, rgba(146,183,199,0.25) 0%, rgba(31,42,48,0) 80%),#1f2a30;color:#fff;padding:3rem 1.5rem 4rem;border-top:1px solid rgba(255,255,255,0.08);line-height:1.6;font-size:16px;margin-top:4rem}
+    .footer-top{max-width:1200px;margin:0 auto 2rem;text-align:center}
+    .footer-top img{height:80px;width:auto;filter:brightness(1) contrast(1.05);display:block;margin:0 auto}
+    .footer-top-tagline{font-size:.9rem;color:rgba(255,255,255,.8);letter-spacing:.03em;margin-top:.5rem}
+    .footer-top hr{width:100%;max-width:280px;border:0;border-top:1px solid rgba(146,183,199,.4);margin:1.75rem auto 0}
+    .footer-grid{max-width:1200px;margin:0 auto 3rem;display:grid;gap:2rem 3rem}
+    @media(min-width:600px){.footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(min-width:900px){.footer-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    .footer-col h3{margin:0 0 .75rem;font-size:.8rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+    .footer-col p,.footer-col address,.footer-col a{color:rgba(255,255,255,.9);font-size:.95rem;line-height:1.6;font-style:normal;text-decoration:none}
+    .footer-col a:hover{color:#92b7c7;text-decoration:underline}
+    .footer-menu{list-style:none;padding:0;margin:0;font-size:.95rem}
+    .footer-menu li{margin:.4rem 0}
+    .footer-menu a{color:rgba(255,255,255,.9)}
+    .footer-menu a:hover{color:#92b7c7}
+    .footer-bottom{max-width:1200px;margin:0 auto;border-top:1px solid rgba(255,255,255,0.08);padding-top:1.5rem;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:rgba(255,255,255,.7);font-size:.85rem;line-height:1.6;gap:1rem}
+    .footer-bottom a{color:#92b7c7}
+    .footer-bottom a:hover{text-decoration:underline}
+    .footer-bottom img{height:34px;width:auto;filter:brightness(1) contrast(1.05);display:block}
+
+    .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;padding:1rem;z-index:2000}
+    .modal-backdrop[hidden]{display:none}
+    .modal{background:#fff;width:min(480px,90vw);max-height:90vh;overflow:auto;border-radius:var(--radius-lg);box-shadow:0 40px 80px rgba(0,0,0,.4);border:1px solid var(--border)}
+    .modal-header{display:flex;justify-content:space-between;align-items:flex-start;padding:1rem 1rem .75rem;border-bottom:1px solid var(--border);background:linear-gradient(to right, rgba(146,183,199,0.12), rgba(255,255,255,0));position:sticky;top:0;z-index:5}
+    .modal-header h2{margin:0;font-size:1rem;font-weight:600;line-height:1.3;color:var(--brand);max-width:90%}
+    .modal-close{background:none;border:0;font-size:1.5rem;line-height:1;cursor:pointer;color:var(--text-dim)}
+    .modal-body{padding:1rem 1rem 1.5rem;font-size:.95rem;line-height:1.5;color:var(--text)}
+    .modal-headline{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:1rem}
+    .modal-thumb{flex:0 0 64px;width:64px;height:64px;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow)}
+    .modal-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+    .modal-summary{flex:1;font-size:.9rem;line-height:1.4;color:var(--text-dim)}
+    .modal-body h3{margin:1.5rem 0 .5rem;font-size:1rem;font-weight:600;color:var(--brand);display:flex;align-items:center;gap:.4rem}
+    .modal-body h3 .material-icons{font-size:1rem;color:var(--accent)}
+    .modal-body ul{margin-top:.5rem;margin-bottom:1rem;padding-left:1.25rem}
+    .modal-body li{margin-bottom:.4rem}
+    .modal-contact{margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.9rem;line-height:1.5;color:var(--text);background:var(--surface-alt);border-radius:var(--radius-lg);padding:1rem}
+    .modal-contact .material-icons{font-size:1rem;margin-right:.4rem;color:var(--accent);vertical-align:middle}
+    .related-links{margin-top:.75rem;display:flex;gap:.5rem;flex-wrap:wrap}
+  </style>
+</head>
+<body>
+  <a class="sr-only" href="#main">Hoppa till innehåll</a>
+
+  <!-- HEADER / NAV -->
+  <header class="site-header" role="banner">
+    <div class="container nav-row">
+      <a class="logo" href="/index.html" aria-label="KBT Skeppsbron startsida">
+        <img src="/assets/images/logo_original.svg" alt="KBT Skeppsbron" />
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="mainmenu" id="navToggle">
+        <span class="material-icons" aria-hidden="true">menu</span>
+        Meny
+      </button>
+
+      <ul class="nav-links" id="mainmenu" role="menubar">
+        <li role="none"><a role="menuitem" href="/index.html">Hem</a></li>
+        <li role="none"><a role="menuitem" href="/behandling.html">Behandling</a></li>
+        <li role="none"><a role="menuitem" href="/utbildning.html">Utbildning</a></li>
+        <li role="none"><a role="menuitem" href="/handledning.html">Handledning</a></li>
+        <li role="none"><a role="menuitem" href="/om_kontakt.html" aria-current="page">Om oss / Kontakt</a></li>
+      </ul>
+    </div>
+
+    <div class="container breadcrumbs" aria-label="Brödsmulor">
+      <nav aria-label="Brödsmulor">
+        <ol>
+          <li><a href="/index.html">Hem</a></li>
+          <li aria-hidden="true">/</li>
+          <li><span aria-current="page">Om oss & kontakt</span></li>
+        </ol>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container" role="main">
+    <!-- INTRO -->
+    <section class="intro" id="intro">
+      <h1><span class="material-icons" aria-hidden="true">favorite</span> Vår grundsyn</h1>
+      <p class="lead">
+        Vi ser människan som en helhet – kropp, själ och medvetande – och varje människa som unik.
+        Vi tror starkt på människans förmåga att genom nya insikter och kunskap kunna göra goda val
+        och förändra sådant som inte längre är hjälpsamt.
+        <br><br>
+        Hos oss på KBT Skeppsbron kan du få hjälp genom KBT och moderna KBT-inriktningar.
+        Alla våra psykoterapeuter har legitimation.
+      </p>
+    </section>
+
+    <!-- KONTAKTKORT -->
+    <section class="about-grid" id="kontaktinfo">
+      <article class="card">
+        <h2><span class="material-icons" aria-hidden="true">person</span> Privatpersoner</h2>
+        <p>
+          Vill du boka tid för psykoterapi, parterapi, egenterapi eller handledning?
+          Mejla <a href="mailto:info@kbtskeppsbron.se">info@kbtskeppsbron.se</a>
+          eller ta direkt kontakt med den psykoterapeut du vill träffa här nedanför.
+          <br><br>
+          <strong>Viktigt:</strong> Av sekretesskäl – skriv inte känsliga personuppgifter
+          eller symtomhistorik i mejlet.
+        </p>
+      </article>
+
+      <article class="card">
+        <h2><span class="material-icons" aria-hidden="true">business_center</span> Företag</h2>
+        <p>
+          Vill ni knyta avtal gällande psykoterapi, handledning eller utbildning?
+          Mejla <a href="mailto:foretagshalsa@kbtskeppsbron.se">foretagshalsa@kbtskeppsbron.se</a>
+          eller ring Matilda Zackrisson: 0708&nbsp;91&nbsp;91&nbsp;19.
+          <br><br>
+          Vi hjälper företag med bl.a. arbetsmiljö, stressprevention och chefsstöd.
+        </p>
+      </article>
+    </section>
+
+    <!-- TEAM -->
+    <section class="team-section" id="team">
+      <h2><span class="material-icons" aria-hidden="true">groups</span> Vårt team</h2>
+
+      <div class="team-grid">
+
+        <!-- PERSON: Anette Edsberger -->
+        <article class="person-card" data-person-modal="anette">
+          <div class="person-media">
+            <img src="/assets/images/port/anette.jpg" alt="Anette Edsberger" />
+            <div class="person-badge">KBT & Parterapi</div>
+          </div>
+          <div class="person-body">
+            <h3 class="person-name">Anette Edsberger</h3>
+            <p class="person-role">Leg. sjukgymnast & leg. psykoterapeut KBT. Erfaren inom stress/utmattning, ångest, självkänsla och parterapi (IBCT).</p>
+            <div class="contact-lines">
+              <div><span class="material-icons">call</span>0709 28 68 78</div>
+              <div><span class="material-icons">alternate_email</span><a href="mailto:anette@kbtskeppsbron.se">anette@kbtskeppsbron.se</a></div>
+            </div>
+            <ul class="tags">
+              <li>Stress / utmattning</li><li>Ångest</li><li>IBCT (par)</li><li>Självkänsla</li>
+            </ul>
+            <div class="person-actions">
+              <button class="btn js-open-modal" data-modal="anette">
+                <span class="material-icons" aria-hidden="true">visibility</span> Läs mer
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- PERSON: Jan-Eric Jönsson -->
+        <article class="person-card" data-person-modal="jan-eric">
+          <div class="person-media">
+            <img src="/assets/images/port/jan-eric.jpg" alt="Jan-Eric Jönsson" />
+            <div class="person-badge">Ångest & OCD</div>
+          </div>
+          <div class="person-body">
+            <h3 class="person-name">Jan-Eric Jönsson</h3>
+            <p class="person-role">Leg. psykolog & leg. psykoterapeut KBT. Handledare med särskild kompetens inom ångest och tvångssyndrom (OCD).</p>
+            <div class="contact-lines">
+              <div><span class="material-icons">call</span>0702 63 48 66</div>
+              <div><span class="material-icons">alternate_email</span><a href="mailto:jan.eric.jonsson@mindmeetab.com">jan.eric.jonsson@mindmeetab.com</a></div>
+            </div>
+            <ul class="tags">
+              <li>Tvång / OCD</li><li>Ångest</li><li>Utbildning</li><li>Handledning</li>
+            </ul>
+            <div class="person-actions">
+              <button class="btn js-open-modal" data-modal="jan-eric">
+                <span class="material-icons" aria-hidden="true">visibility</span> Läs mer
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- PERSON: Billy Larsson -->
+        <article class="person-card" data-person-modal="billy">
+          <div class="person-media">
+            <img src="/assets/images/port/billy.jpg" alt="Billy Larsson" />
+            <div class="person-badge">Relationer & Par</div>
+          </div>
+          <div class="person-body">
+            <h3 class="person-name">Billy Larsson</h3>
+            <p class="person-role">Leg. psykolog & leg. psykoterapeut KBT, handledare i KBT, fil.dr. Arbetar med relationell KBT, parterapi och utbildning.</p>
+            <div class="contact-lines">
+              <div><span class="material-icons">call</span>073 63 95 019</div>
+              <div><span class="material-icons">alternate_email</span><a href="mailto:billy@kbtskeppsbron.se">billy@kbtskeppsbron.se</a></div>
+              <div><span class="material-icons">menu</span><a href="http://www.blpsykolog.se" target="_blank" rel="noopener">Hemsida</a></div>
+            </div>
+            <ul class="tags">
+              <li>KBT</li><li>Parterapi</li><li>Relationella färdigheter</li><li>Handledare</li>
+            </ul>
+            <div class="person-actions">
+              <button class="btn js-open-modal" data-modal="billy">
+                <span class="material-icons" aria-hidden="true">visibility</span> Läs mer
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- PERSON: Sally Marshall -->
+        <article class="person-card" data-person-modal="sally">
+          <div class="person-media">
+            <img src="/assets/images/port/sally.jpg" alt="Sally Marshall" />
+            <div class="person-badge">Par & Sexologi</div>
+          </div>
+          <div class="person-body">
+            <h3 class="person-name">Sally Marshall</h3>
+            <p class="person-role">Leg. psykolog & leg. psykoterapeut KBT. Specialiserad i parterapi (IBCT), sexologi samt stress/utmattning med ACT/FACT.</p>
+            <div class="contact-lines">
+              <div><span class="material-icons">call</span>0730 57 85 20</div>
+              <div><span class="material-icons">alternate_email</span><a href="mailto:sally@kbtskeppsbron.se">sally@kbtskeppsbron.se</a></div>
+              <div><span class="material-icons">menu</span><a href="http://www.sallymarshall.se" target="_blank" rel="noopener">Hemsida</a></div>
+            </div>
+            <ul class="tags">
+              <li>Parterapi (IBCT)</li><li>Sexologisk behandling</li><li>Stress / utmattning</li><li>ACT / FACT</li>
+            </ul>
+            <div class="person-actions">
+              <button class="btn js-open-modal" data-modal="sally">
+                <span class="material-icons" aria-hidden="true">visibility</span> Läs mer
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- PERSON: Lillian -->
+        <article class="person-card" data-person-modal="lillian">
+          <div class="person-media">
+            <img src="/assets/images/port/lillian.jpg" alt="Lillian Noring-Andersson" />
+            <div class="person-badge">Handledare</div>
+          </div>
+          <div class="person-body">
+            <h3 class="person-name">Lillian Noring-Andersson</h3>
+            <p class="person-role">Leg. sjuksköterska & leg. psykoterapeut KBT. Lång erfarenhet av ångest, depression, ätstörningar samt undervisning/handledning.</p>
+            <div class="contact-lines">
+              <div><span class="material-icons">call</span>0709 60 89 10</div>
+              <div><span class="material-icons">alternate_email</span><a href="mailto:lillian@kbtskeppsbron.se">lillian@kbtskeppsbron.se</a></div>
+            </div>
+            <ul class="tags">
+              <li>Ångest</li><li>Depression</li><li>Ätstörningar</li><li>Handledare</li>
+            </ul>
+            <div class="person-actions">
+              <button class="btn js-open-modal" data-modal="lillian">
+                <span class="material-icons" aria-hidden="true">visibility</span> Läs mer
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- PERSON: Camilla -->
+        <article class="person-card" data-person-modal="camilla">
+          <div class="person-media">
+            <img src="/assets/images/port/camilla.jpg" alt="Camilla O´Keeffe" />
+            <div class="person-badge">Neuro / Stress</div>
+          </div>
+          <div class="person-body">
+            <h3 class="person-name">Camilla O´Keeffe</h3>
+            <p class="person-role">Leg. psykolog & leg. psykoterapeut KBT. Specialist i klinisk psykologi. Erfaren inom neuropsykologi, trauma och stress/utmattning.</p>
+            <div class="contact-lines">
+              <div><span class="material-icons">call</span>0705 37 49 75</div>
+              <div><span class="material-icons">alternate_email</span><a href="mailto:camilla@kbtskeppsbron.se">camilla@kbtskeppsbron.se</a></div>
+            </div>
+            <ul class="tags">
+              <li>Neuropsykologi</li><li>PTSD / trauma</li><li>Stress & utmattning</li><li>Mindfulness</li>
+            </ul>
+            <div class="person-actions">
+              <button class="btn js-open-modal" data-modal="camilla">
+                <span class="material-icons" aria-hidden="true">visibility</span> Läs mer
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- PERSON: Lotta -->
+        <article class="person-card" data-person-modal="lotta">
+          <div class="person-media">
+            <img src="/assets/images/port/lotta.jpg" alt="Lotta Scholander" />
+            <div class="person-badge">Specialist KBT</div>
+          </div>
+          <div class="person-body">
+            <h3 class="person-name">Lotta Scholander</h3>
+            <p class="person-role">Leg. psykolog & leg. psykoterapeut KBT. Specialist i psykologisk behandling. Arbetar med ungdomar, självkänsla, utmattning och handledning.</p>
+            <div class="contact-lines">
+              <div><span class="material-icons">call</span>0736 40 38 45</div>
+              <div><span class="material-icons">alternate_email</span><a href="mailto:lotta@kbtskeppsbron.se">lotta@kbtskeppsbron.se</a></div>
+              <div><span class="material-icons">menu</span><img src="/assets/images/spf_logo.png" alt="Sveriges Psykologförbund" style="height:1rem;width:auto;vertical-align:middle;"/></div>
+            </div>
+            <ul class="tags">
+              <li>Ungdomar</li><li>Utmattning & självkänsla</li><li>Par</li><li>Handledare</li>
+            </ul>
+            <div class="person-actions">
+              <button class="btn js-open-modal" data-modal="lotta">
+                <span class="material-icons" aria-hidden="true">visibility</span> Läs mer
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- PERSON: Marie -->
+        <article class="person-card" data-person-modal="marie">
+          <div class="person-media">
+            <img src="/assets/images/port/marie.jpg" alt="Marie Wånsander" />
+            <div class="person-badge">Stress & Livskriser</div>
+          </div>
+          <div class="person-body">
+            <h3 class="person-name">Marie Wånsander</h3>
+            <p class="person-role">Leg. psykoterapeut KBT, leg. hälso- och sjukvårdskurator, auktoriserad socionom. Särskild erfarenhet av stress, utmattning och livskriser.</p>
+            <div class="contact-lines">
+              <div><span class="material-icons">call</span>070 401 93 56</div>
+              <div><span class="material-icons">alternate_email</span><a href="mailto:marie@kbtskeppsbron.se">marie@kbtskeppsbron.se</a></div>
+              <div><span class="material-icons">menu</span><a href="http://www.invivocura.se" target="_blank" rel="noopener">Hemsida</a></div>
+            </div>
+            <ul class="tags">
+              <li>Stress</li><li>Utmattning</li><li>Livskriser</li><li>Par</li>
+            </ul>
+            <div class="person-actions">
+              <button class="btn js-open-modal" data-modal="marie">
+                <span class="material-icons" aria-hidden="true">visibility</span> Läs mer
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- PERSON: Matilda -->
+        <article class="person-card" data-person-modal="matilda">
+          <div class="person-media">
+            <img src="/assets/images/port/matilda.jpg" alt="Matilda Zackrisson" />
+            <div class="person-badge">Chefsstöd & Avtal</div>
+          </div>
+          <div class="person-body">
+            <h3 class="person-name">Matilda Zackrisson</h3>
+            <p class="person-role">Socionom, leg. psykoterapeut KBT, handledare. Arbetar med individer, par, adoption/familj samt chefs- och personalstöd.</p>
+            <div class="contact-lines">
+              <div><span class="material-icons">call</span>0708 91 91 19</div>
+              <div><span class="material-icons">alternate_email</span><a href="mailto:matilda@kbtskeppsbron.se">matilda@kbtskeppsbron.se</a></div>
+              <div><span class="material-icons">menu</span><a href="http://www.kbtgoteborg.com" target="_blank" rel="noopener">Hemsida</a></div>
+            </div>
+            <ul class="tags">
+              <li>Handledare</li><li>Arbetsmiljö</li><li>Adoption / familj</li><li>Par & individ</li>
+            </ul>
+            <div class="person-actions">
+              <button class="btn js-open-modal" data-modal="matilda">
+                <span class="material-icons" aria-hidden="true">visibility</span> Läs mer
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- PERSON: Jonas -->
+        <article class="person-card" data-person-modal="jonas">
+          <div class="person-media">
+            <img src="/assets/images/port/jonasrobertsson.jpg" alt="Jonas Robertsson" />
+            <div class="person-badge">Barn & Föräldrar</div>
+          </div>
+          <div class="person-body">
+            <h3 class="person-name">Jonas Robertsson</h3>
+            <p class="person-role">Leg. psykolog med fokus på barn, unga, föräldrar och familjerelationer. Arbetar med KBT, ABFT och MI.</p>
+            <div class="contact-lines">
+              <div><span class="material-icons">call</span>0707 74 43 60</div>
+              <div><span class="material-icons">alternate_email</span><a href="mailto:info@psykologrobertsson.com">info@psykologrobertsson.com</a></div>
+              <div><span class="material-icons">menu</span><a href="http://www.psykologrobertsson.com" target="_blank" rel="noopener">Hemsida</a></div>
+            </div>
+            <ul class="tags">
+              <li>Barn & unga</li><li>Föräldrastöd</li><li>Relation & kommunikation</li><li>KBT</li>
+            </ul>
+            <div class="person-actions">
+              <button class="btn js-open-modal" data-modal="jonas">
+                <span class="material-icons" aria-hidden="true">visibility</span> Läs mer
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- PERSON: Cathrine -->
+        <article class="person-card" data-person-modal="cathrine">
+          <div class="person-media">
+            <img src="/assets/images/port/cathrine_1.jpg" alt="Cathrine Apelqvist" />
+            <div class="person-badge">Sexologi & HBTQI</div>
+          </div>
+          <div class="person-body">
+            <h3 class="person-name">Cathrine Apelqvist</h3>
+            <p class="person-role">Leg. psykoterapeut KBT, socionom & legitimerad hälso- och sjukvårdskurator. Arbetar med sexologiska frågor, par, trauma och HBTQI.</p>
+            <div class="contact-lines">
+              <div><span class="material-icons">call</span>0703 20 47 09</div>
+              <div><span class="material-icons">alternate_email</span><a href="mailto:cathrine@kbtspektra.com">cathrine@kbtspektra.com</a></div>
+              <div><span class="material-icons">menu</span><a href="https://kbtspektra.com/cathrine-apelqvist/" target="_blank" rel="noopener">Hemsida</a></div>
+            </div>
+            <ul class="tags">
+              <li>Sexologisk behandling</li><li>Par & individ</li><li>HBTQI-stöd</li><li>Trauma / OCD</li>
+            </ul>
+            <div class="person-actions">
+              <button class="btn js-open-modal" data-modal="cathrine">
+                <span class="material-icons" aria-hidden="true">visibility</span> Läs mer
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- PERSON: Annika -->
+        <article class="person-card" data-person-modal="annika">
+            <div class="person-media">
+              <img src="/assets/images/port/annika_1.jpg" alt="Annika Hall" />
+              <div class="person-badge">Schematerapi</div>
+            </div>
+            <div class="person-body">
+              <h3 class="person-name">Annika Hall</h3>
+              <p class="person-role">Leg. psykoterapeut KBT, socionom & legitimerad hälso- och sjukvårdskurator. Särskild erfarenhet av..</p>
+              <div class="contact-lines">
+                <div><span class="material-icons">call</span>0733 99 23 77</div>
+                <div><span class="material-icons">alternate_email</span><a href="mailto:cathrine@kbtspektra.com">cathrine@kbtspektra.com</a></div>
+                <div><span class="material-icons">menu</span><a href="https://kbtspektra.com/cathrine-apelqvist/" target="_blank" rel="noopener">Hemsida</a></div>
+              </div>
+              <ul class="tags">
+                <li>Schematerapi</li><li>CFT</li><li>Mindfulness</li><li>ACT</li><li>MI</li>
+              </ul>
+              <div class="person-actions">
+                <button class="btn js-open-modal" data-modal="annika">
+                  <span class="material-icons" aria-hidden="true">visibility</span> Läs mer
+                </button>
+              </div>
+            </div>
+          </article>
+    </section>
+
+    <!-- PRIS / GDPR / PATIENTSÄKERHET -->
+    <section class="info-section" id="policy">
+      <article class="info-card">
+        <h2><span class="material-icons" aria-hidden="true">payments</span> Priser & avbokning</h2>
+        <p><strong>Priser för terapi:</strong><br>Riktpris för privat betalande är 1450 kr / 50 min. Övrigt sker i överenskommelse med psykoterapeut.</p>
+        <p><strong>Återbud:</strong><br>Senast 48 timmar före avtalad tid: ingen avgift.<br>Senast 24 timmar före: halv avgift.<br>Senare än 24 timmar före: full avgift.</p>
+        <p>Vi försöker erbjuda dig en tid inom en vecka. Du kan komma privat, via din arbetsplats eller ditt försäkringsbolag.</p>
+      </article>
+
+      <article class="info-card">
+        <h2><span class="material-icons" aria-hidden="true">policy</span> Patientsäkerhet & GDPR</h2>
+        <p>Vi hanterar personuppgifter enligt GDPR och följer hälso- och sjukvårdslagen. Alla våra behandlare är legitimerade yrkesutövare.</p>
+        <p><strong>KBT Skeppsbron</strong><br />Surbrunnsgatan 6<br />411 19 Göteborg</p>
+        <p>E-post: <a href="mailto:info@kbtskeppsbron.se">info@kbtskeppsbron.se</a><br>
+        <em>Observera:</em> Av sekretesskäl ska du inte skriva känsliga personuppgifter i mejl.</p>
+      </article>
+    </section>
+
+    <!-- HITTA HIT / KARTA -->
+    <section class="map-section" id="hitta-hit">
+      <div class="map-text">
+        <h2><span class="material-icons" aria-hidden="true">location_on</span> Hitta till oss</h2>
+        <p>
+          Du hittar oss på Surbrunnsgatan&nbsp;6, 411&nbsp;19 Göteborg.<br>
+          Mottagningen ligger centralt med närhet till flera spårvagns- och busslinjer.
+        </p>
+        <p>
+          <strong>Kollektivtrafik:</strong> Närmaste hållplatser är t.ex. Domkyrkan, Brunnsparken och Grönsakstorget.
+        </p>
+        <p>
+          <a href="https://www.google.se/maps/place/Surbrunnsgatan+6,+Göteborg" target="_blank" rel="noopener" style="color:var(--brand);font-weight:500;text-decoration:none;">
+            Öppna i Google Maps →
+          </a>
+        </p>
+      </div>
+
+      <div class="map-wrapper">
+        <iframe
+          class="map-frame"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Surbrunnsgatan+6,+Göteborg&output=embed">
+        </iframe>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-top">
+      <a href="/index.html" style="text-decoration:none;display:inline-flex;flex-direction:column;align-items:center;gap:.5rem;">
+        <img src="/assets/images/kbt-skeppsbron-logo-footer.png" alt="KBT Skeppsbron logotyp" />
+        <div class="footer-top-tagline">KBT i Göteborg sedan 2002</div>
+      </a>
+      <hr />
+    </div>
+
+    <div class="footer-grid">
+      <section class="footer-col">
+        <h3>Kontakt</h3>
+        <address>
+          Surbrunnsgatan&nbsp;6<br>
+          411&nbsp;19&nbsp;Göteborg<br><br>
+          <a href="mailto:info@kbtskeppsbron.se">info@kbtskeppsbron.se</a>
+        </address>
+      </section>
+
+      <section class="footer-col">
+        <h3>Patientsäkerhet & Avbokning</h3>
+        <p>
+          Alla terapeuter hos oss är legitimerade och arbetar enligt hälso- och sjukvårdslagen.
+          Det innebär journalföring, sekretess och patientförsäkring.
+        </p>
+        <p>
+          Avbokning senast 48 h före kostnadsfritt.<br>
+          Inom 24 h debiteras halva priset,<br>
+          senare än 24 h fullt pris.
+        </p>
+      </section>
+
+      <nav class="footer-col" aria-label="Sidmeny i sidfoten">
+        <h3>Meny</h3>
+        <ul class="footer-menu">
+          <li><a href="/behandling.html">Behandling</a></li>
+          <li><a href="/utbildning.html">Utbildning</a></li>
+          <li><a href="/handledning.html">Handledning</a></li>
+          <li><a href="/om_kontakt.html">Om oss / Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <div>
+        © <span id="year"></span> KBT Skeppsbron<br>
+        Surbrunnsgatan&nbsp;6,&nbsp;411&nbsp;19&nbsp;Göteborg<br>
+        <a href="https://www.google.se/maps/place/Surbrunnsgatan+6,+Göteborg"
+           target="_blank" rel="noopener">Visa karta</a><br>
+        <a href="mailto:info@kbtskeppsbron.se">info@kbtskeppsbron.se</a>
+      </div>
+
+      <a href="https://www.socialstyrelsen.se/" target="_blank" rel="noopener" style="line-height:0;">
+        <img src="/assets/images/socialstyrelsen.png" alt="Socialstyrelsen logotyp" />
+      </a>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <div class="modal-backdrop" id="personModal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="personModalTitle">
+    <div class="modal" role="document">
+      <div class="modal-header">
+        <h2 id="personModalTitle"></h2>
+        <button class="modal-close" id="modalClose" aria-label="Stäng">&times;</button>
+      </div>
+      <div class="modal-body" id="personModalBody"></div>
+    </div>
+  </div>
+
+  <script>
+    // dynamiskt år i footern
+    (function(){
+      var y=document.getElementById('year');
+      if(y){ y.textContent=new Date().getFullYear(); }
+    })();
+
+    // mobilmeny toggle
+    (function(){
+      const toggle = document.getElementById('navToggle');
+      const menu = document.getElementById('mainmenu');
+      if(toggle && menu){
+        toggle.addEventListener('click',()=>{
+          const open = toggle.getAttribute('aria-expanded') === 'true';
+          toggle.setAttribute('aria-expanded', String(!open));
+          menu.style.display = open ? 'none' : 'flex';
+          if(!open){
+            menu.style.flexDirection = 'column';
+            menu.style.gap = '.5rem';
+            menu.style.background = '#fff';
+            menu.style.position='absolute';
+            menu.style.top='60px';
+            menu.style.right='4%';
+            menu.style.padding='1rem';
+            menu.style.border='1px solid var(--border)';
+            menu.style.borderRadius='var(--radius-lg)';
+            menu.style.boxShadow='var(--shadow)';
+            menu.style.zIndex='1500';
+          }
+        });
+      }
+    })();
+
+    // PERSONDATA (ersatt & SEO-uppdaterat)
+    const PERSON_DATA = {
+      'anette': {
+        title: 'Anette Edsberger – Sjukgymnast & Psykoterapeut KBT',
+        img: '/assets/images/port/anette_2.jpg',
+        summary: 'Leg. sjukgymnast och legitimerad psykoterapeut KBT. Erfaren inom stress/utmattning, ångest, självkänsla och parterapi (IBCT). Arbetar heltid vid KBT Skeppsbron i Göteborg.',
+        html: `
+          <h3><span class="material-icons">psychology</span> Inriktning</h3>
+          <p>Anette arbetar med KBT vid stress och utmattning, ångest och oro, depression/nedstämdhet samt självkänsla och självtvivel.</p>
+          <h3><span class="material-icons">favorite</span> Parterapi</h3>
+          <p>Hon erbjuder parterapi med IBCT (Integrative Behavioral Couple Therapy), en forskningsbaserad metod som stärker kommunikation och närhet.</p>
+          <h3><span class="material-icons">work</span> Bakgrund & samarbeten</h3>
+          <p>Erfarenhet från primärvård, företagshälsovård, privat mottagning och flygmedicin. Samarbetar med privat näringsliv, försäkringsbolag och Västra Götalandsregionen.</p>
+          <div class="modal-contact">
+            <p><span class="material-icons">call</span>0709 28 68 78<br>
+            <span class="material-icons">alternate_email</span>anette@kbtskeppsbron.se</p>
+          </div>
+          <div class="related-links">
+            <a class="btn btn-outline" href="/behandling/stress-och-utmattning.html">Läs mer om stress & utmattning</a>
+            <a class="btn btn-outline" href="/behandling/ibct-parterapi.html">Läs mer om IBCT-parterapi</a>
+            <a class="btn btn-outline" href="/behandling/angest-oro.html">Läs mer om ångest & oro</a>
+          </div>
+        `
+      },
+      'jan-eric': {
+        title: 'Jan-Eric Jönsson',
+        img: '/assets/images/port/jan-eric_2.jpg',
+        summary: 'Leg. psykolog, leg. psykoterapeut KBT och handledare. Särskild kompetens inom ångest och tvångssyndrom (OCD). Lärare/handledare vid Göteborgs universitet.',
+        html: `
+          <h3><span class="material-icons">psychology</span> Erfarenhet</h3>
+          <p>Lång klinisk erfarenhet från psykiatrin som psykolog och samordnare. Specialiserad på ångestproblem och tvångssymtom (OCD).</p>
+          <p>Verksam som handledare och lärare vid Psykologiska institutionen, Göteborgs universitet. Driver Mind Meet AB med uppdrag inom utbildning, handledning och behandling.</p>
+          <div class="modal-contact">
+            <p><span class="material-icons">call</span>0702 63 48 66<br>
+            <span class="material-icons">alternate_email</span>jan.eric.jonsson@mindmeetab.com</p>
+          </div>
+          <div class="related-links">
+            <a class="btn btn-outline" href="/behandling/ocd-tvangssyndrom.html">Läs mer om OCD & tvång</a>
+            <a class="btn btn-outline" href="/behandling/angest-oro.html">Läs mer om ångestsyndrom</a>
+            <a class="btn btn-outline" href="/handledning.html">Läs mer om handledning</a>
+          </div>
+        `
+      },
+      'billy': {
+        title: 'Billy Larsson',
+        img: '/assets/images/port/billy_2.jpg',
+        summary: 'Leg. psykolog, leg. psykoterapeut KBT, handledare i KBT och fil.dr i psykologi. Erfaren inom parterapi, relationell KBT och utbildning.',
+        html: `
+          <h3><span class="material-icons">menu_book</span> Bakgrund</h3>
+          <p>Vidareutbildad i sexologi och familjeterapi. Tio års erfarenhet från vuxenpsykiatrin (öppenvård och slutenvård). Undervisar/har undervisat vid GU samt psykoterapeututbildningar i Göteborg, Lund och Uppsala.</p>
+          <h3><span class="material-icons">favorite</span> Relationer & par</h3>
+          <p>Författare till <i>Att älska en vuxen människa: Användbara tankar och färdigheter</i>. Arbetar med KBT för individer och par samt erbjuder handledning.</p>
+          <div class="modal-contact">
+            <p><span class="material-icons">call</span>073 63 95 019<br>
+            <span class="material-icons">alternate_email</span>billy@kbtskeppsbron.se</p>
+          </div>
+          <div class="related-links">
+            <a class="btn btn-outline" href="/behandling/ibct-parterapi.html">Läs mer om parterapi (IBCT)</a>
+            <a class="btn btn-outline" href="/behandling/kbt.html">Läs mer om KBT</a>
+            <a class="btn btn-outline" href="/utbildning.html">Läs mer om utbildningar</a>
+          </div>
+        `
+      },
+      'sally': {
+        title: 'Sally Marshall',
+        img: '/assets/images/port/sally_2.jpg',
+        summary: 'Legitimerad psykolog och psykoterapeut KBT. Specialiserad på parterapi (IBCT), sexologiska frågor samt stress/utmattning med ACT/FACT.',
+        html: `
+          <h3><span class="material-icons">favorite</span> Par & närhet</h3>
+          <p>Specialiserad inom IBCT. Hjälper par med återkommande konflikter, kommunikation och närhet.</p>
+          <h3><span class="material-icons">favorite_border</span> Sexologisk behandling</h3>
+          <p>Behandling för par och individer kring lust, intimitet och sexologiska frågeställningar.</p>
+          <h3><span class="material-icons">self_improvement</span> Stress & återhämtning</h3>
+          <p>Lång erfarenhet av stressrelaterad ohälsa och utmattning. Arbetar med ACT/FACT för hållbar återhämtning och relapsförebyggande.</p>
+          <p>Utbildar och handleder personal i VGR, Region Halland och Kriminalvården.</p>
+          <div class="modal-contact">
+            <p><span class="material-icons">call</span>0730 57 85 20<br>
+            <span class="material-icons">alternate_email</span>sally@kbtskeppsbron.se</p>
+          </div>
+          <div class="related-links">
+            <a class="btn btn-outline" href="/behandling/ibct-parterapi.html">Läs mer om parterapi (IBCT)</a>
+            <a class="btn btn-outline" href="/behandling/sexologisk-behandling.html">Läs mer om sexologisk behandling</a>
+            <a class="btn btn-outline" href="/behandling/stress-och-utmattning.html">Läs mer om stress & ACT/FACT</a>
+          </div>
+        `
+      },
+      'lillian': {
+        title: 'Lillian Noring-Andersson',
+        img: '/assets/images/port/lillian_2.jpg',
+        summary: 'Leg. sjuksköterska, leg. psykoterapeut KBT, handledare och lärare. Erfaren inom ångest, depression och ätstörningar.',
+        html: `
+          <h3><span class="material-icons">school</span> Lång erfarenhet</h3>
+          <p>Arbetar med KBT vid bl.a. ångest, depression och ätstörningar. Undervisar och handleder sedan 2003 på grundläggande KBT-utbildningar; studierektor sedan 2009.</p>
+          <h3><span class="material-icons">groups</span> Uppdrag idag</h3>
+          <p>Erbjuder individuell terapi, parterapi och handledning. Uppdrag inom öppenpsykiatri, ungdomsmottagning, vårdcentraler och Grön rehab.</p>
+          <div class="modal-contact">
+            <p><span class="material-icons">call</span>0709 60 89 10<br>
+            <span class="material-icons">alternate_email</span>lillian@kbtskeppsbron.se</p>
+          </div>
+          <div class="related-links">
+            <a class="btn btn-outline" href="/behandling/angest-oro.html">Läs mer om ångest</a>
+            <a class="btn btn-outline" href="/behandling/depression.html">Läs mer om depression</a>
+            <a class="btn btn-outline" href="/handledning.html">Läs mer om handledning</a>
+          </div>
+        `
+      },
+      'camilla': {
+        title: 'Camilla O´Keeffe',
+        img: '/assets/images/port/camilla_2.jpg',
+        summary: 'Leg. psykolog, leg. psykoterapeut KBT, klinisk handledare KBT, specialist i klinisk psykologi. Erfaren inom neuropsykologi, trauma och stress/utmattning.',
+        html: `
+          <h3><span class="material-icons">psychology_alt</span> Klinisk bakgrund</h3>
+          <p>Arbetat inom vuxenpsykiatrin med utredning/behandling av neuropsykologiska tillstånd, ångest, depression, PTSD och emotionella svårigheter (bl.a. DBT).</p>
+          <h3><span class="material-icons">work</span> Företagshälsa & stress</h3>
+          <p>Förebyggande insatser vid stress och rehabilitering vid utmattning. Undervisar vid Psykologiska institutionen, Göteborgs universitet.</p>
+          <h3><span class="material-icons">groups</span> Erbjuder</h3>
+          <p>Individuell KBT-behandling, handledning och utbildning. Arbetar deltid vid KBT Skeppsbron.</p>
+          <div class="modal-contact">
+            <p><span class="material-icons">call</span>0705 37 49 75<br>
+            <span class="material-icons">alternate_email</span>camilla@kbtskeppsbron.se</p>
+          </div>
+          <div class="related-links">
+            <a class="btn btn-outline" href="/behandling/neuropsykologi.html">Läs mer om neuropsykologi</a>
+            <a class="btn btn-outline" href="/behandling/trauma-ptsd.html">Läs mer om trauma & PTSD</a>
+            <a class="btn btn-outline" href="/behandling/stress-och-utmattning.html">Läs mer om stress & utmattning</a>
+          </div>
+        `
+      },
+      'lotta': {
+        title: 'Lotta Scholander',
+        img: '/assets/images/port/lotta_2.jpg',
+        summary: 'Leg. psykolog och leg. psykoterapeut KBT. Specialist i psykologisk behandling/psykoterapi och klinisk handledare KBT. Arbetar med ungdomar, självkänsla och utmattning.',
+        html: `
+          <h3><span class="material-icons">diversity_3</span> Bakgrund</h3>
+          <p>Arbetat inom Statens Institutionsstyrelse (utredning, behandling, metodutveckling inom KBT) och som psykolog i gymnasieskola på individ-, grupp- och organisationsnivå.</p>
+          <h3><span class="material-icons">school</span> Handledning & utbildning</h3>
+          <p>Lärare och handledare på grundläggande KBT-utbildningar sedan 2003; deltagit i legitimationsgrundande utbildningar till 2014.</p>
+          <h3><span class="material-icons">support_agent</span> Inriktning idag</h3>
+          <p>Erbjuder individuell KBT, parterapi och handledning. Handleder personal inom BUP, öppenvårdspsykiatri, elevhälsa och HVB-hem.</p>
+          <div class="modal-contact">
+            <p><span class="material-icons">call</span>0736 40 38 45<br>
+            <span class="material-icons">alternate_email</span>lotta@kbtskeppsbron.se</p>
+          </div>
+          <div class="related-links">
+            <a class="btn btn-outline" href="/behandling/kbt.html">Läs mer om KBT</a>
+            <a class="btn btn-outline" href="/handledning.html">Läs mer om handledning</a>
+            <a class="btn btn-outline" href="/behandling/stress-och-utmattning.html">Läs mer om utmattning & självkänsla</a>
+          </div>
+        `
+      },
+      'marie': {
+        title: 'Marie Wånsander',
+        img: '/assets/images/port/marie_2.jpg',
+        summary: 'Leg. psykoterapeut KBT, leg. hälso- och sjukvårdskurator och auktoriserad socionom. Särskild erfarenhet av stress, utmattning och livskriser.',
+        html: `
+          <h3><span class="material-icons">hdr_strong</span> Erfarenhet</h3>
+          <p>Närmare 15 år i primärvård med bred problematik. 10 års arbete som rehabiliteringssamordnare tillbaka till arbete.</p>
+          <h3><span class="material-icons">self_improvement</span> Inriktning</h3>
+          <p>KBT vid stress-/utmattningsproblematik, ångest, depression, livskriser samt frågor kring vikt/ätbeteende. Individ och par.</p>
+          <p>Arbetar inom primärvård, företagshälsa och privat mottagning. Deltid på KBT Skeppsbron.</p>
+          <div class="modal-contact">
+            <p><span class="material-icons">call</span>070 401 93 56<br>
+            <span class="material-icons">alternate_email</span>marie@kbtskeppsbron.se</p>
+          </div>
+          <div class="related-links">
+            <a class="btn btn-outline" href="/behandling/stress-och-utmattning.html">Läs mer om stress & utmattning</a>
+            <a class="btn btn-outline" href="/behandling/depression.html">Läs mer om livskriser & depression</a>
+            <a class="btn btn-outline" href="/behandling/kbt.html">Läs mer om KBT</a>
+          </div>
+        `
+      },
+      'matilda': {
+        title: 'Matilda Zackrisson',
+        img: '/assets/images/port/matilda_2.jpg',
+        summary: 'Socionom, leg. psykoterapeut KBT, handledare inom KBT och legitimerad hälso- och sjukvårdskurator. Arbetar med individer, par, adoption/familj och chefs-/personalstöd.',
+        html: `
+          <h3><span class="material-icons">diversity_1</span> Bakgrund</h3>
+          <p>Erfarenhet från socialtjänst, psykiatri, somatisk vård och företagshälsa. Arbetar med KBT på individ- och parnivå samt i handledning.</p>
+          <h3><span class="material-icons">family_restroom</span> Särskilda områden</h3>
+          <p>Stöd till adopterade och deras familjer. Chefs-/arbetsplatsstöd inom arbetsmiljö och psykosocial hållbarhet.</p>
+          <p>Handledning i Region Halland, primärvården och Kriminalvården samt på grundläggande KBT-utbildning.</p>
+          <div class="modal-contact">
+            <p><span class="material-icons">call</span>0708 91 91 19<br>
+            <span class="material-icons">alternate_email</span>matilda@kbtskeppsbron.se</p>
+          </div>
+          <div class="related-links">
+            <a class="btn btn-outline" href="/behandling/foraldrastod.html">Läs mer om föräldrastöd</a>
+            <a class="btn btn-outline" href="/behandling/ibct-parterapi.html">Läs mer om KBT för par</a>
+            <a class="btn btn-outline" href="/handledning.html">Läs mer om chefsstöd & handledning</a>
+          </div>
+        `
+      },
+      'jonas': {
+        title: 'Jonas Robertsson',
+        img: '/assets/images/port/jonasrobertsson.jpg',
+        summary: 'Leg. psykolog med fokus på barn, unga, föräldrar och familjerelationer. Arbetar med KBT, ABFT och MI.',
+        html: `
+          <h3><span class="material-icons">child_care</span> Barn & unga</h3>
+          <p>Circa tio års erfarenhet i primärvård/vårdcentral och som skolpsykolog. Stöd till barn/ungdomar och deras föräldrar.</p>
+          <h3><span class="material-icons">psychology</span> Metoder</h3>
+          <p>KBT kombinerat med Anknytningsbaserad familjeterapi (ABFT) och Motiverande samtal (MI) utifrån behov.</p>
+          <h3><span class="material-icons">diversity_3</span> Vad Jonas erbjuder</h3>
+          <p>Behandling och rådgivning vid oro, nedstämdhet, relationskonflikter, kommunikationssvårigheter och föräldrastöd.</p>
+          <div class="modal-contact">
+            <p><span class="material-icons">call</span>0707 74 43 60<br>
+            <span class="material-icons">alternate_email</span>info@psykologrobertsson.com</p>
+          </div>
+          <div class="related-links">
+            <a class="btn btn-outline" href="/behandling/foraldrastod.html">Läs mer om föräldrastöd</a>
+            <a class="btn btn-outline" href="/behandling/abft-anknytningsbaserad-familjeterapi.html">Läs mer om ABFT</a>
+            <a class="btn btn-outline" href="/behandling/kbt.html">Läs mer om KBT för barn & unga</a>
+          </div>
+        `
+      },
+      'cathrine': {
+        title: 'Cathrine Apelqvist',
+        img: '/assets/images/port/cathrine_1.jpg',
+        summary: 'Leg. psykoterapeut KBT, socionom och legitimerad hälso- och sjukvårdskurator. Arbetar med sexologiska frågor, par, trauma och HBTQI.',
+        html: `
+          <h3><span class="material-icons">favorite</span> Par & sexologi</h3>
+          <p>Erbjuder individuell terapi och parterapi. Klinisk erfarenhet av sex som självskadebeteende och tvärprofessionell behandling vid vulvasmärta.</p>
+          <h3><span class="material-icons">people_alt</span> HBTQI & identitet</h3>
+          <p>Stort engagemang i frågor om könsidentitet, sexualitet och närhet – med varmt och inkluderande förhållningssätt.</p>
+          <h3><span class="material-icons">healing</span> Psykisk hälsa</h3>
+          <p>Arbetar bland annat med depression, oro/ångest, tvångssyndrom (OCD) och trauma.</p>
+          <div class="modal-contact">
+            <p><span class="material-icons">call</span>0703 20 47 09<br>
+            <span class="material-icons">alternate_email</span>cathrine@kbtspektra.com</p>
+          </div>
+          <div class="related-links">
+            <a class="btn btn-outline" href="/behandling/sexologisk-behandling.html">Läs mer om sexologisk behandling</a>
+            <a class="btn btn-outline" href="/behandling/trauma-ptsd.html">Läs mer om trauma</a>
+            <a class="btn btn-outline" href="/behandling/kbt.html">Läs mer om KBT</a>
+          </div>
+        `
+      },
+
+      'annika': {
+  title: 'Annika Hall – Psykoterapeut KBT, Socionom & Hälso- och sjukvårdskurator',
+  img: '/assets/images/port/annika_1.jpg',
+  summary: 'Leg. psykoterapeut KBT, socionom och legitimerad hälso- och sjukvårdskurator. Arbetar helhetsinriktat med KBT, ACT, CFT och mindfulness. Erfaren inom stress, NPF och föräldrastöd.',
+  html: `
+    <h3><span class="material-icons">psychology</span> Inriktning & arbetssätt</h3>
+    <p>Annika arbetar utifrån kognitiv beteendeterapi (KBT) och integrerar metoder som <strong>ACT</strong>, <strong>CFT</strong>, <strong>Schematerapi</strong>, <strong>MI</strong> och <strong>Mindfulness</strong>. Hon är även utbildad yogainstruktör, vilket bidrar till en fördjupad förståelse för sambandet mellan kropp och psyke.</p>
+
+    <h3><span class="material-icons">school</span> Erfarenhet</h3>
+    <p>Med över 20 års erfarenhet från arbete inom skolan och mer än 15 år inom primärvården har Annika mött människor med varierande psykisk ohälsa. Hon har särskild kompetens inom stressrelaterad problematik, neuropsykiatriska variationer såsom autism och ADHD samt <strong>föräldrastöd</strong>.</p>
+
+    <h3><span class="material-icons">self_improvement</span> Helhetssyn & förhållningssätt</h3>
+    <p>I terapin betonar Annika vikten av att förstå kroppens signaler och samspelet mellan det fysiska och psykiska. Hon ser terapi som ett gemensamt förändringsarbete – där trygghet, närvaro och medkänsla är centrala för läkning.</p>
+
+    <blockquote>
+      “För att kunna läka behöver vi ibland våga möta vårt lidande – men vi behöver inte göra det ensamma.”
+    </blockquote>
+
+    <div class="modal-contact">
+      <p><span class="material-icons">alternate_email</span>annika@kbtskeppsbron.se</p>
+    </div>
+
+    <div class="related-links">
+      <a class="btn btn-outline" href="/behandling/stress-och-utmattning.html">Läs mer om stress & utmattning</a>
+      <a class="btn btn-outline" href="/behandling/kbt.html">Läs mer om KBT</a>
+      <a class="btn btn-outline" href="/behandling/mindfulness.html">Läs mer om mindfulness</a>
+      <a class="btn btn-outline" href="/behandling/act.html">Läs mer om ACT & CFT</a>
+    </div>
+  `
+},
+
+    };
+
+    // MODAL LOGIK
+    (function(){
+      const backdrop = document.getElementById('personModal');
+      const bodyEl = document.getElementById('personModalBody');
+      const titleEl = document.getElementById('personModalTitle');
+      const closeBtn = document.getElementById('modalClose');
+
+      function openModal(id){
+        const data = PERSON_DATA[id];
+        if(!data) return;
+
+        titleEl.textContent = data.title;
+        bodyEl.innerHTML = `
+          <div class="modal-headline">
+            <div class="modal-thumb">
+              <img src="${data.img}" alt="${data.title}">
+            </div>
+            <div class="modal-summary">
+              ${data.summary}
+            </div>
+          </div>
+          ${data.html}
+        `;
+
+        backdrop.hidden = false;
+        backdrop.setAttribute('aria-hidden','false');
+        closeBtn.focus();
+        document.body.style.overflow='hidden';
+      }
+
+      function closeModal(){
+        backdrop.hidden = true;
+        backdrop.setAttribute('aria-hidden','true');
+        document.body.style.overflow='';
+      }
+
+      document.querySelectorAll('.js-open-modal').forEach(btn=>{
+        btn.addEventListener('click',()=>{
+          const id = btn.getAttribute('data-modal');
+          openModal(id);
+        });
+      });
+
+      closeBtn.addEventListener('click',closeModal);
+
+      backdrop.addEventListener('click',e=>{
+        if(e.target === backdrop){closeModal();}
+      });
+
+      document.addEventListener('keydown',e=>{
+        if(e.key === 'Escape' && backdrop.hidden === false){
+          closeModal();
+        }
+      });
+    })();
+  </script>
+
+  <!-- JSON-LD: Person (schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.kbtskeppsbron.se/#org",
+        "name": "KBT Skeppsbron",
+        "url": "https://www.kbtskeppsbron.se/",
+        "logo": "https://www.kbtskeppsbron.se/assets/images/kbt-skeppsbron-logo-footer.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Surbrunnsgatan 6",
+          "postalCode": "41119",
+          "addressLocality": "Göteborg",
+          "addressCountry": "SE"
+        },
+        "email": "info@kbtskeppsbron.se",
+        "sameAs": []
+      },
+      {
+        "@type": "Person",
+        "name": "Anette Edsberger",
+        "jobTitle": "Leg. sjukgymnast, leg. psykoterapeut KBT",
+        "worksFor": { "@id": "https://www.kbtskeppsbron.se/#org" },
+        "email": "mailto:anette@kbtskeppsbron.se",
+        "telephone": "+46 709286878",
+        "image": "https://www.kbtskeppsbron.se/assets/images/port/anette.jpg",
+        "url": "https://www.kbtskeppsbron.se/om_kontakt.html#team"
+      },
+      {
+        "@type": "Person",
+        "name": "Jan-Eric Jönsson",
+        "jobTitle": "Leg. psykolog, leg. psykoterapeut KBT, handledare",
+        "worksFor": { "@id": "https://www.kbtskeppsbron.se/#org" },
+        "email": "mailto:jan.eric.jonsson@mindmeetab.com",
+        "telephone": "+46 702634866",
+        "image": "https://www.kbtskeppsbron.se/assets/images/port/jan-eric.jpg",
+        "url": "https://www.kbtskeppsbron.se/om_kontakt.html#team"
+      },
+      {
+        "@type": "Person",
+        "name": "Billy Larsson",
+        "jobTitle": "Leg. psykolog, leg. psykoterapeut KBT, handledare i KBT, fil.dr",
+        "worksFor": { "@id": "https://www.kbtskeppsbron.se/#org" },
+        "email": "mailto:billy@kbtskeppsbron.se",
+        "telephone": "+46 736395019",
+        "image": "https://www.kbtskeppsbron.se/assets/images/port/billy.jpg",
+        "url": "https://www.kbtskeppsbron.se/om_kontakt.html#team"
+      },
+      {
+        "@type": "Person",
+        "name": "Sally Marshall",
+        "jobTitle": "Leg. psykolog, leg. psykoterapeut KBT",
+        "worksFor": { "@id": "https://www.kbtskeppsbron.se/#org" },
+        "email": "mailto:sally@kbtskeppsbron.se",
+        "telephone": "+46 730578520",
+        "image": "https://www.kbtskeppsbron.se/assets/images/port/sally.jpg",
+        "url": "https://www.kbtskeppsbron.se/om_kontakt.html#team"
+      },
+      {
+        "@type": "Person",
+        "name": "Lillian Noring-Andersson",
+        "jobTitle": "Leg. sjuksköterska, leg. psykoterapeut KBT, handledare",
+        "worksFor": { "@id": "https://www.kbtskeppsbron.se/#org" },
+        "email": "mailto:lillian@kbtskeppsbron.se",
+        "telephone": "+46 709608910",
+        "image": "https://www.kbtskeppsbron.se/assets/images/port/lillian.jpg",
+        "url": "https://www.kbtskeppsbron.se/om_kontakt.html#team"
+      },
+      {
+        "@type": "Person",
+        "name": "Camilla O´Keeffe",
+        "jobTitle": "Leg. psykolog, leg. psykoterapeut KBT, specialist i klinisk psykologi",
+        "worksFor": { "@id": "https://www.kbtskeppsbron.se/#org" },
+        "email": "mailto:camilla@kbtskeppsbron.se",
+        "telephone": "+46 705374975",
+        "image": "https://www.kbtskeppsbron.se/assets/images/port/camilla.jpg",
+        "url": "https://www.kbtskeppsbron.se/om_kontakt.html#team"
+      },
+      {
+        "@type": "Person",
+        "name": "Lotta Scholander",
+        "jobTitle": "Leg. psykolog, leg. psykoterapeut KBT, klinisk handledare KBT",
+        "worksFor": { "@id": "https://www.kbtskeppsbron.se/#org" },
+        "email": "mailto:lotta@kbtskeppsbron.se",
+        "telephone": "+46 736403845",
+        "image": "https://www.kbtskeppsbron.se/assets/images/port/lotta.jpg",
+        "url": "https://www.kbtskeppsbron.se/om_kontakt.html#team"
+      },
+      {
+        "@type": "Person",
+        "name": "Marie Wånsander",
+        "jobTitle": "Leg. psykoterapeut KBT, leg. hälso- och sjukvårdskurator, auktoriserad socionom",
+        "worksFor": { "@id": "https://www.kbtskeppsbron.se/#org" },
+        "email": "mailto:marie@kbtskeppsbron.se",
+        "telephone": "+46 704019356",
+        "image": "https://www.kbtskeppsbron.se/assets/images/port/marie.jpg",
+        "url": "https://www.kbtskeppsbron.se/om_kontakt.html#team"
+      },
+      {
+        "@type": "Person",
+        "name": "Matilda Zackrisson",
+        "jobTitle": "Socionom, leg. psykoterapeut KBT, handledare",
+        "worksFor": { "@id": "https://www.kbtskeppsbron.se/#org" },
+        "email": "mailto:matilda@kbtskeppsbron.se",
+        "telephone": "+46 708919119",
+        "image": "https://www.kbtskeppsbron.se/assets/images/port/matilda.jpg",
+        "url": "https://www.kbtskeppsbron.se/om_kontakt.html#team"
+      },
+      {
+        "@type": "Person",
+        "name": "Jonas Robertsson",
+        "jobTitle": "Leg. psykolog",
+        "worksFor": { "@id": "https://www.kbtskeppsbron.se/#org" },
+        "email": "mailto:info@psykologrobertsson.com",
+        "telephone": "+46 707744360",
+        "image": "https://www.kbtskeppsbron.se/assets/images/port/jonasrobertsson.jpg",
+        "url": "https://www.kbtskeppsbron.se/om_kontakt.html#team"
+      },
+      {
+        "@type": "Person",
+        "name": "Cathrine Apelqvist",
+        "jobTitle": "Leg. psykoterapeut KBT, socionom, legitimerad hälso- och sjukvårdskurator",
+        "worksFor": { "@id": "https://www.kbtskeppsbron.se/#org" },
+        "email": "mailto:cathrine@kbtspektra.com",
+        "telephone": "+46 703204709",
+        "image": "https://www.kbtskeppsbron.se/assets/images/port/cathrine_1.jpg",
+        "url": "https://www.kbtskeppsbron.se/om_kontakt.html#team"
+      }
+    ]
+  }
+  </script>
+</body>
+</html>
