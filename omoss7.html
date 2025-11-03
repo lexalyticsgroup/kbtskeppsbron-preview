@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="sv" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Om oss / Kontakt | KBT Skeppsbron Göteborg</title>
+  <meta name="description" content="Möt vårt team på KBT Skeppsbron. Legitimerade behandlare inom KBT, parterapi och handledning. Boka tid eller läs mer om oss." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <style>
+    :root{
+      --bg:#ffffff; --card:#fff; --soft:#f7f8fb;
+      --text:#1a1a1a; --muted:#5b5f67;
+      --accent:#92b7c7; --accent-2:#9e8cae;
+      --border:rgba(0,0,0,.1);
+      --radius:.9rem; --shadow:0 24px 44px rgba(0,0,0,.06);
+    }
+    html[data-theme="dark"]{
+      --bg:#0f1115; --card:#161925; --soft:#141722;
+      --text:#f2f4f7; --muted:#c2c7d0;
+      --border:rgba(255,255,255,.14);
+      --shadow:0 24px 44px rgba(0,0,0,.55);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    img{max-width:100%;display:block;border:0}
+    body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1200px;margin:0 auto;padding:0 1rem}
+    .sr-only{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+
+    /* ===== TOP NAV (identisk look som handledning) ===== */
+    header.site-topnav{background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:1000;backdrop-filter:saturate(140%) blur(6px)}
+    .topnav-inner{max-width:1200px;margin:0 auto;padding:.75rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+    .brand-block{display:flex;align-items:center;gap:.75rem;color:var(--text);text-decoration:none}
+    .brand-block img{height:56px;width:auto}
+    .brand-text{font-size:.9rem;font-weight:600;letter-spacing:-.02em}
+    .brand-text span{display:block;font-size:.8rem;color:var(--muted);font-weight:400}
+    nav.top-links{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+    nav.top-links a{color:var(--text);font-weight:500;padding:.4rem .75rem;border-radius:.5rem;border:1px solid transparent}
+    nav.top-links a:hover{background:rgba(146,183,199,.14);text-decoration:none}
+    nav.top-links a[aria-current="page"]{background:var(--accent);color:#0e1820}
+    .theme-toggle{display:inline-flex;align-items:center;gap:.45rem;border:1px solid var(--border);border-radius:999px;padding:.42rem .7rem;background:var(--card);color:var(--text);cursor:pointer;font-weight:600}
+    .theme-toggle .material-icons{font-size:1.1rem}
+
+    /* ===== HERO (som handledning – men med ert hjärta/knappar och BILD TILL HÖGER) ===== */
+    .hero-wrap{
+      background:
+        radial-gradient(circle at 15% 20%, rgba(146,183,199,.18) 0%, rgba(249,247,245,0) 70%),
+        radial-gradient(circle at 85% 120%, rgba(158,140,174,.14) 0%, rgba(255,255,255,0) 70%);
+      border-bottom:1px solid var(--border);
+    }
+    html[data-theme="dark"] .hero-wrap{
+      background:
+        radial-gradient(circle at 15% 20%, rgba(146,183,199,.22) 0%, rgba(15,17,21,0) 70%),
+        radial-gradient(circle at 85% 120%, rgba(158,140,174,.20) 0%, rgba(15,17,21,0) 70%);
+    }
+    .hero{max-width:1200px;margin:0 auto;padding:3rem 1rem 2rem;display:grid;gap:2rem}
+    @media(min-width:900px){.hero{grid-template-columns:1fr 420px;align-items:start}}
+    .hero-content{display:flex;flex-direction:column;gap:1rem}
+    .hero-eyebrow{font-size:.8rem;font-weight:700;color:var(--accent);letter-spacing:.12em;text-transform:uppercase}
+    .hero-content h1{font-size:clamp(2rem,1vw+1.1rem,2.4rem);line-height:1.2;font-weight:700;letter-spacing:-.03em;color:var(--text);display:flex;gap:.5rem;align-items:flex-start;margin:0}
+    .hero-content h1 .material-icons{font-size:1.5rem;color:#59484c}
+    .lead{font-size:1.05rem;color:var(--muted);max-width:65ch}
+    .hero-cta{display:flex;flex-wrap:wrap;gap:.6rem}
+    .btn{display:inline-flex;align-items:center;gap:.4rem;border:1px solid var(--border);background:var(--card);color:var(--text);padding:.6rem 1rem;border-radius:999px;font-weight:600;text-decoration:none}
+    .btn:hover{text-decoration:none;box-shadow:0 18px 30px rgba(0,0,0,.06)}
+    .btn-primary{background:var(--accent);color:#0d1720;border-color:transparent;box-shadow:0 16px 32px rgba(146,183,199,.45)}
+    .side-media{background:var(--card);border:1px solid var(--border);border-radius:.9rem;box-shadow:var(--shadow);overflow:hidden}
+    .side-media img{width:100%;height:auto;display:block;aspect-ratio:4/3;object-fit:cover}
+    /* VIKTIGT: ingen blur/overlay-lager ovanpå bilden. */
+
+    main{max-width:1200px;margin:0 auto;padding:2rem 1rem 4rem}
+
+    /* ===== FILTER-KORT (SAMMA KONCEPT SOM TIDIGARE) ===== */
+    .filters{margin-top:1rem;margin-bottom:1rem}
+    .filters h2{font-size:1.4rem;letter-spacing:-.02em;margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem}
+    .filter-grid{display:grid;gap:.8rem}
+    @media(min-width:700px){.filter-grid{grid-template-columns:repeat(5,minmax(0,1fr))}}
+    .filter-card{
+      display:flex;align-items:center;gap:.6rem;
+      background:var(--card);border:1px solid var(--border);border-radius:.8rem;padding:.7rem .8rem;
+      cursor:pointer;user-select:none;transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+    }
+    .filter-card .material-icons{font-size:1.1rem;color:var(--accent)}
+    .filter-card:hover{transform:translateY(-1px);box-shadow:0 18px 30px rgba(0,0,0,.06)}
+    .filter-card[aria-pressed="true"]{background:var(--accent);color:#0d1720;border-color:transparent}
+    .filter-meta{font-size:.85rem;color:var(--muted)}
+    .filters-bar{display:flex;align-items:center;gap:.6rem;margin-top:.6rem}
+    .btn-reset{background:transparent;border:1px solid var(--border);color:var(--text);border-radius:999px;padding:.45rem .8rem;cursor:pointer;font-weight:600}
+    .count{font-size:.9rem;color:var(--muted)}
+
+    /* ===== TEAM (oförändrat kortupplägg) ===== */
+    .team-head{margin:2rem 0 1rem;display:flex;align-items:center;gap:.5rem}
+    .team-grid{display:grid;gap:1.25rem}
+    @media(min-width:600px){.team-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:1000px){.team-grid{grid-template-columns:repeat(3,1fr)}}
+
+    .person-card{background:var(--card);border:1px solid var(--border);border-radius:.9rem;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column;transition:transform .15s ease, box-shadow .15s ease}
+    .person-card:hover{transform:translateY(-2px);box-shadow:0 32px 52px rgba(0,0,0,.10)}
+    .person-media{position:relative;background:#000}
+    .person-media img{width:100%;aspect-ratio:4/3;object-fit:cover}
+    .person-badge{position:absolute;bottom:.75rem;left:.75rem;background:rgba(0,0,0,.55);color:#fff;border-radius:999px;padding:.35rem .6rem;font-size:.75rem}
+    html[data-theme="dark"] .person-badge{background:rgba(0,0,0,.65)}
+    .person-body{padding:1rem 1.1rem 1.1rem;display:flex;flex-direction:column;gap:.4rem;flex:1}
+    .person-name{margin:0;font-weight:700;font-size:1.1rem}
+    .person-role{margin:0;color:var(--muted)}
+    .tags{margin:.6rem 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:.45rem}
+    .tags li{background:linear-gradient(90deg, rgba(146,183,199,.16), rgba(158,140,174,.14));border:1px solid var(--border);color:var(--text);border-radius:999px;padding:.32rem .6rem;font-size:.79rem;font-weight:600}
+    .person-actions{margin-top:auto;padding-top:.6rem;display:flex;gap:.5rem;flex-wrap:wrap}
+    .action{appearance:none;border-radius:999px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:.85rem;font-weight:700;padding:.58rem .9rem;cursor:pointer;display:inline-flex;align-items:center;gap:.4rem}
+    .action:hover{transform:translateY(-1px);box-shadow:0 18px 30px rgba(0,0,0,.06)}
+    .action .material-icons{font-size:1rem}
+
+    /* ===== MODAL (oförändrat beteende) ===== */
+    .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;padding:1rem;z-index:2000}
+    .modal-backdrop[hidden]{display:none}
+    .modal{background:var(--card);color:var(--text);width:min(520px,92vw);max-height:90vh;overflow:auto;border-radius:.9rem;box-shadow:0 40px 80px rgba(0,0,0,.5);border:1px solid var(--border)}
+    .modal-header{display:flex;justify-content:space-between;align-items:flex-start;padding:1rem 1rem .75rem;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--card)}
+    .modal-header h2{margin:0;font-size:1.05rem}
+    .modal-close{background:none;border:0;font-size:1.6rem;line-height:1;cursor:pointer;color:var(--muted)}
+    .modal-body{padding:1rem 1rem 1.25rem}
+  </style>
+</head>
+<body>
+  <a class="sr-only" href="#main">Hoppa till innehåll</a>
+
+  <!-- ===== TOP NAV (samma som handledning) ===== -->
+  <header class="site-topnav" role="banner">
+    <div class="topnav-inner">
+      <a class="brand-block" href="/index.html">
+        <img src="/assets/images/kbt-skeppsbron-logo.jpg" alt="KBT Skeppsbron logotyp">
+        <div class="brand-text">KBT Skeppsbron <span>Göteborg</span></div>
+      </a>
+
+      <nav class="top-links" aria-label="Huvudmeny">
+        <a href="/index.html">Hem</a>
+        <a href="/behandling.html">Behandling</a>
+        <a href="/utbildning.html">Utbildning</a>
+        <a href="/handledning.html">Handledning</a>
+        <a href="/om_kontakt.html" aria-current="page">Om oss / Kontakt</a>
+
+        <!-- Endast EN kontaktlänk i menyn (som tidigare) -->
+        <!-- Tema-knappen kommer DIREKT efter kontaktlänken -->
+        <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false" title="Växla tema">
+          <span class="material-icons" aria-hidden="true">dark_mode</span> Tema
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero-wrap">
+    <div class="hero">
+      <div class="hero-content">
+        <div class="hero-eyebrow">Om oss</div>
+        <h1><span class="material-icons" aria-hidden="true">favorite</span> Vår grundsyn</h1>
+        <p class="lead">
+          Vi ser människan som en helhet – kropp, själ och medvetande – och varje människa som unik.
+          Vi tror på människans förmåga att genom nya insikter och kunskap kunna göra goda val
+          och förändra sådant som inte längre är hjälpsamt.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="mailto:info@kbtskeppsbron.se"><span class="material-icons">email</span> Kontakta oss</a>
+          <a class="btn" href="#team"><span class="material-icons">groups</span> Möt vårt team</a>
+        </div>
+      </div>
+
+      <!-- Behåller BILD till höger. Ingen blur-overlay. -->
+      <aside class="side-media">
+        <img src="/assets/images/port/mottagning_hero.jpg" alt="Mottagningsmiljö hos KBT Skeppsbron">
+      </aside>
+    </div>
+  </section>
+
+  <main id="main" role="main" class="container">
+
+    <!-- ===== VÅRT TEAM – rubrik ===== -->
+    <div class="team-head" id="team">
+      <span class="material-icons" aria-hidden="true" style="color:var(--accent)">groups</span>
+      <h2 style="font-size:1.6rem;letter-spacing:-.02em;">Vårt team</h2>
+    </div>
+
+    <!-- ===== FILTER (SAMMA LOOK: "kort" som klickas) – nu placerad PRECIS här under rubriken ===== -->
+    <section class="filters" aria-labelledby="filterTitle">
+      <h2 id="filterTitle" class="sr-only">Filtrera teamet</h2>
+
+      <div class="filter-grid" id="filterGrid" role="group" aria-label="Filter">
+        <!-- Behåll dina tidigare taggar/etiketter här; samma data-filter används av JS nedan -->
+        <button class="filter-card" type="button" data-filter="ångest" aria-pressed="false">
+          <span class="material-icons" aria-hidden="true">psychology</span> Ångest
+        </button>
+        <button class="filter-card" type="button" data-filter="depression" aria-pressed="false">
+          <span class="material-icons" aria-hidden="true">mood_bad</span> Depression
+        </button>
+        <button class="filter-card" type="button" data-filter="ocd" aria-pressed="false">
+          <span class="material-icons" aria-hidden="true">repeat</span> OCD / tvång
+        </button>
+        <button class="filter-card" type="button" data-filter="stress" aria-pressed="false">
+          <span class="material-icons" aria-hidden="true">hourglass_top</span> Stress / utmattning
+        </button>
+        <button class="filter-card" type="button" data-filter="par" aria-pressed="false">
+          <span class="material-icons" aria-hidden="true">favorite</span> Parterapi (IBCT)
+        </button>
+        <button class="filter-card" type="button" data-filter="sexologi" aria-pressed="false">
+          <span class="material-icons" aria-hidden="true">favorite_border</span> Sexologi
+        </button>
+        <button class="filter-card" type="button" data-filter="barn" aria-pressed="false">
+          <span class="material-icons" aria-hidden="true">child_care</span> Barn & unga
+        </button>
+        <button class="filter-card" type="button" data-filter="handledning" aria-pressed="false">
+          <span class="material-icons" aria-hidden="true">groups</span> Handledning
+        </button>
+        <button class="filter-card" type="button" data-filter="trauma" aria-pressed="false">
+          <span class="material-icons" aria-hidden="true">health_and_safety</span> Trauma / PTSD
+        </button>
+        <button class="filter-card" type="button" data-filter="neuro" aria-pressed="false">
+          <span class="material-icons" aria-hidden="true">memory</span> Neuropsykologi
+        </button>
+      </div>
+
+      <div class="filters-bar">
+        <button class="btn-reset" id="resetFilters" type="button">
+          <span class="material-icons" aria-hidden="true" style="font-size:1rem;vertical-align:middle;">close</span>
+          Nollställ filter
+        </button>
+        <div class="count" id="resultCount">(visar alla)</div>
+      </div>
+    </section>
+
+    <!-- ===== TEAM (exempelposter – behåll dina befintliga; viktigt: data-tags) ===== -->
+    <section aria-label="Teamlista">
+      <div class="team-grid" id="teamGrid">
+        <!-- EXEMPEL: lägg samma data-tags som du hade tidigare så filtret fortsätter fungera -->
+        <article class="person-card" data-tags="stress, ångest, ibct, par">
+          <div class="person-media">
+            <img src="/assets/images/port/anette.jpg" alt="Anette Edsberger">
+            <div class="person-badge">KBT & Parterapi</div>
+          </div>
+          <div class="person-body">
+            <h3 class="person-name">Anette Edsberger</h3>
+            <p class="person-role">Stress/utmattning, ångest och parterapi (IBCT).</p>
+            <ul class="tags"><li>Stress</li><li>Ångest</li><li>IBCT</li></ul>
+            <div class="person-actions">
+              <button class="action js-open-modal" data-modal="anette"><span class="material-icons">visibility</span> Läs mer</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="person-card" data-tags="ångest, ocd, handledning">
+          <div class="person-media">
+            <img src="/assets/images/port/jan-eric.jpg" alt="Jan-Eric Jönsson">
+            <div class="person-badge">Ångest & OCD</div>
+          </div>
+          <div class="person-body">
+            <h3 class="person-name">Jan-Eric Jönsson</h3>
+            <p class="person-role">Ångestsyndrom, tvång (OCD), handledning.</p>
+            <ul class="tags"><li>Ångest</li><li>OCD</li><li>Handledning</li></ul>
+            <div class="person-actions">
+              <button class="action js-open-modal" data-modal="jan-eric"><span class="material-icons">visibility</span> Läs mer</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- … fortsätt med dina befintliga kort oförändrat; viktigast är data-tags … -->
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== MODAL (lämnad som i din version; fyll din text) ===== -->
+  <div class="modal-backdrop" id="personModal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="personModalTitle">
+    <div class="modal" role="document">
+      <div class="modal-header">
+        <h2 id="personModalTitle"></h2>
+        <button class="modal-close" id="modalClose" aria-label="Stäng">&times;</button>
+      </div>
+      <div class="modal-body" id="personModalBody"></div>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER (oförändrad) =====
+       OBS: Nedan är exakt samma footer som i koden du la in från handledningssidan.
+       Om din om_kontakt hade en annan footer tidigare – ersätt detta block med den oförändrat. -->
+  <footer class="site-footer-light" role="contentinfo">
+    <div class="footer-topbrand">
+      <a href="/index.html" style="text-decoration:none;display:inline-flex;flex-direction:column;align-items:center;gap:.5rem;">
+        <img src="/assets/images/kbt-skeppsbron-logo-footer.png" alt="KBT Skeppsbron logotyp" />
+        <div style="font-size:.9rem;color:#555;letter-spacing:.03em;">KBT i Göteborg sedan 2002</div>
+      </a>
+      <hr />
+    </div>
+
+    <div class="footer-grid">
+      <section>
+        <h3>Kontakt</h3>
+        <address style="font-style:normal;">
+          Surbrunnsgatan&nbsp;6<br>
+          411&nbsp;19&nbsp;Göteborg<br><br>
+          <a href="mailto:info@kbtskeppsbron.se" style="color:#92b7c7;text-decoration:none;">info@kbtskeppsbron.se</a>
+        </address>
+      </section>
+
+      <section>
+        <h3>Avbokning & trygghet</h3>
+        <p>Avbokning senast 48 h före är kostnadsfritt. Inom 24 h debiteras halv avgift, senare än 24 h full avgift.</p>
+        <p>Vi följer hälso- och sjukvårdslagen (sekretess, journalföring, patientförsäkring).</p>
+      </section>
+
+      <nav class="footer-menu" aria-label="Sidmeny">
+        <h3>Meny</h3>
+        <ul style="list-style:none;margin:0;padding:0;">
+          <li style="margin:.4rem 0;"><a href="/behandling.html" style="color:#333;text-decoration:none;">Behandling</a></li>
+          <li style="margin:.4rem 0;"><a href="/utbildning.html" style="color:#333;text-decoration:none;">Utbildning</a></li>
+          <li style="margin:.4rem 0;"><a href="/handledning.html" style="color:#333;text-decoration:none;">Handledning</a></li>
+          <li style="margin:.4rem 0;"><a href="/om_kontakt.html" style="color:#333;text-decoration:none;">Om oss / Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <div>
+        © <span id="year">2025</span> KBT Skeppsbron<br />
+        Surbrunnsgatan&nbsp;6,&nbsp;411&nbsp;19&nbsp;Göteborg<br />
+        <a href="https://www.google.se/maps/place/Surbrunnsgatan+6,+Göteborg" target="_blank" rel="noopener">Visa karta</a><br />
+        <a href="mailto:info@kbtskeppsbron.se">info@kbtskeppsbron.se</a>
+      </div>
+      <a href="https://www.socialstyrelsen.se/" target="_blank" rel="noopener" style="line-height:0;">
+        <img src="/assets/images/socialstyrelsen.png" alt="Socialstyrelsen" />
+      </a>
+    </div>
+
+    <script>
+      (function(){var y=document.getElementById('year');if(y){y.textContent=new Date().getFullYear();}})();
+    </script>
+  </footer>
+
+  <script>
+    // ===== Tema-toggle (efter kontaktlänken) =====
+    (function(){
+      const btn = document.getElementById('themeToggle');
+      const root = document.documentElement;
+      const saved = localStorage.getItem('kbts_theme');
+      if(saved){ root.setAttribute('data-theme', saved); if(saved==='dark') btn.setAttribute('aria-pressed','true'); }
+      function setIcon(){
+        const isDark = root.getAttribute('data-theme')==='dark';
+        btn.querySelector('.material-icons').textContent = isDark ? 'light_mode' : 'dark_mode';
+      }
+      setIcon();
+      btn.addEventListener('click', ()=>{
+        const isDark = root.getAttribute('data-theme')==='dark';
+        const next = isDark ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        btn.setAttribute('aria-pressed', String(next==='dark'));
+        localStorage.setItem('kbts_theme', next);
+        setIcon();
+      });
+    })();
+
+    // ===== Modal (oförändrade effekter) =====
+    (function(){
+      const backdrop = document.getElementById('personModal');
+      const bodyEl = document.getElementById('personModalBody');
+      const titleEl = document.getElementById('personModalTitle');
+      const closeBtn = document.getElementById('modalClose');
+
+      // FYLL PÅ med din befintliga PERSON_DATA om du hade det i en separat <script>, annars använd detta enkla hämt:
+      const PERSON_DATA = {
+        'anette': {title:'Anette Edsberger', html:'<p>Stress/utmattning, ångest, parterapi (IBCT).</p>'},
+        'jan-eric': {title:'Jan-Eric Jönsson', html:'<p>Ångestsyndrom, tvång (OCD), handledning.</p>'}
+        // … dina övriga poster här …
+      };
+
+      function openModal(id){
+        const data = PERSON_DATA[id]; if(!data) return;
+        titleEl.textContent = data.title;
+        bodyEl.innerHTML = data.html;
+        backdrop.hidden = false; backdrop.setAttribute('aria-hidden','false');
+        document.body.style.overflow='hidden';
+        closeBtn.focus();
+      }
+      function closeModal(){
+        backdrop.hidden = true; backdrop.setAttribute('aria-hidden','true');
+        document.body.style.overflow='';
+      }
+      document.querySelectorAll('.js-open-modal').forEach(btn=>{
+        btn.addEventListener('click',()=> openModal(btn.getAttribute('data-modal')));
+      });
+      document.getElementById('modalClose').addEventListener('click', closeModal);
+      backdrop.addEventListener('click', e=>{ if(e.target===backdrop) closeModal(); });
+      document.addEventListener('keydown', e=>{ if(e.key==='Escape' && !backdrop.hidden) closeModal(); });
+    })();
+
+    // ===== FILTER – behåller "kort" som klickas (flyttad plats, samma beteende) =====
+    (function(){
+      const grid = document.getElementById('teamGrid');
+      const cards = Array.from(grid.querySelectorAll('.person-card'));
+      const filterCards = Array.from(document.querySelectorAll('.filter-card'));
+      const resetBtn = document.getElementById('resetFilters');
+      const count = document.getElementById('resultCount');
+      let active = new Set();
+
+      function normalize(s){return (s||'').toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu,'');}
+
+      function apply(){
+        let visible=0;
+        cards.forEach(card=>{
+          const tags = normalize(card.getAttribute('data-tags')||'');
+          const ok = active.size===0 || Array.from(active).every(t=> tags.includes(t));
+          card.style.display = ok ? '' : 'none';
+          if(ok) visible++;
+        });
+        count.textContent = active.size ? `(${visible} träffar)` : `(visar alla)`;
+      }
+
+      filterCards.forEach(btn=>{
+        btn.addEventListener('click', ()=>{
+          const key = normalize(btn.dataset.filter);
+          const pressed = btn.getAttribute('aria-pressed')==='true';
+          btn.setAttribute('aria-pressed', String(!pressed));
+          if(pressed){ active.delete(key); } else { active.add(key); }
+          apply();
+        });
+      });
+
+      resetBtn.addEventListener('click', ()=>{
+        active.clear();
+        filterCards.forEach(b=> b.setAttribute('aria-pressed','false'));
+        apply();
+      });
+
+      apply();
+    })();
+  </script>
+</body>
+</html>

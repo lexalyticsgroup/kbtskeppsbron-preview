@@ -1,0 +1,1101 @@
+<!doctype html>
+<html lang="sv" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Om oss & Kontakt | KBT Skeppsbron – Legitimerade psykoterapeuter i Göteborg</title>
+  <meta name="description" content="Möt teamet på KBT Skeppsbron i Göteborg. Alla våra terapeuter är legitimerade och erfarna inom KBT, parterapi, handledning och utbildning. Boka tid som privatperson eller företag." />
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Fonts & icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+  <style>
+    /* ===================== Bas / Variabler ===================== */
+    :root{
+      --brand-deep:#180f29;
+      --brand-mid:#6f6a7b;
+      --brand-accent:#92b7c7;
+      --brand-rose:#59484c;
+      --brand-plum:#9e8cae;
+
+      --bg:#ffffff;
+      --accent:#7cb1c8;
+      --surface:#ffffff;
+      --surface-alt:#f6f7fb;
+      --text:#1d1b26;
+      --text-dim:#5d5869;
+      --border:rgba(24,15,41,.12);
+
+      --radius-lg:1rem;
+      --radius-full:999px;
+      --shadow:0 24px 48px rgba(0,0,0,.08);
+      --shadow-strong:0 40px 80px rgba(0,0,0,.18);
+    }
+    /* Dark theme overrides */
+    html[data-theme="dark"]{
+      --bg:#0f1116;
+      --surface:#141720;
+      --surface-alt:#10131a;
+      --text:#eef1f7;
+      --text-dim:#abb0bf;
+      --border:rgba(255,255,255,.12);
+      --shadow:0 20px 40px rgba(0,0,0,.6);
+      --shadow-strong:0 50px 90px rgba(0,0,0,.75);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:auto}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);background:var(--bg);line-height:1.55;
+      overflow-x:hidden; /* hindra ”vitt område” horisontellt */
+    }
+    img{max-width:100%;height:auto;display:block;border:0}
+    a{color:var(--brand-deep);text-decoration:none}
+    html[data-theme="dark"] a{color:#b9d5df}
+    a:hover{text-decoration:underline}
+    .container{width:min(1200px,92%);margin-inline:auto}
+    .sr-only{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+
+    /* ===================== Dekorativ bakgrund ===================== */
+    .bg-decor{position:relative;isolation:isolate;overflow-x:hidden; /* behåll horisontellt klipp */ }
+    .bg-decor::before,
+    .bg-decor::after{
+      content:"";
+      position:fixed; /* FIX: var absolute → skapade extra ”vit yta” */
+      width:60vmax;height:60vmax;pointer-events:none;z-index:-1;
+      filter:blur(40px);
+    }
+    .bg-decor::before{
+      left:-10%;bottom:10%;
+      background:radial-gradient(closest-side, rgba(146,183,199,.20), rgba(146,183,199,0) 70%);
+      transform:rotate(-10deg);
+    }
+    .bg-decor::after{
+      right:-15%;top:-10%;
+      background:radial-gradient(closest-side, rgba(158,140,174,.18), rgba(158,140,174,0) 70%);
+      transform:rotate(8deg);
+    }
+
+      /* ===== TOP NAV (identisk look som handledning) ===== */
+      header.site-topnav{background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:1000;backdrop-filter:saturate(140%) blur(6px)}
+    .topnav-inner{max-width:1200px;margin:0 auto;padding:.75rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+    .brand-block{display:flex;align-items:center;gap:.75rem;color:var(--text);text-decoration:none}
+    .brand-block img{height:56px;width:auto}
+    .brand-text{font-size:.9rem;font-weight:600;letter-spacing:-.02em}
+    .brand-text span{display:block;font-size:.8rem;color:var(--muted);font-weight:400}
+    nav.top-links{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+    nav.top-links a{color:var(--text);font-weight:500;padding:.4rem .75rem;border-radius:.5rem;border:1px solid transparent}
+    nav.top-links a:hover{background:rgba(146,183,199,.14);text-decoration:none}
+    nav.top-links a[aria-current="page"]{
+      background:var(--accent);
+      color:#fff;
+    }
+    .theme-toggle{display:inline-flex;align-items:center;gap:.45rem;border:1px solid var(--border);border-radius:999px;padding:.42rem .7rem;background:var(--card);color:var(--text);cursor:pointer;font-weight:600}
+    .theme-toggle .material-icons{font-size:1.1rem}
+
+    /* ===== HERO (som handledning – men med ert hjärta/knappar och BILD TILL HÖGER) ===== */
+    .hero-wrap{
+      background:
+        radial-gradient(circle at 15% 20%, rgba(146,183,199,.18) 0%, rgba(249,247,245,0) 70%),
+        radial-gradient(circle at 85% 120%, rgba(158,140,174,.14) 0%, rgba(255,255,255,0) 70%);
+      border-bottom:1px solid var(--border);
+    }
+    html[data-theme="dark"] .hero-wrap{
+      background:
+        radial-gradient(circle at 15% 20%, rgba(146,183,199,.22) 0%, rgba(15,17,21,0) 70%),
+        radial-gradient(circle at 85% 120%, rgba(158,140,174,.20) 0%, rgba(15,17,21,0) 70%);
+    }
+    .hero{max-width:1200px;margin:0 auto;padding:3rem 1rem 2rem;display:grid;gap:2rem}
+    @media(min-width:900px){.hero{grid-template-columns:1fr 420px;align-items:start}}
+    .hero-content{display:flex;flex-direction:column;gap:1rem}
+    .hero-eyebrow{font-size:.8rem;font-weight:700;color:var(--accent);letter-spacing:.12em;text-transform:uppercase}
+    .hero-content h1{font-size:clamp(2rem,1vw+1.1rem,2.4rem);line-height:1.2;font-weight:700;letter-spacing:-.03em;color:var(--text);display:flex;gap:.5rem;align-items:flex-start;margin:0}
+    .hero-content h1 .material-icons{font-size:1.5rem;color:#59484c}
+    .lead{font-size:1.05rem;color:var(--muted);max-width:65ch}
+    .hero-cta{display:flex;flex-wrap:wrap;gap:.6rem}
+    .btn{display:inline-flex;align-items:center;gap:.4rem;border:1px solid var(--border);background:var(--card);color:var(--text);padding:.6rem 1rem;border-radius:999px;font-weight:600;text-decoration:none}
+    .btn:hover{text-decoration:none;box-shadow:0 18px 30px rgba(0,0,0,.06)}
+    .btn-primary{background:var(--accent);color:#0d1720;border-color:transparent;box-shadow:0 16px 32px rgba(146,183,199,.45)}
+    .side-media{background:var(--card);border:1px solid var(--border);border-radius:.9rem;box-shadow:var(--shadow);overflow:hidden}
+    .side-media img{width:100%;height:auto;display:block;aspect-ratio:4/3;object-fit:cover}
+    /* VIKTIGT: ingen blur/overlay-lager ovanpå bilden. */
+
+    main{max-width:1200px;margin:0 auto;padding:2rem 1rem 4rem}
+
+    /* ===================== Intro (Vår grundsyn) ===================== */
+    .intro{
+      display:grid;gap:1.25rem;overflow:hidden;
+      border:1px solid var(--border);border-radius:var(--radius-lg);
+      box-shadow:var(--shadow);padding:1.25rem;background:var(--surface);
+      background-image:
+        radial-gradient(1000px 480px at -10% 0%, rgba(158,140,174,.12), rgba(255,255,255,0) 60%),
+        radial-gradient(900px 520px at 110% 100%, rgba(146,183,199,.14), rgba(255,255,255,0) 60%);
+    }
+    @media(min-width:860px){
+      .intro{grid-template-columns:1.2fr .8fr;align-items:stretch}
+    }
+    .intro h1{
+      font-size:clamp(1.6rem,1vw+1.1rem,2rem);line-height:1.22;margin:0 0 .5rem;font-weight:800;
+      color:var(--brand-deep);display:flex;align-items:flex-start;gap:.5rem;letter-spacing:.2px;
+    }
+    .intro h1 .material-icons{font-size:1.4rem;color:var(--brand-accent)}
+    .intro .lead{font-size:1rem;line-height:1.75;color:var(--text);max-width:75ch;margin:0}
+    .intro-cta{margin-top:1rem;display:flex;gap:.5rem;flex-wrap:wrap}
+    .btn{appearance:none;border-radius:var(--radius-full);border:1px solid var(--brand-deep);background:var(--surface);color:var(--brand-deep);font-size:.9rem;font-weight:800;padding:.6rem .95rem;cursor:pointer;display:inline-flex;align-items:center;gap:.4rem}
+    .btn .material-icons{font-size:1rem}
+    .btn:hover{background:linear-gradient(135deg,var(--brand-deep), var(--brand-plum));color:#fff;border-color:transparent}
+    .btn-secondary{border-color:var(--border);color:var(--text)}
+    .btn-secondary:hover{background:rgba(146,183,199,.18);color:var(--brand-deep)}
+
+    .intro-media{
+      position:relative;border-radius:1rem;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);
+      min-height:260px;background:linear-gradient(120deg, rgba(146,183,199,.2), rgba(158,140,174,.18));
+    }
+    .intro-media img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:4/3}
+    .intro-media::after{
+      content:"";position:absolute;inset:auto 1rem 1rem auto;width:140px;height:140px;border-radius:1rem;backdrop-filter:blur(6px);
+      border:1px solid var(--border);box-shadow:var(--shadow);background:linear-gradient(180deg, rgba(255,255,255,.35), rgba(255,255,255,.05));
+    }
+
+    /* ===================== Mosaik (filter-triggers) ===================== */
+    .filter-hint{margin:1rem 0 .5rem;font-size:.9rem;color:var(--text-dim);display:flex;align-items:center;gap:.4rem}
+    .filter-hint .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, monospace;border:1px solid var(--border);padding:.1rem .35rem;border-radius:.4rem;background:var(--surface-alt);font-size:.8rem;color:var(--text)}
+    .mosaic{margin:1rem 0 0;display:grid;gap:1rem;grid-template-columns:1fr}
+    @media(min-width:800px){.mosaic{grid-template-columns:repeat(5,1fr)}}
+    .tile{
+      position:relative;overflow:hidden;border-radius:1rem;border:1px solid var(--border);
+      padding:1rem 1rem 1.25rem;background:var(--surface);box-shadow:var(--shadow);
+      transition:transform .18s ease, box-shadow .18s ease, outline-color .18s ease;
+      cursor:pointer;min-height:140px;
+      background-image:
+        radial-gradient(220px 180px at 10% 0%, rgba(146,183,199,.22), rgba(255,255,255,0) 60%),
+        radial-gradient(280px 200px at 120% 130%, rgba(158,140,174,.18), rgba(255,255,255,0) 60%);
+    }
+    .tile:hover{transform:translateY(-2px);box-shadow:var(--shadow-strong)}
+    .tile h3{margin:0 0 .35rem;font-size:1rem;line-height:1.3;font-weight:800;color:var(--brand-deep);display:flex;gap:.4rem;align-items:center}
+    .tile h3 .material-icons{font-size:1.1rem;color:var(--brand-accent)}
+    .tile p{margin:.25rem 0 0;font-size:.92rem;line-height:1.45;color:var(--text-dim)}
+    .tile .tile-link{display:inline-flex;margin-top:.6rem;font-weight:700;font-size:.85rem;gap:.35rem;align-items:center;color:var(--brand-deep);background:rgba(146,183,199,.18);border:1px solid rgba(146,183,199,.35);padding:.35rem .6rem;border-radius:.6rem;text-decoration:none}
+    .tile .tile-link:hover{text-decoration:none;background:rgba(146,183,199,.28)}
+    .tile.is-active{outline:2px solid var(--brand-plum);box-shadow:var(--shadow-strong)}
+    .tile .filter-badge{position:absolute;top:.6rem;right:.6rem;background:rgba(0,0,0,.08);color:var(--text-dim);border:1px solid var(--border);padding:.15rem .45rem;border-radius:.4rem;font-size:.72rem;font-weight:700}
+    .tile[role="button"]{outline-offset:2px}
+
+    .tile-a{background:linear-gradient(180deg, rgba(158,140,174,.16), rgba(255,255,255,0))}
+    .tile-b{background:linear-gradient(180deg, rgba(146,183,199,.18), rgba(255,255,255,0))}
+    .tile-c{background:linear-gradient(180deg, rgba(89,72,76,.10), rgba(255,255,255,0))}
+    .tile-d{background:linear-gradient(180deg, rgba(30,20,50,.08), rgba(255,255,255,0))}
+    .tile-reset{background:linear-gradient(180deg, rgba(24,15,41,.06), rgba(255,255,255,0))}
+
+    /* ===================== Chip-rad (sekundära filterkontroller) ===================== */
+    .chipbar{
+      margin:1rem 0 0;display:flex;flex-wrap:wrap;gap:.5rem;
+      align-items:center
+    }
+    .chipbar-label{font-size:.9rem;color:var(--text-dim);margin-right:.25rem}
+    .chip{
+      border:1px solid var(--border);background:var(--surface);padding:.4rem .7rem;border-radius:999px;
+      font-size:.85rem;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:.35rem;
+    }
+    .chip .material-icons{font-size:1rem}
+    .chip.is-active{background:rgba(146,183,199,.2);border-color:rgba(146,183,199,.6);color:var(--brand-deep)}
+    html[data-theme="dark"] .chip.is-active{color:#0f1220}
+
+    /* ===================== Kontaktkort ===================== */
+    .about-grid{display:grid;gap:1.5rem;margin-top:2rem}
+    @media(min-width:900px){.about-grid{grid-template-columns:1fr 1fr}}
+    .card{
+      background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow);
+      padding:1.2rem 1.2rem 1.1rem;display:flex;flex-direction:column;
+      background-image:
+        radial-gradient(800px 240px at -5% 0%, rgba(146,183,199,.14), rgba(255,255,255,0) 60%),
+        radial-gradient(600px 300px at 110% 120%, rgba(89,72,76,.10), rgba(255,255,255,0) 60%);
+    }
+    .card h2{margin:0;font-weight:800;color:var(--brand-deep);line-height:1.3;font-size:1.1rem;display:flex;align-items:center;gap:.5rem}
+    .card h2 .material-icons{font-size:1.15rem;color:var(--brand-accent)}
+    .card p{margin-top:.6rem;margin-bottom:0;color:var(--text);font-size:.95rem;line-height:1.55}
+
+    /* ===================== Team ===================== */
+    .team-section{margin-top:3rem}
+    .team-section>h2{margin:0 0 .4rem;font-size:1.35rem;font-weight:800;line-height:1.3;color:var(--brand-deep);display:flex;align-items:center;gap:.5rem}
+    .team-section>h2 .material-icons{font-size:1.2rem;color:var(--brand-accent)}
+    .team-count{margin:.15rem 0 1rem;font-size:.9rem;color:var(--text-dim)}
+    .team-grid{display:grid;gap:1.25rem;align-items:stretch}
+    @media(min-width:600px){.team-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:1000px){.team-grid{grid-template-columns:repeat(3,1fr)}}
+
+    .person-card{
+      background:var(--surface);border:1px solid var(--border);border-radius:1rem;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column;position:relative;
+      transition:opacity .22s ease, transform .22s ease;
+      background-image:
+        radial-gradient(500px 200px at 100% -10%, rgba(146,183,199,.16), rgba(255,255,255,0) 60%),
+        radial-gradient(400px 200px at -10% 120%, rgba(158,140,174,.14), rgba(255,255,255,0) 60%);
+    }
+    .person-media{position:relative;background:#000}
+    .person-media img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover;filter:saturate(1.03) contrast(1.02)}
+    .person-badge{position:absolute;bottom:.75rem;left:.75rem;background:rgba(0,0,0,.58);color:#fff;border-radius:var(--radius-full);font-size:.72rem;line-height:1.2;padding:.4rem .6rem;box-shadow:0 10px 20px rgba(0,0,0,.4)}
+    .person-body{padding:1rem 1.1rem 1.2rem;display:flex;flex-direction:column;flex-grow:1}
+    .person-name{font-weight:800;font-size:1.08rem;line-height:1.3;margin:0 0 .2rem 0;color:var(--text)}
+    .person-role{font-size:.95rem;color:var(--text-dim);margin:0;line-height:1.45}
+    .contact-lines{font-size:.88rem;line-height:1.5;color:var(--text);margin-top:.7rem}
+    .contact-lines .material-icons{font-size:1rem;line-height:1;vertical-align:middle;margin-right:.4rem;color:var(--brand-accent)}
+    .tags{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0 0;padding:0;list-style:none}
+    .tags li{background:rgba(146,183,199,.16);color:var(--brand-deep);border-radius:var(--radius-full);padding:.35rem .6rem;font-size:.8rem;line-height:1.2;font-weight:700;border:1px solid rgba(146,183,199,.45)}
+    .person-actions{margin-top:auto;padding-top:1rem;display:flex;flex-wrap:wrap;gap:.5rem}
+
+    .person-card.is-hiding{opacity:0;transform:scale(.98);pointer-events:none}
+    .person-card.is-hidden{display:none}
+
+    /* ===================== Info / Karta ===================== */
+    .info-section{margin-top:3rem;display:grid;gap:1.2rem}
+    @media(min-width:700px){.info-section{grid-template-columns:1fr 1fr}}
+    .info-card{
+      background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow);
+      padding:1.25rem 1.25rem 1.1rem;
+      background-image:
+        radial-gradient(900px 220px at -5% 0%, rgba(24,15,41,.06), rgba(255,255,255,0) 60%),
+        radial-gradient(600px 260px at 120% 110%, rgba(146,183,199,.18), rgba(255,255,255,0) 60%);
+    }
+    .info-card h2{margin-top:0;font-size:1.15rem;font-weight:800;line-height:1.35;color:var(--brand-deep);display:flex;align-items:center;gap:.5rem}
+    .info-card h2 .material-icons{font-size:1.1rem;color:var(--brand-accent)}
+    .info-card p{margin-top:.5rem;line-height:1.55;font-size:.95rem;color:var(--text)}
+
+    .map-section{margin-top:2rem;display:grid;gap:1.2rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:1.2rem}
+    @media(min-width:900px){.map-section{grid-template-columns:1fr 1fr;align-items:start}}
+    .map-text h2{margin:0;font-size:1.15rem;font-weight:800;color:var(--brand-deep);line-height:1.3;display:flex;align-items:center;gap:.5rem}
+    .map-text h2 .material-icons{font-size:1.1rem;color:var(--brand-accent)}
+    .map-text p{margin:.7rem 0 0;font-size:.95rem;line-height:1.55;color:var(--text)}
+    .map-wrapper{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);min-height:260px}
+    .map-frame{width:100%;height:100%;min-height:260px;border:0;display:block}
+
+    /* ===================== Footer ===================== */
+    footer.site-footer{
+      background:radial-gradient(circle at 25% 25%, rgba(146,183,199,0.25) 0%, rgba(31,42,48,0) 80%),#1f2a30;
+      color:#fff;padding:3rem 1.5rem 3.2rem;border-top:1px solid rgba(255,255,255,0.08);line-height:1.6;font-size:16px;margin-top:4rem
+    }
+    .footer-top{max-width:1200px;margin:0 auto 2rem;text-align:center}
+    .footer-top img{height:80px;width:auto;filter:brightness(1) contrast(1.05);display:block;margin:0 auto}
+    .footer-top-tagline{font-size:.9rem;color:rgba(255,255,255,.8);letter-spacing:.03em;margin-top:.5rem}
+    .footer-top hr{width:100%;max-width:280px;border:0;border-top:1px solid rgba(146,183,199,.4);margin:1.75rem auto 0}
+    .footer-grid{max-width:1200px;margin:0 auto 3rem;display:grid;gap:2rem 3rem}
+    @media(min-width:600px){.footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(min-width:900px){.footer-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    .footer-col h3{margin:0 0 .75rem;font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-accent)}
+    .footer-col p,.footer-col address,.footer-col a{color:rgba(255,255,255,.9);font-size:.95rem;line-height:1.6;font-style:normal;text-decoration:none}
+    .footer-col a:hover{color:#92b7c7;text-decoration:underline}
+    .footer-menu{list-style:none;padding:0;margin:0;font-size:.95rem}
+    .footer-menu li{margin:.4rem 0}
+    .footer-menu a{color:rgba(255,255,255,.9)}
+    .footer-menu a:hover{color:#92b7c7}
+    .footer-bottom{max-width:1200px;margin:0 auto;border-top:1px solid rgba(255,255,255,0.08);padding-top:1.5rem;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:rgba(255,255,255,.7);font-size:.85rem;line-height:1.6;gap:1rem}
+    .footer-bottom a{color:#92b7c7}
+    .footer-bottom a:hover{text-decoration:underline}
+    .footer-bottom img{height:34px;width:auto;filter:brightness(1) contrast(1.05);display:block}
+
+    /* ===================== Modal ===================== */
+    .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;padding:1rem;z-index:2000}
+    .modal-backdrop[hidden]{display:none}
+    .modal{background:var(--surface);color:var(--text);width:min(520px,92vw);max-height:90vh;overflow:auto;border-radius:var(--radius-lg);box-shadow:var(--shadow-strong);border:1px solid var(--border)}
+    .modal-header{display:flex;justify-content:space-between;align-items:flex-start;padding:1rem 1rem .75rem;border-bottom:1px solid var(--border);background:linear-gradient(to right, rgba(146,183,199,0.14), rgba(255,255,255,0));position:sticky;top:0;z-index:5}
+    .modal-header h2{margin:0;font-size:1.05rem;font-weight:800;line-height:1.3;color:var(--brand-deep);max-width:90%}
+    .modal-close{background:none;border:0;font-size:1.6rem;line-height:1;cursor:pointer;color:var(--text-dim)}
+    .modal-body{padding:1rem 1rem 1.5rem;font-size:.95rem;line-height:1.55;color:var(--text)}
+    .modal-headline{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:1rem}
+    .modal-thumb{flex:0 0 64px;width:64px;height:64px;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow)}
+    .modal-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+    .modal-summary{flex:1;font-size:.92rem;line-height:1.45;color:var(--text-dim)}
+    .modal-body h3{margin:1.3rem 0 .5rem;font-size:1rem;font-weight:800;color:var(--brand-deep);display:flex;align-items:center;gap:.4rem}
+    .modal-body h3 .material-icons{font-size:1rem;color:var(--brand-accent)}
+    .modal-body ul{margin-top:.5rem;margin-bottom:1rem;padding-left:1.25rem}
+    .modal-body li{margin-bottom:.4rem}
+    .modal-contact{margin-top:1rem;padding:1rem;border-top:1px solid var(--border);font-size:.9rem;line-height:1.5;color:var(--text);background:var(--surface-alt);border-radius:var(--radius-lg)}
+    .modal-contact .material-icons{font-size:1rem;margin-right:.4rem;color:var(--brand-accent);vertical-align:middle}
+    .related-links{margin-top:.75rem;display:flex;gap:.5rem;flex-wrap:wrap}
+
+    /* ===================== Reveal-effekter ===================== */
+    .reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease, transform .5s ease}
+    .reveal.is-visible{opacity:1;transform:none}
+  </style>
+</head>
+<body class="bg-decor">
+  <a class="sr-only" href="#main">Hoppa till innehåll</a>
+
+  <!-- ===== TOP NAV (samma som handledning) ===== -->
+  <header class="site-topnav" role="banner">
+    <div class="topnav-inner">
+      <a class="brand-block" href="/index.html">
+        <img src="/assets/images/kbt-skeppsbron-logo.jpg" alt="KBT Skeppsbron logotyp">
+        <div class="brand-text">KBT Skeppsbron <span>Göteborg</span></div>
+      </a>
+
+      <nav class="top-links" aria-label="Huvudmeny">
+        <a href="/index.html">Hem</a>
+        <a href="/behandling.html">Behandling</a>
+        <a href="/utbildning.html">Utbildning</a>
+        <a href="/handledning.html">Handledning</a>
+        <a href="/om_kontakt.html" aria-current="page">Om oss/Kontakt</a>
+
+        
+
+        <!-- Endast EN kontaktlänk i menyn (som tidigare) -->
+        <!-- Tema-knappen kommer DIREKT efter kontaktlänken -->
+        <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false" title="Växla tema">
+          <span class="material-icons" aria-hidden="true">dark_mode</span> Tema
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero-wrap">
+    <div class="hero">
+      <div class="hero-content">
+        <div class="hero-eyebrow">Om oss</div>
+        <h1><span class="material-icons" aria-hidden="true">favorite</span> Vår grundsyn</h1>
+        <p class="lead">
+          Vi ser människan som en helhet – kropp, själ och medvetande – och varje människa som unik.
+          Vi tror på människans förmåga att genom nya insikter och kunskap kunna göra goda val
+          och förändra sådant som inte längre är hjälpsamt.
+          <br><br>
+          Hos oss på KBT Skeppsbron får du hjälp genom KBT och moderna KBT-inriktningar. Alla våra psykoterapeuter har legitimation.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="mailto:info@kbtskeppsbron.se"><span class="material-icons">email</span> Kontakta oss</a>
+          <a class="btn" href="#team"><span class="material-icons">groups</span> Möt vårt team</a>
+        </div>
+      </div>
+
+      <!-- Behåller BILD till höger. Ingen blur-overlay. -->
+      <aside class="side-media">
+        <img src="/assets/images/4.jpg" alt="Mottagningsmiljö hos KBT Skeppsbron">
+      </aside>
+    </div>
+  </section>
+
+  <main id="main" role="main" class="container">
+
+  <!-- ===================== MAIN ===================== -->
+  <main id="main" class="container" role="main">
+
+
+    <!-- KONTAKTKORT -->
+    <section class="about-grid reveal" id="kontaktinfo">
+      <article class="card">
+        <h2><span class="material-icons" aria-hidden="true">person</span> Privatpersoner</h2>
+        <p>
+          Vill du boka tid för psykoterapi, parterapi, egenterapi eller handledning?
+          Mejla <a href="mailto:info@kbtskeppsbron.se">info@kbtskeppsbron.se</a>
+          eller ta direkt kontakt med den psykoterapeut du vill träffa här nedanför.
+          <br><br><strong>Viktigt:</strong> Skriv inte känsliga personuppgifter i mejl.
+        </p>
+      </article>
+
+      <article class="card">
+        <h2><span class="material-icons" aria-hidden="true">business_center</span> Företag</h2>
+        <p>
+          Vill ni knyta avtal gällande psykoterapi, handledning eller utbildning?
+          Mejla <a href="mailto:foretagshalsa@kbtskeppsbron.se">foretagshalsa@kbtskeppsbron.se</a>
+          eller ring Matilda Zackrisson: 0708&nbsp;91&nbsp;91&nbsp;19.
+          <br><br>Vi hjälper företag med arbetsmiljö, stressprevention och chefsstöd.
+        </p>
+      </article>
+    </section>
+<!-- FILTER-HINT + MOSAIK -->
+<div class="filter-hint">
+    <span class="material-icons" aria-hidden="true">tune</span>
+    <strong>Filtrera teamet:</strong> Klicka på ett kort nedan eller använd chip-knapparna. <span class="kbd">Enter</span> aktiverar val när kortet är i fokus.
+  </div>
+
+  <section class="mosaic reveal" aria-label="Genvägar som filtrerar teamet">
+    <article class="tile tile-a js-filter" data-filter="parterapi" tabindex="0" role="button" aria-pressed="false">
+      <span class="filter-badge">Filter</span>
+      <h3><span class="material-icons" aria-hidden="true">favorite</span> Parterapi (IBCT)</h3>
+      <p>Stärk närhet och kommunikation – stöd i konflikter och livsförändringar.</p>
+      <a class="tile-link" href="/behandling/ibct-parterapi.html">Läs mer</a>
+    </article>
+
+    <article class="tile tile-b js-filter" data-filter="ångest" tabindex="0" role="button" aria-pressed="false">
+      <span class="filter-badge">Filter</span>
+      <h3><span class="material-icons" aria-hidden="true">psychology</span> Ångest & oro</h3>
+      <p>Konkreta KBT-verktyg för att minska undvikande och bygga mod.</p>
+      <a class="tile-link" href="/behandling/angest-oro.html">Läs mer</a>
+    </article>
+
+    <article class="tile tile-c js-filter" data-filter="stress" tabindex="0" role="button" aria-pressed="false">
+      <span class="filter-badge">Filter</span>
+      <h3><span class="material-icons" aria-hidden="true">self_improvement</span> Stress & utmattning</h3>
+      <p>Återhämtning med KBT/ACT – balans mellan krav, vila och vardag.</p>
+      <a class="tile-link" href="/behandling/stress-och-utmattning.html">Läs mer</a>
+    </article>
+
+    <article class="tile tile-d js-filter" data-filter="barn" tabindex="0" role="button" aria-pressed="false">
+      <span class="filter-badge">Filter</span>
+      <h3><span class="material-icons" aria-hidden="true">child_care</span> Barn & föräldrar</h3>
+      <p>Stöd till barn/unga och föräldrar – relation, kommunikation, skola.</p>
+      <a class="tile-link" href="/behandling/foraldrastod.html">Läs mer</a>
+    </article>
+
+    <article class="tile tile-reset js-filter-reset" aria-label="Visa alla behandlare" tabindex="0" role="button" aria-pressed="true">
+      <span class="filter-badge">Filter</span>
+      <h3><span class="material-icons" aria-hidden="true">filter_alt_off</span> Visa alla</h3>
+      <p>Återställ filtrering och visa hela teamet.</p>
+      <button class="tile-link" type="button">Återställ</button>
+    </article>
+  </section>
+
+  <!-- CHIP-RAD (synkad med mosaiken) -->
+  <nav class="chipbar" aria-label="Filter för teamet">
+    <span class="chipbar-label">Snabbfilter:</span>
+    <button class="chip js-chip" data-filter="parterapi"><span class="material-icons">favorite</span> Par</button>
+    <button class="chip js-chip" data-filter="ångest"><span class="material-icons">psychology</span> Ångest</button>
+    <button class="chip js-chip" data-filter="stress"><span class="material-icons">self_improvement</span> Stress</button>
+    <button class="chip js-chip" data-filter="barn"><span class="material-icons">child_care</span> Barn & föräldrar</button>
+    <button class="chip js-chip" data-filter=""><span class="material-icons">filter_alt_off</span> Alla</button>
+  </nav>
+    <!-- TEAM (oförändrade personkort från din version) -->
+    <section class="team-section" id="team">
+      <h2 class="reveal"><span class="material-icons" aria-hidden="true">groups</span> Vårt team</h2>
+      <p id="teamCount" class="team-count reveal" aria-live="polite"></p>
+
+      <div class="team-grid">
+
+        <!-- ------- Personkort (samma som i din senaste fil) ------- -->
+        <!-- Anette -->
+        <article class="person-card reveal" data-person-modal="anette">
+          <div class="person-media">
+            <img src="/assets/images/port/anette.jpg" alt="Anette Edsberger" />
+            <div class="person-badge">KBT & Parterapi</div>
+          </div>
+          <div class="person-body">
+            <h3 class="person-name">Anette Edsberger</h3>
+            <p class="person-role">Leg. sjukgymnast & leg. psykoterapeut KBT. Erfaren inom stress/utmattning, ångest, självkänsla och parterapi (IBCT).</p>
+            <div class="contact-lines">
+              <div><span class="material-icons">call</span>0709 28 68 78</div>
+              <div><span class="material-icons">alternate_email</span><a href="mailto:anette@kbtskeppsbron.se">anette@kbtskeppsbron.se</a></div>
+            </div>
+            <ul class="tags">
+              <li>Stress / utmattning</li><li>Ångest</li><li>IBCT (par)</li><li>Självkänsla</li>
+            </ul>
+            <div class="person-actions">
+              <button class="btn js-open-modal" data-modal="anette">
+                <span class="material-icons" aria-hidden="true">visibility</span> Läs mer
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Jan-Eric -->
+        <article class="person-card reveal" data-person-modal="jan-eric">
+          <div class="person-media">
+            <img src="/assets/images/port/jan-eric.jpg" alt="Jan-Eric Jönsson" />
+            <div class="person-badge">Ångest & OCD</div>
+          </div>
+          <div class="person-body">
+            <h3 class="person-name">Jan-Eric Jönsson</h3>
+            <p class="person-role">Leg. psykolog & leg. psykoterapeut KBT. Handledare med särskild kompetens inom ångest och tvångssyndrom (OCD).</p>
+            <div class="contact-lines">
+              <div><span class="material-icons">call</span>0702 63 48 66</div>
+              <div><span class="material-icons">alternate_email</span><a href="mailto:jan.eric.jonsson@mindmeetab.com">jan.eric.jonsson@mindmeetab.com</a></div>
+            </div>
+            <ul class="tags">
+              <li>Tvång / OCD</li><li>Ångest</li><li>Utbildning</li><li>Handledning</li>
+            </ul>
+            <div class="person-actions">
+              <button class="btn js-open-modal" data-modal="jan-eric">
+                <span class="material-icons" aria-hidden="true">visibility</span> Läs mer
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Billy -->
+        <article class="person-card reveal" data-person-modal="billy">
+          <div class="person-media">
+            <img src="/assets/images/port/billy.jpg" alt="Billy Larsson" />
+            <div class="person-badge">Relationer & Par</div>
+          </div>
+          <div class="person-body">
+            <h3 class="person-name">Billy Larsson</h3>
+            <p class="person-role">Leg. psykolog & leg. psykoterapeut KBT, handledare i KBT, fil.dr. Arbetar med relationell KBT, parterapi och utbildning.</p>
+            <div class="contact-lines">
+              <div><span class="material-icons">call</span>073 63 95 019</div>
+              <div><span class="material-icons">alternate_email</span><a href="mailto:billy@kbtskeppsbron.se">billy@kbtskeppsbron.se</a></div>
+              <div><span class="material-icons">menu</span><a href="http://www.blpsykolog.se" target="_blank" rel="noopener">Hemsida</a></div>
+            </div>
+            <ul class="tags">
+              <li>KBT</li><li>Parterapi</li><li>Relationella färdigheter</li><li>Handledare</li>
+            </ul>
+            <div class="person-actions">
+              <button class="btn js-open-modal" data-modal="billy">
+                <span class="material-icons" aria-hidden="true">visibility</span> Läs mer
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Sally -->
+        <article class="person-card reveal" data-person-modal="sally">
+          <div class="person-media">
+            <img src="/assets/images/port/sally.jpg" alt="Sally Marshall" />
+            <div class="person-badge">Par & Sexologi</div>
+          </div>
+          <div class="person-body">
+            <h3 class="person-name">Sally Marshall</h3>
+            <p class="person-role">Leg. psykolog & leg. psykoterapeut KBT. Specialiserad i parterapi (IBCT), sexologi samt stress/utmattning med ACT/FACT.</p>
+            <div class="contact-lines">
+              <div><span class="material-icons">call</span>0730 57 85 20</div>
+              <div><span class="material-icons">alternate_email</span><a href="mailto:sally@kbtskeppsbron.se">sally@kbtskeppsbron.se</a></div>
+              <div><span class="material-icons">menu</span><a href="http://www.sallymarshall.se" target="_blank" rel="noopener">Hemsida</a></div>
+            </div>
+            <ul class="tags">
+              <li>Parterapi (IBCT)</li><li>Sexologisk behandling</li><li>Stress / utmattning</li><li>ACT / FACT</li>
+            </ul>
+            <div class="person-actions">
+              <button class="btn js-open-modal" data-modal="sally">
+                <span class="material-icons" aria-hidden="true">visibility</span> Läs mer
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Lillian -->
+        <article class="person-card reveal" data-person-modal="lillian">
+          <div class="person-media">
+            <img src="/assets/images/port/lillian.jpg" alt="Lillian Noring-Andersson" />
+            <div class="person-badge">Handledare</div>
+          </div>
+          <div class="person-body">
+            <h3 class="person-name">Lillian Noring-Andersson</h3>
+            <p class="person-role">Leg. sjuksköterska & leg. psykoterapeut KBT. Lång erfarenhet av ångest, depression, ätstörningar samt undervisning/handledning.</p>
+            <div class="contact-lines">
+              <div><span class="material-icons">call</span>0709 60 89 10</div>
+              <div><span class="material-icons">alternate_email</span><a href="mailto:lillian@kbtskeppsbron.se">lillian@kbtskeppsbron.se</a></div>
+            </div>
+            <ul class="tags">
+              <li>Ångest</li><li>Depression</li><li>Ätstörningar</li><li>Handledare</li>
+            </ul>
+            <div class="person-actions">
+              <button class="btn js-open-modal" data-modal="lillian">
+                <span class="material-icons" aria-hidden="true">visibility</span> Läs mer
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Camilla -->
+        <article class="person-card reveal" data-person-modal="camilla">
+          <div class="person-media">
+            <img src="/assets/images/port/camilla.jpg" alt="Camilla O´Keeffe" />
+            <div class="person-badge">Neuro / Stress</div>
+          </div>
+          <div class="person-body">
+            <h3 class="person-name">Camilla O´Keeffe</h3>
+            <p class="person-role">Leg. psykolog & leg. psykoterapeut KBT. Specialist i klinisk psykologi. Erfaren inom neuropsykologi, trauma och stress/utmattning.</p>
+            <div class="contact-lines">
+              <div><span class="material-icons">call</span>0705 37 49 75</div>
+              <div><span class="material-icons">alternate_email</span><a href="mailto:camilla@kbtskeppsbron.se">camilla@kbtskeppsbron.se</a></div>
+            </div>
+            <ul class="tags">
+              <li>Neuropsykologi</li><li>PTSD / trauma</li><li>Stress & utmattning</li><li>Mindfulness</li>
+            </ul>
+            <div class="person-actions">
+              <button class="btn js-open-modal" data-modal="camilla">
+                <span class="material-icons" aria-hidden="true">visibility</span> Läs mer
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Lotta -->
+        <article class="person-card reveal" data-person-modal="lotta">
+          <div class="person-media">
+            <img src="/assets/images/port/lotta.jpg" alt="Lotta Scholander" />
+            <div class="person-badge">Specialist KBT</div>
+          </div>
+          <div class="person-body">
+            <h3 class="person-name">Lotta Scholander</h3>
+            <p class="person-role">Leg. psykolog & leg. psykoterapeut KBT. Specialist i psykologisk behandling. Arbetar med ungdomar, självkänsla, utmattning och handledning.</p>
+            <div class="contact-lines">
+              <div><span class="material-icons">call</span>0736 40 38 45</div>
+              <div><span class="material-icons">alternate_email</span><a href="mailto:lotta@kbtskeppsbron.se">lotta@kbtskeppsbron.se</a></div>
+            </div>
+            <ul class="tags">
+              <li>Ungdomar</li><li>Utmattning & självkänsla</li><li>Par</li><li>Handledare</li>
+            </ul>
+            <div class="person-actions">
+              <button class="btn js-open-modal" data-modal="lotta">
+                <span class="material-icons" aria-hidden="true">visibility</span> Läs mer
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Marie -->
+        <article class="person-card reveal" data-person-modal="marie">
+          <div class="person-media">
+            <img src="/assets/images/port/marie.jpg" alt="Marie Wånsander" />
+            <div class="person-badge">Stress & Livskriser</div>
+          </div>
+          <div class="person-body">
+            <h3 class="person-name">Marie Wånsander</h3>
+            <p class="person-role">Leg. psykoterapeut KBT, leg. hälso- och sjukvårdskurator, auktoriserad socionom. Särskild erfarenhet av stress, utmattning och livskriser.</p>
+            <div class="contact-lines">
+              <div><span class="material-icons">call</span>070 401 93 56</div>
+              <div><span class="material-icons">alternate_email</span><a href="mailto:marie@kbtskeppsbron.se">marie@kbtskeppsbron.se</a></div>
+              <div><span class="material-icons">menu</span><a href="http://www.invivocura.se" target="_blank" rel="noopener">Hemsida</a></div>
+            </div>
+            <ul class="tags">
+              <li>Stress</li><li>Utmattning</li><li>Livskriser</li><li>Par</li>
+            </ul>
+            <div class="person-actions">
+              <button class="btn js-open-modal" data-modal="marie">
+                <span class="material-icons" aria-hidden="true">visibility</span> Läs mer
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Matilda -->
+        <article class="person-card reveal" data-person-modal="matilda">
+          <div class="person-media">
+            <img src="/assets/images/port/matilda.jpg" alt="Matilda Zackrisson" />
+            <div class="person-badge">Chefsstöd & Avtal</div>
+          </div>
+          <div class="person-body">
+            <h3 class="person-name">Matilda Zackrisson</h3>
+            <p class="person-role">Socionom, leg. psykoterapeut KBT, handledare. Arbetar med individer, par, adoption/familj samt chefs- och personalstöd.</p>
+            <div class="contact-lines">
+              <div><span class="material-icons">call</span>0708 91 91 19</div>
+              <div><span class="material-icons">alternate_email</span><a href="mailto:matilda@kbtskeppsbron.se">matilda@kbtskeppsbron.se</a></div>
+              <div><span class="material-icons">menu</span><a href="http://www.kbtgoteborg.com" target="_blank" rel="noopener">Hemsida</a></div>
+            </div>
+            <ul class="tags">
+              <li>Handledare</li><li>Arbetsmiljö</li><li>Adoption / familj</li><li>Par & individ</li>
+            </ul>
+            <div class="person-actions">
+              <button class="btn js-open-modal" data-modal="matilda">
+                <span class="material-icons" aria-hidden="true">visibility</span> Läs mer
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Jonas -->
+        <article class="person-card reveal" data-person-modal="jonas">
+          <div class="person-media">
+            <img src="/assets/images/port/jonasrobertsson.jpg" alt="Jonas Robertsson" />
+            <div class="person-badge">Barn & Föräldrar</div>
+          </div>
+          <div class="person-body">
+            <h3 class="person-name">Jonas Robertsson</h3>
+            <p class="person-role">Leg. psykolog med fokus på barn, unga, föräldrar och familjerelationer. Arbetar med KBT, ABFT och MI.</p>
+            <div class="contact-lines">
+              <div><span class="material-icons">call</span>0707 74 43 60</div>
+              <div><span class="material-icons">alternate_email</span><a href="mailto:jonas@kbtskeppsbron.se">jonas@kbtskeppsbron.se</a></div>
+              <div><span class="material-icons">menu</span><a href="http://www.psykologrobertsson.com" target="_blank" rel="noopener">Hemsida</a></div>
+            </div>
+            <ul class="tags">
+              <li>Barn & unga</li><li>Föräldrastöd</li><li>Relation & kommunikation</li><li>KBT</li>
+            </ul>
+            <div class="person-actions">
+              <button class="btn js-open-modal" data-modal="jonas">
+                <span class="material-icons" aria-hidden="true">visibility</span> Läs mer
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Cathrine -->
+        <article class="person-card reveal" data-person-modal="cathrine">
+          <div class="person-media">
+            <img src="/assets/images/port/cathrine_1.jpg" alt="Cathrine Apelqvist" />
+            <div class="person-badge">Sexologi & HBTQI</div>
+          </div>
+          <div class="person-body">
+            <h3 class="person-name">Cathrine Apelqvist</h3>
+            <p class="person-role">Leg. psykoterapeut KBT, socionom & legitimerad hälso- och sjukvårdskurator. Arbetar med sexologiska frågor, par, trauma och HBTQI.</p>
+            <div class="contact-lines">
+              <div><span class="material-icons">call</span>0703 20 47 09</div>
+              <div><span class="material-icons">alternate_email</span><a href="mailto:cathrine@kbtskeppsbron.se">cathrine@kbtskeppsbron.se</a></div>
+              <div><span class="material-icons">menu</span><a href="https://kbtspektra.com/cathrine-apelqvist/" target="_blank" rel="noopener">Hemsida</a></div>
+            </div>
+            <ul class="tags">
+              <li>Sexologisk behandling</li><li>Par & individ</li><li>HBTQI-stöd</li><li>Trauma / OCD</li>
+            </ul>
+            <div class="person-actions">
+              <button class="btn js-open-modal" data-modal="cathrine">
+                <span class="material-icons" aria-hidden="true">visibility</span> Läs mer
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Annika -->
+        <article class="person-card reveal" data-person-modal="annika">
+          <div class="person-media">
+            <img src="/assets/images/port/annika_1.jpg" alt="Annika Hall" />
+            <div class="person-badge">Schematerapi</div>
+          </div>
+          <div class="person-body">
+            <h3 class="person-name">Annika Hall</h3>
+            <p class="person-role">Leg. psykoterapeut KBT, socionom & legitimerad hälso- och sjukvårdskurator. Särskild erfarenhet av..</p>
+            <div class="contact-lines">
+              <div><span class="material-icons">call</span>0733 99 23 77</div>
+              <div><span class="material-icons">alternate_email</span><a href="mailto:annika@kbtskeppsbron.se">annika@kbtskeppsbron.se</a></div>
+              <div><span class="material-icons">menu</span><a href="https://annikahall.com/" target="_blank" rel="noopener">Hemsida</a></div>
+            </div>
+            <ul class="tags">
+              <li>Schematerapi</li><li>CFT</li><li>Mindfulness</li><li>ACT</li><li>MI</li>
+            </ul>
+            <div class="person-actions">
+              <button class="btn js-open-modal" data-modal="annika">
+                <span class="material-icons" aria-hidden="true">visibility</span> Läs mer
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- PRIS / GDPR -->
+    <section class="info-section reveal" id="policy">
+      <article class="info-card">
+        <h2><span class="material-icons" aria-hidden="true">payments</span> Priser & avbokning</h2>
+        <p><strong>Priser för terapi:</strong> Riktpris för privat betalande är 1450 kr / 50 min. Övrigt sker i överenskommelse med psykoterapeut.</p>
+        <p><strong>Återbud:</strong><br>Senast 48 timmar före avtalad tid: ingen avgift.<br>Senast 24 timmar före: halv avgift.<br>Senare än 24 timmar före: full avgift.</p>
+        <p>Du kan komma privat, via din arbetsplats eller ditt försäkringsbolag.</p>
+      </article>
+
+      <article class="info-card">
+        <h2><span class="material-icons" aria-hidden="true">policy</span> Patientsäkerhet & GDPR</h2>
+        <p>Vi hanterar personuppgifter enligt GDPR och följer hälso- och sjukvårdslagen. Alla våra behandlare är legitimerade yrkesutövare.</p>
+        <p><strong>KBT Skeppsbron</strong><br>Surbrunnsgatan 6<br>411 19 Göteborg</p>
+        <p>E-post: <a href="mailto:info@kbtskeppsbron.se">info@kbtskeppsbron.se</a><br><em>Observera:</em> Skriv inte känsliga personuppgifter i mejl.</p>
+      </article>
+    </section>
+
+    <!-- HITTA HIT / KARTA -->
+    <section class="map-section reveal" id="hitta-hit">
+      <div class="map-text">
+        <h2><span class="material-icons" aria-hidden="true">location_on</span> Hitta till oss</h2>
+        <p>Surbrunnsgatan&nbsp;6, 411&nbsp;19 Göteborg. Centralt läge nära flera spårvagns- och busslinjer.</p>
+        <p><strong>Kollektivtrafik:</strong> Exempelvis Domkyrkan, Brunnsparken och Grönsakstorget.</p>
+        <p><a href="https://www.google.se/maps/place/Surbrunnsgatan+6,+Göteborg" target="_blank" rel="noopener" style="font-weight:700;">Öppna i Google Maps →</a></p>
+      </div>
+
+      <div class="map-wrapper">
+        <iframe class="map-frame" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Surbrunnsgatan+6,+Göteborg&output=embed"></iframe>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-top">
+      <a href="/index.html" style="text-decoration:none;display:inline-flex;flex-direction:column;align-items:center;gap:.5rem;">
+        <img src="/assets/images/kbt-skeppsbron-logo-footer.png" alt="KBT Skeppsbron logotyp" />
+        <div class="footer-top-tagline">KBT i Göteborg sedan 2002</div>
+      </a>
+      <hr />
+    </div>
+
+    <div class="footer-grid">
+      <section class="footer-col">
+        <h3>Kontakt</h3>
+        <address>
+          Surbrunnsgatan&nbsp;6<br>
+          411&nbsp;19&nbsp;Göteborg<br><br>
+          <a href="mailto:info@kbtskeppsbron.se">info@kbtskeppsbron.se</a>
+        </address>
+      </section>
+
+      <section class="footer-col">
+        <h3>Patientsäkerhet & Avbokning</h3>
+        <p>
+          Alla terapeuter hos oss är legitimerade och arbetar enligt hälso- och sjukvårdslagen.
+          Det innebär journalföring, sekretess och patientförsäkring.
+        </p>
+        <p>
+          Avbokning senast 48 h före kostnadsfritt.<br>
+          Inom 24 h debiteras halva priset, senare än 24 h fullt pris.
+        </p>
+      </section>
+
+      <nav class="footer-col" aria-label="Sidmeny i sidfoten">
+        <h3>Meny</h3>
+        <ul class="footer-menu">
+          <li><a href="/behandling.html">Behandling</a></li>
+          <li><a href="/utbildning.html">Utbildning</a></li>
+          <li><a href="/handledning.html">Handledning</a></li>
+          <li><a href="/om_kontakt.html">Om oss / Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <div>
+        © <span id="year"></span> KBT Skeppsbron<br>
+        Surbrunnsgatan&nbsp;6,&nbsp;411&nbsp;19&nbsp;Göteborg<br>
+        <a href="https://www.google.se/maps/place/Surbrunnsgatan+6,+Göteborg"
+           target="_blank" rel="noopener">Visa karta</a><br>
+        <a href="mailto:info@kbtskeppsbron.se">info@kbtskeppsbron.se</a>
+      </div>
+
+      <a href="https://www.socialstyrelsen.se/" target="_blank" rel="noopener" style="line-height:0;">
+        <img src="/assets/images/socialstyrelsen.png" alt="Socialstyrelsen logotyp" />
+      </a>
+    </div>
+  </footer>
+
+  <!-- ===================== MODAL ===================== -->
+  <div class="modal-backdrop" id="personModal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="personModalTitle">
+    <div class="modal" role="document">
+      <div class="modal-header">
+        <h2 id="personModalTitle"></h2>
+        <button class="modal-close" id="modalClose" aria-label="Stäng">&times;</button>
+      </div>
+      <div class="modal-body" id="personModalBody"></div>
+    </div>
+  </div>
+
+  <!-- ===================== SCRIPTS ===================== -->
+  <script>
+    // Dynamiskt år i footern
+    (function(){
+      var y=document.getElementById('year');
+      if(y){ y.textContent=new Date().getFullYear(); }
+    })();
+
+    // Tema-toggle (minns val i localStorage)
+    (function(){
+      const btn = document.getElementById('themeToggle');
+      const root = document.documentElement;
+      const saved = localStorage.getItem('theme');
+      if(saved){ root.setAttribute('data-theme', saved); btn.setAttribute('aria-pressed', saved==='dark'); }
+      btn.addEventListener('click', ()=>{
+        const isDark = root.getAttribute('data-theme')==='dark';
+        const next = isDark ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        btn.setAttribute('aria-pressed', String(next==='dark'));
+        localStorage.setItem('theme', next);
+      });
+    })();
+
+    // Mobilmeny toggle
+    (function(){
+      const toggle = document.getElementById('navToggle');
+      const menu = document.getElementById('mainmenu');
+      if(toggle && menu){
+        toggle.addEventListener('click',()=>{
+          const open = toggle.getAttribute('aria-expanded') === 'true';
+          toggle.setAttribute('aria-expanded', String(!open));
+          menu.style.display = open ? 'none' : 'flex';
+          if(!open){
+            menu.style.flexDirection = 'column';
+            menu.style.gap = '.5rem';
+            menu.style.background = 'var(--surface)';
+            menu.style.position='absolute';
+            menu.style.top='60px';
+            menu.style.right='4%';
+            menu.style.padding='1rem';
+            menu.style.border='1px solid var(--border)';
+            menu.style.borderRadius='var(--radius-lg)';
+            menu.style.boxShadow='var(--shadow)';
+            menu.style.zIndex='1500';
+          }
+        });
+      }
+    })();
+
+    // Reveal on scroll
+    (function(){
+      const els = document.querySelectorAll('.reveal');
+      if(!('IntersectionObserver' in window) || !els.length) {
+        els.forEach(el=>el.classList.add('is-visible'));
+        return;
+      }
+      const io = new IntersectionObserver(entries=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting){
+            e.target.classList.add('is-visible');
+            io.unobserve(e.target);
+          }
+        });
+      }, {threshold:.12});
+      els.forEach(el=>io.observe(el));
+    })();
+
+    // PERSONDATA för modaler (oförändrat från din version – kortat här för översikt)
+    const PERSON_DATA = {
+      'anette': { title:'Anette Edsberger – Sjukgymnast & Psykoterapeut KBT', img:'/assets/images/port/anette_2.jpg',
+        summary:'Leg. sjukgymnast och legitimerad psykoterapeut KBT. Erfaren inom stress/utmattning, ångest, självkänsla och parterapi (IBCT).',
+        html:`<h3><span class="material-icons">psychology</span> Inriktning</h3><p>…</p>` },
+      'jan-eric': { title:'Jan-Eric Jönsson', img:'/assets/images/port/jan-eric_2.jpg', summary:'…', html:`<h3>…</h3><p>…</p>` },
+      'billy': { title:'Billy Larsson', img:'/assets/images/port/billy_2.jpg', summary:'…', html:`<h3>…</h3><p>…</p>` },
+      'sally': { title:'Sally Marshall', img:'/assets/images/port/sally_2.jpg', summary:'…', html:`<h3>…</h3><p>…</p>` },
+      'lillian': { title:'Lillian Noring-Andersson', img:'/assets/images/port/lillian_2.jpg', summary:'…', html:`<h3>…</h3><p>…</p>` },
+      'camilla': { title:'Camilla O´Keeffe', img:'/assets/images/port/camilla_2.jpg', summary:'…', html:`<h3>…</h3><p>…</p>` },
+      'lotta': { title:'Lotta Scholander', img:'/assets/images/port/lotta_2.jpg', summary:'…', html:`<h3>…</h3><p>…</p>` },
+      'marie': { title:'Marie Wånsander', img:'/assets/images/port/marie_2.jpg', summary:'…', html:`<h3>…</h3><p>…</p>` },
+      'matilda': { title:'Matilda Zackrisson', img:'/assets/images/port/matilda_2.jpg', summary:'…', html:`<h3>…</h3><p>…</p>` },
+      'jonas': { title:'Jonas Robertsson', img:'/assets/images/port/jonasrobertsson.jpg', summary:'…', html:`<h3>…</h3><p>…</p>` },
+      'cathrine': { title:'Cathrine Apelqvist', img:'/assets/images/port/cathrine_1.jpg', summary:'…', html:`<h3>…</h3><p>…</p>` },
+      'annika': { title:'Annika Hall – Psykoterapeut KBT…', img:'/assets/images/port/annika_1.jpg', summary:'…', html:`<h3>…</h3><p>…</p>` }
+    };
+
+    // MODAL logik
+    (function(){
+      const backdrop = document.getElementById('personModal');
+      const bodyEl = document.getElementById('personModalBody');
+      const titleEl = document.getElementById('personModalTitle');
+      const closeBtn = document.getElementById('modalClose');
+
+      function openModal(id){
+        const data = PERSON_DATA[id];
+        if(!data) return;
+        titleEl.textContent = data.title;
+        bodyEl.innerHTML = `
+          <div class="modal-headline">
+            <div class="modal-thumb"><img src="${data.img}" alt="${data.title}"></div>
+            <div class="modal-summary">${data.summary}</div>
+          </div>${data.html}`;
+        backdrop.hidden = false;backdrop.setAttribute('aria-hidden','false');closeBtn.focus();
+        document.body.style.overflow='hidden';
+      }
+      function closeModal(){
+        backdrop.hidden = true;backdrop.setAttribute('aria-hidden','true');
+        document.body.style.overflow='';
+      }
+      document.querySelectorAll('.js-open-modal').forEach(btn=>{
+        btn.addEventListener('click',()=>openModal(btn.getAttribute('data-modal')));
+      });
+      closeBtn.addEventListener('click',closeModal);
+      backdrop.addEventListener('click',e=>{ if(e.target === backdrop){closeModal();} });
+      document.addEventListener('keydown',e=>{ if(e.key === 'Escape' && backdrop.hidden === false){ closeModal(); } });
+    })();
+
+    // ========= TEAM-FILTER (mosaik + chipbar + hash) =========
+    (function(){
+      const cards  = Array.from(document.querySelectorAll('.team-grid .person-card'));
+      const tiles  = Array.from(document.querySelectorAll('.mosaic .js-filter'));
+      const resetTile = document.querySelector('.mosaic .js-filter-reset');
+      const chips  = Array.from(document.querySelectorAll('.chipbar .js-chip'));
+      const countEl= document.getElementById('teamCount');
+
+      if(!cards.length) return;
+
+      const norm = s => (s||'').toString().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim();
+
+      const CARD_TAGS = new Map();
+      cards.forEach(card=>{
+        const tags = Array.from(card.querySelectorAll('.tags li')).map(li => norm(li.textContent));
+        CARD_TAGS.set(card, tags);
+      });
+
+      function updateCount(visible){
+        const total = cards.length;
+        if(countEl) countEl.textContent = visible===total ? `Visar alla ${total} behandlare` : `Visar ${visible} av ${total} behandlare`;
+      }
+
+      function hideCard(card){ if(card.classList.contains('is-hidden')) return; card.classList.add('is-hiding'); setTimeout(()=>card.classList.add('is-hidden'), 220); }
+      function showCard(card){ if(!card.classList.contains('is-hidden')){ card.classList.remove('is-hiding'); return; } card.classList.remove('is-hidden'); void card.offsetWidth; card.classList.remove('is-hiding'); }
+
+      function setActiveTile(active){
+        tiles.forEach(t => t.classList.toggle('is-active', t===active));
+        tiles.forEach(t => t.setAttribute('aria-pressed', t===active ? 'true' : 'false'));
+      }
+      function setActiveChip(filter){
+        chips.forEach(c => c.classList.toggle('is-active', norm(c.dataset.filter)===norm(filter)));
+      }
+
+      function applyFilter(raw){
+        const q = norm(raw);
+        let visible = 0;
+        cards.forEach(card=>{
+          const tags = CARD_TAGS.get(card) || [];
+          const matches = q==='' ? true : tags.some(tag => tag.includes(q) || q.includes(tag));
+          if(matches){ showCard(card); visible++; } else { hideCard(card); }
+        });
+        updateCount(visible);
+        const newHash = q ? `#filter=${encodeURIComponent(q)}` : '#';
+        if(location.hash !== newHash){ history.pushState(null, '', newHash); }
+        setActiveChip(q);
+      }
+
+      // Klick/Enter på mosaik
+      tiles.forEach(tile=>{
+        const trigger = ()=>{
+          const f = tile.getAttribute('data-filter') || '';
+          setActiveTile(tile); applyFilter(f);
+        };
+        tile.addEventListener('click',e=>{
+          const a = e.target.closest('a'); if(a && a.classList.contains('tile-link')) return;
+          e.preventDefault(); trigger();
+        });
+        tile.addEventListener('keydown',e=>{
+          if(e.key==='Enter' || e.key===' '){ e.preventDefault(); trigger(); }
+        });
+      });
+
+      // Chip-klick
+      chips.forEach(chip=>{
+        chip.addEventListener('click', ()=>{
+          const f = chip.dataset.filter || '';
+          setActiveTile(tiles.find(t => norm(t.dataset.filter)===norm(f)) || null);
+          applyFilter(f);
+        });
+      });
+
+      // Återställ via ”Visa alla”
+      if(resetTile){
+        const clear = ()=>{ setActiveTile(null); applyFilter(''); };
+        resetTile.addEventListener('click', e=>{ e.preventDefault(); clear(); });
+        resetTile.addEventListener('keydown', e=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); clear(); }});
+      }
+
+      // Läs hash vid laddning
+      function restoreFromHash(){
+        const m = location.hash.match(/#filter=([^&]+)/i);
+        if(m){
+          const q = decodeURIComponent(m[1]);
+          const hit = tiles.find(t => norm(t.dataset.filter) === norm(q));
+          setActiveTile(hit || null);
+          applyFilter(q);
+        } else {
+          updateCount(cards.length);
+          setActiveTile(null);
+          setActiveChip('');
+        }
+      }
+      window.addEventListener('popstate', restoreFromHash);
+      restoreFromHash();
+    })();
+  </script>
+
+  <!-- ===================== JSON-LD (oförändrat) ===================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+      "@id": "https://www.kbtskeppsbron.se/#org",
+      "name": "KBT Skeppsbron",
+      "url": "https://www.kbtskeppsbron.se/",
+      "logo": "https://www.kbtskeppsbron.se/assets/images/kbt-skeppsbron-logo-footer.png",
+      "address": { "@type": "PostalAddress","streetAddress": "Surbrunnsgatan 6","postalCode": "41119","addressLocality": "Göteborg","addressCountry": "SE" },
+      "email": "info@kbtskeppsbron.se","sameAs":[]
+      }
+    ]
+  }
+  </script>
+</body>
+</html>
