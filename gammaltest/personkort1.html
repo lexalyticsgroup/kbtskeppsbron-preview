@@ -82,7 +82,7 @@
     .btn-outline{background:var(--brand);border:1px solid var(--border);color:#fff}
     .btn-outline:hover{background:#fff;border-color:var(--accent);color:var(--brand)}
 
-    /* Info / Karta / Footer / Modal */
+    /* Info / Karta / Footer / Modal (oförändrat) */
     .info-section{margin-top:3rem;display:grid;gap:2rem}
     @media(min-width:700px){.info-section{grid-template-columns:1fr 1fr}}
     .info-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:1.5rem 1.5rem 1.25rem}
@@ -153,9 +153,15 @@
   <a class="sr-only" href="#main">Hoppa till innehåll</a>
 
   <!-- HEADER / NAV -->
-  <header class="site-header" role="banner"></header>
+  <header class="site-header" role="banner">
+   
+
+    
+  </header>
 
   <main id="main" class="container" role="main">
+    
+
     <!-- TEAM -->
     <section class="team-section" id="team">
       <h2><span class="material-icons" aria-hidden="true">groups</span> Vårt team</h2>
@@ -197,7 +203,7 @@
             <p class="person-role">Leg. psykolog & leg. psykoterapeut KBT. Handledare med särskild kompetens inom ångest och tvångssyndrom (OCD).</p>
             <div class="contact-lines">
               <div><span class="material-icons">call</span>0702 63 48 66</div>
-              <div><span class="material-icons">alternate_email</span><a href="mailto:jan-eric@kbtskeppsbron.se">jan-eric@kbtskeppsbron.se</a></div>
+              <div><span class="material-icons">alternate_email</span><a href="mailto:jan.eric.jonsson@mindmeetab.com">jan.eric.jonsson@mindmeetab.com</a></div>
             </div>
             <ul class="tags">
               <li>Tvång / OCD</li><li>Ångest</li><li>Utbildning</li><li>Handledning</li>
@@ -503,7 +509,7 @@
       }
     })();
 
-    // PERSONDATA (uppdaterad med originaltexter)
+    // PERSONDATA (ersatt & SEO-uppdaterat)
     const PERSON_DATA = {
       'anette': {
         title: 'Anette Edsberger – Sjukgymnast och Psykoterapeut KBT vid KBT Skeppsbron i Göteborg',
@@ -546,7 +552,7 @@
             <p>Uppdrag för offentliga aktörer och privata företag, bl.a. Västra Götalandsregionen, primärvård/psykiatri, försäkringsbolag och utbildningsanordnare.</p>
           <div class="modal-contact">
             <p><span class="material-icons">call</span>0702 63 48 66<br>
-            <span class="material-icons">alternate_email</span>jan-eric@kbtskeppsbron.se</p>
+            <span class="material-icons">alternate_email</span>jan.eric.jonsson@mindmeetab.com</p>
           </div>
           <div class="related-links">
             <a class="btn btn-outline" href="/behandling/ocd-tvangssyndrom.html">Läs mer om OCD & tvång</a>
@@ -556,105 +562,65 @@
         `
       },
       'billy': {
-        title: 'Billy Larsson – Psykolog, Psykoterapeut KBT & Handledare',
+        title: 'Billy Larsson',
         img: 'assets/images/port/billy_2.jpg',
         summary: 'Billy är legitimerad psykolog, legitimerad psykoterapeut (KBT), handledare i KBT samt fil.dr i psykologi. Han har mångårig erfarenhet från vuxenpsykiatrin och vidareutbildning i sexologi och familjeterapi.',
         html: `
-          <h3><span class="material-icons">badge</span> Billy Larsson </h3>
-
-          <h3><span class="material-icons">format_list_bulleted</span> Behandlingsområden:</h3>
-          <ul>
-            <li>Relationssvårigheter och parproblem</li>
-            <li>Ångest, oro och nedstämdhet</li>
-            <li>Stress, utmattning och livskriser</li>
-            <li>Sexologiska frågeställningar</li>
-          </ul>
-
-          <h3><span class="material-icons">school</span> Arbetssätt och utbildning</h3>
-          <p>Erbjuder KBT individuellt och för par samt handledning. Har undervisat på psykologprogrammet och psykoterapeututbildningar vid flera universitet och bidragit till att introducera Unified Protocol i Sverige.</p>
-
-          <h3><span class="material-icons">menu_book</span> Författarskap</h3>
-          <p>Författare till Att älska en vuxen människa: Användbara tankar och färdigheter – om relationella färdigheter.</p> <a class="btn btn-outline" href="https://www.bokus.com/bok/9789163978814/att-alska-en-vuxen-manniska-anvandbara-tankar-och-fardigheter/" target="_blank" rel="noopener noreferrer">
-  Boken hittar du här
-</a>
-
-
+          <h3><span class="material-icons">menu_book</span> Bakgrund</h3>
+          <p>Vidareutbildad i sexologi och familjeterapi. Tio års erfarenhet från vuxenpsykiatrin (öppenvård och slutenvård). Undervisar/har undervisat vid GU samt psykoterapeututbildningar i Göteborg, Lund och Uppsala.</p>
+          <h3><span class="material-icons">favorite</span> Relationer & par</h3>
+          <p>Författare till <i>Att älska en vuxen människa: Användbara tankar och färdigheter</i>. Arbetar med KBT för individer och par samt erbjuder handledning.</p>
           <div class="modal-contact">
             <p><span class="material-icons">call</span>073 63 95 019<br>
             <span class="material-icons">alternate_email</span>billy@kbtskeppsbron.se</p>
           </div>
+          <div class="related-links">
+            <a class="btn btn-outline" href="/behandling/ibct-parterapi.html">Läs mer om parterapi (IBCT)</a>
+            <a class="btn btn-outline" href="/behandling/kbt.html">Läs mer om KBT</a>
+            <a class="btn btn-outline" href="/utbildning.html">Läs mer om utbildningar</a>
+          </div>
         `
       },
       'sally': {
-        title: 'Sally Marshall – Psykolog och Psykoterapeut vid KBT Skeppsbron i Göteborg',
+        title: 'Sally Marshall',
         img: 'assets/images/port/sally_2.jpg',
-        summary: 'Sally är legitimerad psykolog och psykoterapeut i Göteborg med specialistkompetens inom parterapi, sexologisk behandling samt stress och utmattning. Hon har många års erfarenhet av kliniskt arbete. Idag arbetar hon främst med KBT och tredjevågens terapimetoder som ACT, FACT och IBCT. Sally är verksam på heltid vid KBT Skeppsbron i Göteborg och erbjuder terapi både på svenska och engelska.',
+        summary: 'Legitimerad psykolog och psykoterapeut KBT. Specialiserad på parterapi (IBCT), sexologiska frågor samt stress/utmattning med ACT/FACT.',
         html: `
-          <h3><span class="material-icons">favorite</span> Parterapi med IBCT</h3>
-          <p>Sally är specialiserad inom parterapi och har de senaste åren främst arbetat med metoden IBCT (Integrative Behavioral Couple Therapy).</p>
-          <p>Parterapin hjälper par att:</p>
-          <ul>
-            <li>Hantera återkommande konflikter</li>
-            <li>Förbättra kommunikationen</li>
-            <li>Bygga närhet och förståelse</li>
-          </ul>
-
+          <h3><span class="material-icons">favorite</span> Par & närhet</h3>
+          <p>Specialiserad inom IBCT. Hjälper par med återkommande konflikter, kommunikation och närhet.</p>
           <h3><span class="material-icons">favorite_border</span> Sexologisk behandling</h3>
-          <p>Utöver parterapi erbjuder Sally sexologisk behandling för både par och individer. Det kan handla om:</p>
-          <ul>
-            <li>Problem med lust eller sexuell samvaro</li>
-            <li>Svårigheter kopplade till närhet och intimitet</li>
-            <li>Sexologiska frågor som påverkar relationen eller individens välmående</li>
-          </ul>
-
-          <h3><span class="material-icons">self_improvement</span> Stress och utmattning</h3>
-          <p>Sally har lång erfarenhet av behandling för stressrelaterade problem och utmattningstillstånd. Med hjälp av metoder inom tredjevågens KBT, framför allt ACT (Acceptance and Commitment Therapy) och FACT (Fokuserad ACT), får klienter stöd i att:</p>
-          <ul>
-            <li>Hantera stress och återhämta sig</li>
-            <li>Hitta balans mellan arbete och privatliv</li>
-            <li>Utveckla strategier för att förebygga återfall</li>
-          </ul>
-
-          <h3><span class="material-icons">co_present</span> Handledning och utbildning</h3>
-          <p>Förutom kliniskt arbete handleder och utbildar Sally andra terapeuter, psykologer och vårdpersonal. Hon har samarbeten med bland annat:</p>
-          <ul>
-            <li>Västra Götalandsregionen</li>
-            <li>Region Halland</li>
-            <li>Kriminalvården</li>
-          </ul>
-          <p>Hon erbjuder också kurser och utbildningar inom KBT, ACT, FACT samt IBCT-parterapi.</p>
-
-          <h3><span class="material-icons">handshake</span> Avtal och samarbeten</h3>
-          <p>Sally har avtal med Västra Götalandsregionen och Region Halland för handledning av personal. Hon samarbetar även med olika aktörer inom det privata näringslivet.</p>
-
+          <p>Behandling för par och individer kring lust, intimitet och sexologiska frågeställningar.</p>
+          <h3><span class="material-icons">self_improvement</span> Stress & återhämtning</h3>
+          <p>Lång erfarenhet av stressrelaterad ohälsa och utmattning. Arbetar med ACT/FACT för hållbar återhämtning och relapsförebyggande.</p>
+          <p>Utbildar och handleder personal i VGR, Region Halland och Kriminalvården.</p>
           <div class="modal-contact">
             <p><span class="material-icons">call</span>0730 57 85 20<br>
             <span class="material-icons">alternate_email</span>sally@kbtskeppsbron.se</p>
           </div>
+          <div class="related-links">
+            <a class="btn btn-outline" href="/behandling/ibct-parterapi.html">Läs mer om parterapi (IBCT)</a>
+            <a class="btn btn-outline" href="/behandling/sexologisk-behandling.html">Läs mer om sexologisk behandling</a>
+            <a class="btn btn-outline" href="/behandling/stress-och-utmattning.html">Läs mer om stress & ACT/FACT</a>
+          </div>
         `
       },
       'lillian': {
-        title: 'Lillian Noring-Andersson – Psykoterapeut KBT, Lärare & Handledare',
+        title: 'Lillian Noring-Andersson',
         img: 'assets/images/port/lillian_2.jpg',
-        summary: 'Leg. sjuksköterska, leg. psykoterapeut KBT, handledare och lärare. Erfarenhet av arbete med ångest, depression och ätstörningar samt över 20 år som lärare och handledare på KBT-utbildningar.',
+        summary: 'Leg. sjuksköterska, leg. psykoterapeut KBT, handledare och lärare. Erfaren inom ångest, depression och ätstörningar.',
         html: `
-       
-          <h3><span class="material-icons">format_list_bulleted</span> Behandlingsområden</h3>
-          <ul>
-            <li>Ångest- och depressionstillstånd</li>
-            <li>Ätstörningar och kroppsinriktad problematik</li>
-            <li>Stress, återhämtning och livsbalans</li>
-          </ul>
-
-          <h3><span class="material-icons">school</span> Handledning & utbildning</h3>
-          <p>Lärare och handledare på KBT-utbildningar sedan 2003 och studierektor sedan 2009. Medarrangör för grundläggande KBT-utbildning förlagd i och kring KBT Skeppsbron.</p>
-
-          <h3><span class="material-icons">diversity_3</span> Uppdrag & samarbeten</h3>
-          <p>Handledning inom öppenvårdspsykiatri, ungdomsmottagningar, vårdcentraler och Grön rehab. Avtal med Västra Götalandsregionen samt samarbeten med privat näringsliv och Göteborgs stad/kranskommuner.</p>
-
+          <h3><span class="material-icons">school</span> Lång erfarenhet</h3>
+          <p>Arbetar med KBT vid bl.a. ångest, depression och ätstörningar. Undervisar och handleder sedan 2003 på grundläggande KBT-utbildningar; studierektor sedan 2009.</p>
+          <h3><span class="material-icons">groups</span> Uppdrag idag</h3>
+          <p>Erbjuder individuell terapi, parterapi och handledning. Uppdrag inom öppenpsykiatri, ungdomsmottagning, vårdcentraler och Grön rehab.</p>
           <div class="modal-contact">
             <p><span class="material-icons">call</span>0709 60 89 10<br>
             <span class="material-icons">alternate_email</span>lillian@kbtskeppsbron.se</p>
+          </div>
+          <div class="related-links">
+            <a class="btn btn-outline" href="/behandling/angest-oro.html">Läs mer om ångest</a>
+            <a class="btn btn-outline" href="/behandling/depression.html">Läs mer om depression</a>
+            <a class="btn btn-outline" href="/handledning.html">Läs mer om handledning</a>
           </div>
         `
       },
@@ -663,26 +629,20 @@
         img: 'assets/images/port/camilla_2.jpg',
         summary: 'Leg. psykolog, leg. psykoterapeut KBT, klinisk handledare KBT, specialist i klinisk psykologi. Erfaren inom neuropsykologi, trauma och stress/utmattning.',
         html: `
-          <h3><span class="material-icons">badge</span> Camilla O´Keeffe – Psykolog, Psykoterapeut KBT & Specialist i Klinisk Psykologi</h3>
-          <p>Camilla är legitimerad psykolog, legitimerad psykoterapeut (KBT), klinisk handledare i KBT och specialist i klinisk psykologi. Hon är även utbildad mindfulnessinstruktör.</p>
-
-          <h3><span class="material-icons">format_list_bulleted</span> Behandlingsområden</h3>
-          <ul>
-            <li>Ångest, depression och trauma (PTSD)</li>
-            <li>Emotionella svårigheter och färdighetsträning (DBT-inriktning)</li>
-            <li>Stressrelaterad ohälsa och återgång i arbete</li>
-            <li>Neuropsykiatriska tillstånd (utredning och behandling)</li>
-          </ul>
-
-          <h3><span class="material-icons">work</span> Arbetsliv & undervisning</h3>
-          <p>Mångårig erfarenhet inom företagshälsovård med förebyggande insatser och rehabilitering vid utmattning. Deltid som lärare och handledare vid Psykologiska institutionen, Göteborgs universitet.</p>
-
-          <h3><span class="material-icons">psychology</span> Tjänster</h3>
-          <p>Psykologisk behandling, handledning och utbildning. Camilla arbetar deltid vid KBT Skeppsbron.</p>
-
+          <h3><span class="material-icons">psychology_alt</span> Klinisk bakgrund</h3>
+          <p>Arbetat inom vuxenpsykiatrin med utredning/behandling av neuropsykologiska tillstånd, ångest, depression, PTSD och emotionella svårigheter (bl.a. DBT).</p>
+          <h3><span class="material-icons">work</span> Företagshälsa & stress</h3>
+          <p>Förebyggande insatser vid stress och rehabilitering vid utmattning. Undervisar vid Psykologiska institutionen, Göteborgs universitet.</p>
+          <h3><span class="material-icons">groups</span> Erbjuder</h3>
+          <p>Individuell KBT-behandling, handledning och utbildning. Arbetar deltid vid KBT Skeppsbron.</p>
           <div class="modal-contact">
             <p><span class="material-icons">call</span>0705 37 49 75<br>
             <span class="material-icons">alternate_email</span>camilla@kbtskeppsbron.se</p>
+          </div>
+          <div class="related-links">
+            <a class="btn btn-outline" href="/behandling/neuropsykologi.html">Läs mer om neuropsykologi</a>
+            <a class="btn btn-outline" href="/behandling/trauma-ptsd.html">Läs mer om trauma & PTSD</a>
+            <a class="btn btn-outline" href="/behandling/stress-och-utmattning.html">Läs mer om stress & utmattning</a>
           </div>
         `
       },
@@ -691,25 +651,20 @@
         img: 'assets/images/port/lotta_2.jpg',
         summary: 'Leg. psykolog och leg. psykoterapeut KBT. Specialist i psykologisk behandling/psykoterapi och klinisk handledare KBT. Arbetar med ungdomar, självkänsla och utmattning.',
         html: `
-          <h3><span class="material-icons">badge</span> Lotta Scholander – Psykolog, Psykoterapeut KBT & Klinisk Handledare</h3>
-          <p>Lotta är legitimerad psykolog, legitimerad psykoterapeut (KBT), klinisk handledare i KBT samt specialist i psykologisk behandling/psykoterapi. Hon har arbetat inom Statens institutionsstyrelse med utredning, behandling och KBT-metodutveckling samt som psykolog inom gymnasieskolan på individ-, grupp- och organisationsnivå.</p>
-
-          <h3><span class="material-icons">format_list_bulleted</span> Behandlingsområden</h3>
-          <ul>
-            <li>KBT individuellt och för par</li>
-            <li>Ångest, nedstämdhet, stress och livskriser</li>
-            <li>Ungdomsproblematik och familjerelationer</li>
-          </ul>
-
+          <h3><span class="material-icons">diversity_3</span> Bakgrund</h3>
+          <p>Arbetat inom Statens Institutionsstyrelse (utredning, behandling, metodutveckling inom KBT) och som psykolog i gymnasieskola på individ-, grupp- och organisationsnivå.</p>
           <h3><span class="material-icons">school</span> Handledning & utbildning</h3>
-          <p>Lärare och handledare på grundläggande KBT-utbildningar sedan 2003 samt medverkan i legitimationsgrundande utbildningar t.o.m. 2014. Pågående handledningsuppdrag inom BUP, öppenvård, elevhälsa och HVB-verksamheter.</p>
-
-          <h3><span class="material-icons">handshake</span> Avtal och samarbeten</h3>
-          <p>Västra Götalandsregionen – handledning av personal. Privat näringsliv – psykologisk behandling och handledning. Lotta arbetar heltid vid KBT Skeppsbron.</p>
-
+          <p>Lärare och handledare på grundläggande KBT-utbildningar sedan 2003; deltagit i legitimationsgrundande utbildningar till 2014.</p>
+          <h3><span class="material-icons">support_agent</span> Inriktning idag</h3>
+          <p>Erbjuder individuell KBT, parterapi och handledning. Handleder personal inom BUP, öppenvårdspsykiatri, elevhälsa och HVB-hem.</p>
           <div class="modal-contact">
             <p><span class="material-icons">call</span>0736 40 38 45<br>
             <span class="material-icons">alternate_email</span>lotta@kbtskeppsbron.se</p>
+          </div>
+          <div class="related-links">
+            <a class="btn btn-outline" href="/behandling/kbt.html">Läs mer om KBT</a>
+            <a class="btn btn-outline" href="/handledning.html">Läs mer om handledning</a>
+            <a class="btn btn-outline" href="/behandling/stress-och-utmattning.html">Läs mer om utmattning & självkänsla</a>
           </div>
         `
       },
@@ -718,26 +673,19 @@
         img: 'assets/images/port/marie_2.jpg',
         summary: 'Leg. psykoterapeut KBT, leg. hälso- och sjukvårdskurator och auktoriserad socionom. Särskild erfarenhet av stress, utmattning och livskriser.',
         html: `
-          <h3><span class="material-icons">badge</span> Marie Wånsander – Psykoterapeut KBT & Hälso- och sjukvårdskurator</h3>
-          <p>Marie är legitimerad psykoterapeut (KBT), legitimerad hälso- och sjukvårdskurator och auktoriserad socionom. Hon har nära 15 års erfarenhet av samtalsbehandling i primärvård och 10 år som rehabiliteringssamordnare med fokus på återgång i arbete.</p>
-
-          <h3><span class="material-icons">format_list_bulleted</span> Behandlingsområden</h3>
-          <ul>
-            <li>Stress och utmattning</li>
-            <li>Ångesttillstånd och depression</li>
-            <li>Livskriser och sorg</li>
-            <li>Viktproblematik och ätstörningsrelaterade svårigheter</li>
-          </ul>
-
-          <h3><span class="material-icons">psychology</span> Tjänster</h3>
-          <p>KBT individuellt och för par. Verksam inom primärvård, företagshälsovård och privat mottagning samt deltid vid KBT Skeppsbron.</p>
-
-          <h3><span class="material-icons">handshake</span> Avtal och samarbeten</h3>
-          <p>Primärvård och företagshälsovård. Västra Götalandsregionen – personalvård i samarbete med Hälsan & Arbetslivet.</p>
-
+          <h3><span class="material-icons">hdr_strong</span> Erfarenhet</h3>
+          <p>Närmare 15 år i primärvård med bred problematik. 10 års arbete som rehabiliteringssamordnare tillbaka till arbete.</p>
+          <h3><span class="material-icons">self_improvement</span> Inriktning</h3>
+          <p>KBT vid stress-/utmattningsproblematik, ångest, depression, livskriser samt frågor kring vikt/ätbeteende. Individ och par.</p>
+          <p>Arbetar inom primärvård, företagshälsa och privat mottagning. Deltid på KBT Skeppsbron.</p>
           <div class="modal-contact">
             <p><span class="material-icons">call</span>070 401 93 56<br>
             <span class="material-icons">alternate_email</span>marie@kbtskeppsbron.se</p>
+          </div>
+          <div class="related-links">
+            <a class="btn btn-outline" href="/behandling/stress-och-utmattning.html">Läs mer om stress & utmattning</a>
+            <a class="btn btn-outline" href="/behandling/depression.html">Läs mer om livskriser & depression</a>
+            <a class="btn btn-outline" href="/behandling/kbt.html">Läs mer om KBT</a>
           </div>
         `
       },
@@ -746,25 +694,19 @@
         img: 'assets/images/port/matilda_2.jpg',
         summary: 'Socionom, leg. psykoterapeut KBT, handledare inom KBT och legitimerad hälso- och sjukvårdskurator. Arbetar med individer, par, adoption/familj och chefs-/personalstöd.',
         html: `
-          <h3><span class="material-icons">badge</span> Matilda Zackrisson – Socionom, Psykoterapeut KBT & Handledare</h3>
-          <p>Matilda är socionom, legitimerad psykoterapeut (KBT) och utbildad handledare. Hon har arbetat inom socialtjänst, psykiatri, somatik och företagshälsovård och erbjuder behandling för individer och par samt handledning.</p>
-
-          <h3><span class="material-icons">format_list_bulleted</span> Behandlingsområden</h3>
-          <ul>
-            <li>Ångest, stress och nedstämdhet</li>
-            <li>Relations- och familjeproblem</li>
-            <li>Adoptionsrelaterade frågor – stöd till adopterade och deras familjer</li>
-          </ul>
-
-          <h3><span class="material-icons">school</span> Handledning & utbildning</h3>
-          <p>Handledningsuppdrag på grundläggande KBT-utbildning samt inom Region Halland, primärvården och Kriminalvården.</p>
-
-          <h3><span class="material-icons">handshake</span> Avtal och samarbeten</h3>
-          <p>Göteborgs Stad. Västra Götalandsregionen – personalvård via Hälsan & Arbetslivet. Privat näringsliv – psykologisk behandling och handledning. Matilda arbetar heltid på KBT Skeppsbron.</p>
-
+          <h3><span class="material-icons">diversity_1</span> Bakgrund</h3>
+          <p>Erfarenhet från socialtjänst, psykiatri, somatisk vård och företagshälsa. Arbetar med KBT på individ- och parnivå samt i handledning.</p>
+          <h3><span class="material-icons">family_restroom</span> Särskilda områden</h3>
+          <p>Stöd till adopterade och deras familjer. Chefs-/arbetsplatsstöd inom arbetsmiljö och psykosocial hållbarhet.</p>
+          <p>Handledning i Region Halland, primärvården och Kriminalvården samt på grundläggande KBT-utbildning.</p>
           <div class="modal-contact">
             <p><span class="material-icons">call</span>0708 91 91 19<br>
             <span class="material-icons">alternate_email</span>matilda@kbtskeppsbron.se</p>
+          </div>
+          <div class="related-links">
+            <a class="btn btn-outline" href="/behandling/foraldrastod.html">Läs mer om föräldrastöd</a>
+            <a class="btn btn-outline" href="/behandling/ibct-parterapi.html">Läs mer om KBT för par</a>
+            <a class="btn btn-outline" href="/handledning.html">Läs mer om chefsstöd & handledning</a>
           </div>
         `
       },
@@ -773,27 +715,20 @@
         img: 'assets/images/port/jonasrobertsson.jpg',
         summary: 'Leg. psykolog med fokus på barn, unga, föräldrar och familjerelationer. Arbetar med KBT, ABFT och MI.',
         html: `
-          <h3><span class="material-icons">badge</span> Om Jonas – Psykolog vid KBT Skeppsbron i Göteborg</h3>
-          <p>Jonas är legitimerad psykolog med omkring tio års erfarenhet av arbete med barn, ungdomar och föräldrar. Han har främst varit verksam inom primärvården på vårdcentral, men har också arbetat i skolan som skolpsykolog. Han erbjuder behandling och rådgivning med fokus på KBT, men arbetar även med metoder som anknytningsbaserad familjeterapi (ABFT) och motiverande samtal (MI).</p>
-
-          <h3><span class="material-icons">psychology</span> KBT och andra metoder</h3>
-          <p>Jonas arbetar huvudsakligen med kognitiv beteendeterapi (KBT), men använder även andra välbeprövade metoder beroende på behov, till exempel:</p>
-          <ul>
-            <li>Anknytningsbaserad familjeterapi (ABFT) – för att stärka relationen mellan barn/ungdom och föräldrar</li>
-            <li>Motiverande samtal (MI) – för att främja förändring och motivation</li>
-          </ul>
-
-          <h3><span class="material-icons">family_restroom</span> Behandling och rådgivning för barn, ungdomar och familjer</h3>
-          <p>Jonas erbjuder behandling, stöd och rådgivning för:</p>
-          <ul>
-            <li>Barn och ungdomar med psykisk ohälsa, oro eller nedstämdhet</li>
-            <li>Föräldrar som vill få stöd i sitt föräldraskap</li>
-            <li>Familjer som behöver hjälp att förbättra relationer och kommunikation</li>
-          </ul>
-
+          <h3><span class="material-icons">child_care</span> Barn & unga</h3>
+          <p>Circa tio års erfarenhet i primärvård/vårdcentral och som skolpsykolog. Stöd till barn/ungdomar och deras föräldrar.</p>
+          <h3><span class="material-icons">psychology</span> Metoder</h3>
+          <p>KBT kombinerat med Anknytningsbaserad familjeterapi (ABFT) och Motiverande samtal (MI) utifrån behov.</p>
+          <h3><span class="material-icons">diversity_3</span> Vad Jonas erbjuder</h3>
+          <p>Behandling och rådgivning vid oro, nedstämdhet, relationskonflikter, kommunikationssvårigheter och föräldrastöd.</p>
           <div class="modal-contact">
             <p><span class="material-icons">call</span>0707 74 43 60<br>
             <span class="material-icons">alternate_email</span>jonas@kbtskeppsbron.se</p>
+          </div>
+          <div class="related-links">
+            <a class="btn btn-outline" href="/behandling/foraldrastod.html">Läs mer om föräldrastöd</a>
+            <a class="btn btn-outline" href="/behandling/abft-anknytningsbaserad-familjeterapi.html">Läs mer om ABFT</a>
+            <a class="btn btn-outline" href="/behandling/kbt.html">Läs mer om KBT för barn & unga</a>
           </div>
         `
       },
@@ -802,62 +737,55 @@
         img: 'assets/images/port/cathrine_1.jpg',
         summary: 'Leg. psykoterapeut KBT, socionom och legitimerad hälso- och sjukvårdskurator. Arbetar med sexologiska frågor, par, trauma och HBTQI.',
         html: `
-          <h3><span class="material-icons">badge</span> Om Cathrine Apelqvist – Psykoterapeut vid KBT Skeppsbron i Göteborg</h3>
-          <p>Cathrine är legitimerad psykoterapeut med inriktning KBT, socionom och legitimerad hälso- och sjukvårdskurator. Hon har över 25 års erfarenhet som behandlare och erbjuder både individuell terapi och parterapi. Hennes arbete utgår från kognitiv beteendeterapi, men omfattar även metoder som IBCT, ACT, anknytningsteori och mindfulness.</p>
-
-          <h3><span class="material-icons">favorite</span> Sexologisk kompetens</h3>
-          <p>Cathrine har lång erfarenhet av att arbeta med sexologiska frågor. Hon har bland annat fördjupat sig i sex som självskadebeteende (publicerad artikel) och varit delaktig i utvecklingen av tvärprofessionell behandling vid vulvasmärta på ungdomsmottagning.</p>
-
-          <h3><span class="material-icons">diversity_2</span> HBTQI och könsidentitet</h3>
-          <p>Med stort engagemang för HBTQI-frågor och särskilt könsidentitetsfrågor, erbjuder Cathrine stöd och behandling som är inkluderande och individanpassad.</p>
-
-          <h3><span class="material-icons">healing</span> Behandling vid psykisk ohälsa</h3>
-          <p>Utöver ovanstående områden kan Cathrine hjälpa till vid flera olika former av psykisk ohälsa, till exempel:</p>
-          <ul>
-            <li>Depression och nedstämdhet</li>
-            <li>Oro, ångest och ältande</li>
-            <li>Tvångsproblematik (OCD)</li>
-            <li>Traumabearbetning</li>
-          </ul>
-
-          <h3><span class="material-icons">contacts</span> Kontakt</h3>
-          <p>📞 Tel: 0703-204 709<br>🌐 Hemsida: Cathrine Apelqvist</p>
-
+          <h3><span class="material-icons">favorite</span> Par & sexologi</h3>
+          <p>Erbjuder individuell terapi och parterapi. Klinisk erfarenhet av sex som självskadebeteende och tvärprofessionell behandling vid vulvasmärta.</p>
+          <h3><span class="material-icons">people_alt</span> HBTQI & identitet</h3>
+          <p>Stort engagemang i frågor om könsidentitet, sexualitet och närhet – med varmt och inkluderande förhållningssätt.</p>
+          <h3><span class="material-icons">healing</span> Psykisk hälsa</h3>
+          <p>Arbetar bland annat med depression, oro/ångest, tvångssyndrom (OCD) och trauma.</p>
           <div class="modal-contact">
             <p><span class="material-icons">call</span>0703 20 47 09<br>
             <span class="material-icons">alternate_email</span>cathrine@kbtskeppsbron.se</p>
+          </div>
+          <div class="related-links">
+            <a class="btn btn-outline" href="/behandling/sexologisk-behandling.html">Läs mer om sexologisk behandling</a>
+            <a class="btn btn-outline" href="/behandling/trauma-ptsd.html">Läs mer om trauma</a>
+            <a class="btn btn-outline" href="/behandling/kbt.html">Läs mer om KBT</a>
           </div>
         `
       },
 
       'annika': {
-        title: 'Annika Hall – Psykoterapeut KBT, Socionom & Hälso- och sjukvårdskurator',
-        img: 'assets/images/port/annika_1.jpg',
-        summary: 'Leg. psykoterapeut KBT, socionom och legitimerad hälso- och sjukvårdskurator. Arbetar helhetsinriktat med KBT, ACT, CFT och mindfulness. Erfaren inom stress, NPF och föräldrastöd.',
-        html: `
-          <h3><span class="material-icons">psychology</span> Inriktning & arbetssätt</h3>
-          <p>Annika arbetar utifrån kognitiv beteendeterapi (KBT) och integrerar metoder som <strong>ACT</strong>, <strong>CFT</strong>, <strong>Schematerapi</strong>, <strong>MI</strong> och <strong>Mindfulness</strong>. Hon är även utbildad yogainstruktör, vilket bidrar till en fördjupad förståelse för sambandet mellan kropp och psyke.</p>
+  title: 'Annika Hall – Psykoterapeut KBT, Socionom & Hälso- och sjukvårdskurator',
+  img: 'assets/images/port/annika_1.jpg',
+  summary: 'Leg. psykoterapeut KBT, socionom och legitimerad hälso- och sjukvårdskurator. Arbetar helhetsinriktat med KBT, ACT, CFT och mindfulness. Erfaren inom stress, NPF och föräldrastöd.',
+  html: `
+    <h3><span class="material-icons">psychology</span> Inriktning & arbetssätt</h3>
+    <p>Annika arbetar utifrån kognitiv beteendeterapi (KBT) och integrerar metoder som <strong>ACT</strong>, <strong>CFT</strong>, <strong>Schematerapi</strong>, <strong>MI</strong> och <strong>Mindfulness</strong>. Hon är även utbildad yogainstruktör, vilket bidrar till en fördjupad förståelse för sambandet mellan kropp och psyke.</p>
 
-          <h3><span class="material-icons">school</span> Erfarenhet</h3>
-          <p>Med över 20 års erfarenhet från arbete inom skolan och mer än 15 år inom primärvården har Annika mött människor med varierande psykisk ohälsa. Hon har särskild kompetens inom stressrelaterad problematik, neuropsykiatriska variationer såsom autism och ADHD samt <strong>föräldrastöd</strong>.</p>
+    <h3><span class="material-icons">school</span> Erfarenhet</h3>
+    <p>Med över 20 års erfarenhet från arbete inom skolan och mer än 15 år inom primärvården har Annika mött människor med varierande psykisk ohälsa. Hon har särskild kompetens inom stressrelaterad problematik, neuropsykiatriska variationer såsom autism och ADHD samt <strong>föräldrastöd</strong>.</p>
 
-          <h3><span class="material-icons">self_improvement</span> Helhetssyn & förhållningssätt</h3>
-          <p>I terapin betonar Annika vikten av att förstå kroppens signaler och samspelet mellan det fysiska och psykiska. Hon ser terapi som ett gemensamt förändringsarbete – där trygghet, närvaro och medkänsla är centrala för läkning.</p>
+    <h3><span class="material-icons">self_improvement</span> Helhetssyn & förhållningssätt</h3>
+    <p>I terapin betonar Annika vikten av att förstå kroppens signaler och samspelet mellan det fysiska och psykiska. Hon ser terapi som ett gemensamt förändringsarbete – där trygghet, närvaro och medkänsla är centrala för läkning.</p>
 
-          <blockquote>“För att kunna läka behöver vi ibland våga möta vårt lidande – men vi behöver inte göra det ensamma.”</blockquote>
+    <blockquote>
+      “För att kunna läka behöver vi ibland våga möta vårt lidande – men vi behöver inte göra det ensamma.”
+    </blockquote>
 
-          <div class="modal-contact">
-            <p><span class="material-icons">alternate_email</span>annika@kbtskeppsbron.se</p>
-          </div>
+    <div class="modal-contact">
+      <p><span class="material-icons">alternate_email</span>annika@kbtskeppsbron.se</p>
+    </div>
 
-          <div class="related-links">
-            <a class="btn btn-outline" href="/behandling/stress-och-utmattning.html">Läs mer om stress & utmattning</a>
-            <a class="btn btn-outline" href="/behandling/kbt.html">Läs mer om KBT</a>
-            <a class="btn btn-outline" href="/behandling/mindfulness.html">Läs mer om mindfulness</a>
-            <a class="btn btn-outline" href="/behandling/act.html">Läs mer om ACT & CFT</a>
-          </div>
-        `
-      },
+    <div class="related-links">
+      <a class="btn btn-outline" href="/behandling/stress-och-utmattning.html">Läs mer om stress & utmattning</a>
+      <a class="btn btn-outline" href="/behandling/kbt.html">Läs mer om KBT</a>
+      <a class="btn btn-outline" href="/behandling/mindfulness.html">Läs mer om mindfulness</a>
+      <a class="btn btn-outline" href="/behandling/act.html">Läs mer om ACT & CFT</a>
+    </div>
+  `
+},
+
     };
 
     // MODAL LOGIK
@@ -904,8 +832,16 @@
       });
 
       closeBtn.addEventListener('click',closeModal);
-      backdrop.addEventListener('click',e=>{ if(e.target === backdrop){closeModal();} });
-      document.addEventListener('keydown',e=>{ if(e.key === 'Escape' && backdrop.hidden === false){ closeModal(); } });
+
+      backdrop.addEventListener('click',e=>{
+        if(e.target === backdrop){closeModal();}
+      });
+
+      document.addEventListener('keydown',e=>{
+        if(e.key === 'Escape' && backdrop.hidden === false){
+          closeModal();
+        }
+      });
     })();
   </script>
 
@@ -945,7 +881,7 @@
         "name": "Jan-Eric Jönsson",
         "jobTitle": "Leg. psykolog, leg. psykoterapeut KBT, handledare",
         "worksFor": { "@id": "https://www.kbtskeppsbron.se/#org" },
-        "email": "mailto:jan-eric@kbtskeppsbron.se",
+        "email": "mailto:jan.eric.jonsson@mindmeetab.com",
         "telephone": "+46 702634866",
         "image": "https://www.kbtskeppsbron.se/assets/images/port/jan-eric.jpg",
         "url": "https://www.kbtskeppsbron.se/om_kontakt.html#team"
@@ -1025,7 +961,7 @@
         "name": "Jonas Robertsson",
         "jobTitle": "Leg. psykolog",
         "worksFor": { "@id": "https://www.kbtskeppsbron.se/#org" },
-        "email": "mailto:jonas@kbtskeppsbron.se",
+        "email": "mailto:info@psykologrobertsson.com",
         "telephone": "+46 707744360",
         "image": "https://www.kbtskeppsbron.se/assets/images/port/jonasrobertsson.jpg",
         "url": "https://www.kbtskeppsbron.se/om_kontakt.html#team"
@@ -1035,7 +971,7 @@
         "name": "Cathrine Apelqvist",
         "jobTitle": "Leg. psykoterapeut KBT, socionom, legitimerad hälso- och sjukvårdskurator",
         "worksFor": { "@id": "https://www.kbtskeppsbron.se/#org" },
-        "email": "mailto:cathrine@kbtskeppsbron.se",
+        "email": "mailto:cathrine@kbtspektra.com",
         "telephone": "+46 703204709",
         "image": "https://www.kbtskeppsbron.se/assets/images/port/cathrine_1.jpg",
         "url": "https://www.kbtskeppsbron.se/om_kontakt.html#team"
